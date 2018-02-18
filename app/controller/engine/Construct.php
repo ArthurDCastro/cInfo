@@ -1,40 +1,44 @@
 <?php
-
-class Construct
-{
-    const DIRECTORY_VIEW = 'app/views/';
-    private $url;
-    private $padroes;
-
-    /**
-     * @param mixed $url
-     */
-    public function setUrl($url)
+/*
+ * Arquivo controlador
+ *
+ * Não editar
+ */
+    class Construct
     {
-        $this->url = $url;
-    }
+        const DIRECTORY_VIEW = 'app/views/';
+        private $url;
+        private $padroes;
 
-    /**
-     * @param mixed $standards
-     */
-    public function setPadroes($padroes)
-    {
-        $this->padroes = $padroes;
-    }
+        /**
+         * @param mixed $url
+         */
+        public function setUrl($url)
+        {
+            $this->url = $url;
+        }
 
-    public function constroi($acao, $class){
-        return $class . '->' . $acao . '();';
-    }
+        /**
+         * @param mixed $padroes
+         */
+        public function setPadroes($padroes)
+        {
+            $this->padroes = $padroes;
+        }
 
-    public function loadView($file, $data = ''){
-        @include self::DIRECTORY_VIEW . $file;
-    }
+        public function constroi($acao, $class){
+            return $class . '->' . $acao . '();';
+        }
 
-    public function pattern($data = ''){
-        $files = scandir(self::DIRECTORY_VIEW . $this->padroes, 0);
+        protected function loadView($file, $data = ''){
+            @include self::DIRECTORY_VIEW . $file;
+        }
 
-        foreach ($files as $file){
-            $this->view($this->padroes . $file, $data);
+        public function padroes($data = ''){
+            $files = scandir(self::DIRECTORY_VIEW . $this->padroes, 0);
+
+            foreach ($files as $file){
+                $this->loadView($this->padroes . $file, $data);
+            }
         }
     }
-}

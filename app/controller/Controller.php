@@ -1,13 +1,23 @@
 <?php
 
-require_once 'engine/Construct.php';
+/* Controlador de páginas
+ *
+ * Aqui você contruirá as suas páginas
+ *
+ * $data é um array onde voce pode colocar informações como título da pagina ou então id de um produto
+*/
 
-class Controller extends Construct
-{
-    public $caminho = '';
+    require_once 'engine/Construct.php';
 
-    public function index(){
-        $data['titulo_pagina'] = 'bla';
-        $this->loadView('inicio.php', $data);
+    class Controller extends Construct
+    {
+        public function error_404(){
+            $data['titulo_pagina'] = 'Error 404';
+            $this->loadView('error_404.php', $data);
+        }
+
+        public function index(){
+            $data['titulo_pagina'] = 'Bem Vindo';
+            $this->loadView('inicio.php', $data);
+        }
     }
-}
