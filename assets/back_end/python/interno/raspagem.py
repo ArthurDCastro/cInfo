@@ -112,7 +112,7 @@ def rapaTudo(dados):
                 dados.remove(valor)
 
     except: NameError
-    
+
 
     return dados
 
