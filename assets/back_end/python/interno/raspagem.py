@@ -3,7 +3,7 @@ import json
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
-def convertFloat(string):
+def convertFloat(string): 
     novaString = ''
     for letra in string:
         if (letra != "."):
