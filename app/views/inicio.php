@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1>hello word</h1>
-    <h2><a href="index.php/pag2">pag2</a></h2>
+    <h2><a href="<?= $data['url_base'] ?>pag2">pag2</a></h2>
 </body>
 </html>

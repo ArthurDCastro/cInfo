@@ -4,20 +4,19 @@ require_once 'config/config.php';
 require_once 'app/controller/Controller.php';
 require_once 'app/controller/engine/Construct.php';
 
-$url    = $config['base_url'];
+$base_url    = $config['base_url'];
 $padrao = $config['views_padrao'];
 
-$url = $_SERVER['REQUEST_URI'];
+$url = 'http://localhost' . $_SERVER['REQUEST_URI'];
 
-$action = explode('.php/', $url);
-
-$action = @$action[1];
+$action = @explode('/',explode($base_url, $url)[1])[1];
 
 if (!isset($action)){
     $action = 'index';
 }
 
 $page = new Controller();
+$page->setBaseUrl($base_url);
 $page->setUrl($url);
 $page->setPadroes($padrao);
 

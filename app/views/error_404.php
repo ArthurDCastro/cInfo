@@ -1,3 +1,3 @@
 <?php
 
-echo "<h1>Pagina não encontrada</h1>";
+echo "<h1>". $data['titulo_pagina   '] . "</h1>";
