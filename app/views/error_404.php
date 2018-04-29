@@ -1,3 +1,3 @@
 <?php
 
-echo "<h1>". $data['titulo_pagina   '] . "</h1>";
+echo "<h1>". $titulo_pagina . "</h1>";

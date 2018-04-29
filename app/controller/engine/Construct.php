@@ -4,7 +4,7 @@
  *
  * Não editar
  */
-    class Construct
+abstract class Construct
     {
         const DIRECTORY_VIEW = 'app/views/';
         private $url;
@@ -45,7 +45,7 @@
             $count = count($data_url);
 
             $data['url'] = [];
-            for ($i = 2; $i < $count; $i++){
+            for ($i = 1; $i < $count; $i++){
                 $data['url'][] = $data_url[$i];
             }
 
@@ -54,12 +54,25 @@
 
         protected function loadView($file, $data = ''){
             $data['url'] = @$this->getDataUrl();
-            $data['url_base'] = $this->base_url . 'cinfo/';
+            $data['url_base'] = $this->base_url . '';
+
+            foreach ($data as $key => $value ){
+                if (is_string($value)){
+                    @eval('$' . $key . ' = \'' . $value . '\';');
+                } elseif(is_array($value)) {
+                    foreach ($value as $val){
+                        @eval('$' . $key . '[] = ' . $val . ';');
+                    }
+                } else {
+                    @eval('$' . $key . ' = ' . $value . ';');
+                }
+
+            }
 
             @include self::DIRECTORY_VIEW . $file;
         }
 
-        public function padroes($data = ''){
+        protected function padroes($data = ''){
             $files = scandir(self::DIRECTORY_VIEW . $this->padroes, 0);
 
             foreach ($files as $file){

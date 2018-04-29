@@ -1,41 +1,39 @@
 <?php
 
-require_once 'config/config.php';
-require_once 'app/controller/Controller.php';
-require_once 'app/controller/engine/Construct.php';
+    require_once 'config/config.php';
+    require_once 'app/controller/Controller.php';
 
-$base_url    = $config['base_url'];
-$padrao = $config['views_padrao'];
+    $base_url    = $config['base_url'];
+    $padrao = $config['views_padrao'];
 
-$url = 'http://localhost' . $_SERVER['REQUEST_URI'];
+    $url = 'http://localhost' . $_SERVER['REQUEST_URI'];
 
-$action = @explode('/',explode($base_url, $url)[1])[1];
+    $action = @explode('/',explode($base_url, $url)[1])[0];
 
-if (!isset($action)){
-    $action = 'index';
-}
-
-$page = new Controller();
-$page->setBaseUrl($base_url);
-$page->setUrl($url);
-$page->setPadroes($padrao);
-
-$methods = get_class_methods($page);
-
-$verificaPage = false;
-foreach ($methods as $method){
-    if ($method == $action){
-        $verificaPage = true;
-        break;
+    if ($action == ""){
+        $action = 'index';
     }
-}
 
-$construct = new Construct();
 
-if ($verificaPage){
-    $load = $construct->constroi($action, '$page');
-} else {
-    $load = $construct->constroi('error_404', '$page');
-}
+    $page = new Controller();
+    $page->setBaseUrl($base_url);
+    $page->setUrl($url);
+    $page->setPadroes($padrao);
 
-@eval($load);
+    $methods = get_class_methods($page);
+
+    $verificaPage = false;
+    foreach ($methods as $method){
+        if ($method == $action){
+            $verificaPage = true;
+            break;
+        }
+    }
+
+    if ($verificaPage){
+        $load = $page->constroi($action, '$page');
+    } else {
+        $load = $page->constroi('error_404', '$page');
+    }
+
+    @eval($load);

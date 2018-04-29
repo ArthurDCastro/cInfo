@@ -1,1 +1,14 @@
-{}
+[
+
+  {
+    "_id": {
+      "$oid": "5aadb9db607d9e277cdbff69"
+    },
+    "login": "LukDuk",
+    "nome": "Arthur",
+    "password": "0714",
+    "email": "arthurcastro078@gmail.com",
+    "tipo_user": "admin"
+  }
+
+]

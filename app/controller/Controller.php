@@ -24,7 +24,7 @@
         }
 
         public function pag2(){
-            $data['titulo_pagina'] = 'Error 404';
+            $data['titulo_pagina'] = 'ata';
             echo '<h1>bla</h1>';
             $this->loadView('pag2.php', $data);
         }

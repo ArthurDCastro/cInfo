@@ -4,16 +4,17 @@ $config['base_url']     = 'http://localhost/cInfo_Oficial/';
 $config['views_padrao'] = 'padroes/';
 
 $config['banco'] = [
-    'nomeDB'     => 'db_cinfo',
+    'uri'         => "mongodb://localhost:27017",
+    'nomeDB'      => 'db_cinfo',
     'collections' => [
-        'user' => [
+        'user'    => [
             'file' => 'documents/mongoDB/db/user.json'
         ],
-        'grafico' => [
-            'file' => 'documents/mongoDB/db/grafico.json'
+        'graficos' => [
+            'file'  => 'documents/mongoDB/db/grafico.json'
         ],
         'dados' => [
-            'file' => 'documents/mongoDB/db/dados.json'
+            'file'  => 'documents/mongoDB/db/dados.json'
         ]
     ]
 ];
