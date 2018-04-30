@@ -1,0 +1,22 @@
+#menu {
+    background-color: white;
+}
+
+#logo {
+    margin-bottom: -4px
+}
+
+#logo img {
+    height: auto;
+    width: 100px
+}
+
+#right {
+    margin-bottom: -2px
+
+}
+
+.ui.nag.comentarios {
+    background-color: transparent;
+    text-align: left;
+}

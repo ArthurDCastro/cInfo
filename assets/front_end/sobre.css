@@ -1,0 +1,17 @@
+#div1{
+    margin-top: 80px;
+    margin-bottom: 10px;
+}
+#div2{
+    padding: 10px;
+}
+#divLeft{
+    text-align: left;
+}
+#divRight{
+    text-align: right;
+}
+#img1{
+    width: 90%;
+    height: 30%;
+}

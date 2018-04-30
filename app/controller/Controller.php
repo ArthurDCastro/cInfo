@@ -19,18 +19,43 @@
 
         public function index(){
             $data['titulo_pagina'] = 'Bem Vindo';
-            $data['pereschato'] = 'show';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
             $this->loadView('inicio.php', $data);
         }
 
-        public function pag2(){
-            $data['titulo_pagina'] = 'ata';
-            echo '<h1>bla</h1>';
-            $this->loadView('pag2.php', $data);
+        public function sobre(){
+            $data['titulo_pagina'] = 'Sobre';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('sobre.php', $data);
         }
 
-        public function pag3(){
-            echo 'pag3';
+        public function cadastro(){
+            $data['titulo_pagina'] = 'Cadastre-se';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('cadastro.php', $data);
+        }
+
+        public function crie(){
+            $data['titulo_pagina'] = 'Crie um Gráfico';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('crie.php', $data);
+        }
+
+        public function login(){
+            $data['titulo_pagina'] = 'Faça Login';
+            $this->loadView('padroes/head.php', $data);
+            //$this->loadView('padroes/menu.php', $data);
+            $this->loadView('login.php', $data);
+        }
+
+        public function feed(){
+            $data['titulo_pagina'] = 'Feed de Notícias';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('feed.php', $data);
         }
 
     }
