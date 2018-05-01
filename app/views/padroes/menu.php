@@ -38,7 +38,7 @@
                         <a class="item">Perfil</a>
                         <a class="item">Amigos</a>
                         <a class="item">Gráficos</a>
-                        <a class="item" href="login">Sair</a>
+                        <a class="item" href="logout">Sair</a>
                     </div>
                 </div>
 

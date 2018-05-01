@@ -6,8 +6,6 @@
  * Time: 14:39
  */
 
-require_once 'UserFunc.php';
-
 class Comum extends UserFunc
 {
     public function ata(){

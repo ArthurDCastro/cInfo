@@ -19,7 +19,7 @@
             </div>
         </h1>
         <br><br>
-        <form class="ui large form">
+        <form class="ui large form" action="login" method="post">
             <div class="ui stacked segment">
                 <div class="field">
                     <h5 id="text_email">Email</h5>
@@ -35,12 +35,12 @@
                         <input type="password" name="password" placeholder="Senha">
                     </div>
                 </div>
-                <div class="ui animated green large fluid submit button" tabindex="0">
+                <button class="ui animated green large fluid submit button" tabindex="0" name="login">
                     <div class="visible content">Login</div>
                     <div class="hidden content">
                         <i class="right arrow icon"></i>
                     </div>
-                </div>
+                </button>
                 <h5 id="text_cadastro">Novo por aqui? <a href="cadastro" id="clique_cadastro">Cadastre-se!</a></h5>
             </div>
         </form>

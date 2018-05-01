@@ -9,10 +9,10 @@
             <div class="three wide column">
                 <h4 class="ui inverted header">cInfo</h4>
                 <div class="ui inverted link list">
-                    <a href="<?php echo $config['base_url'] ?>index.php" class="item">Início</a>
-                    <a href="<?php echo $config['base_url'] ?>index.php?acao=feed" class="item">Feed</a>
-                    <a href="<?php echo $config['base_url'] ?>index.php?acao=crie" class="item">Crie</a>
-                    <a href="<?php echo $config['base_url'] ?>index.php?acao=sobre" class="item">Sobre</a>
+                    <a href="index" class="item">Início</a>
+                    <a href="feed" class="item">Feed</a>
+                    <a href="crie" class="item">Crie</a>
+                    <a href="sobre" class="item">Sobre</a>
                     <a href="#" class="item">Transparência</a>
                 </div>
             </div>
@@ -30,9 +30,9 @@
                                 <i class="instagram icon"></i>
                                 @tuckcastroo
                             </a>
-                            <a href="#" class="item" target="_blank">
+                            <a href="https://twitter.com/tuckcastro" class="item" target="_blank">
                                 <i class="twitter icon"></i>
-                                @bla
+                                @tuckcastro
                             </a>
                         </div>
                     </div>

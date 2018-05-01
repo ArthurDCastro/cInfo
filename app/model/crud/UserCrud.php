@@ -24,7 +24,7 @@ class UserCrud
 
         foreach ($cursor as $document) {
             $array = (array) $document;
-            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['nome']);
+            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
         }
 
         return $list;
@@ -38,7 +38,18 @@ class UserCrud
             $array = (array) $document;
         }
 
-        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['nome']);;
+        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
+    }
+
+    public function getUser_byEmail($email){
+        $query = new MongoDB\Driver\Query(['email' => $email]);
+        $cursor =  $this->manager->executeQuery('db_cinfo.user', $query);
+
+        foreach ($cursor as $document) {
+            $array = (array) $document;
+        }
+
+        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);;
     }
 
     public function add(User $user){
@@ -49,7 +60,13 @@ class UserCrud
 
         $verifica = true;
         foreach ($allUsers as $oneUser){
-            if ($oneUser->getLogin() == $user->getLogin() or $oneUser->getEmail() == $user->getEmail()){
+            if ($oneUser->getLogin() == $user->getLogin()){
+                $verifica = false;
+            }
+
+            echo $oneUser->getEmail() .'   ///   '. $user->getEmail();
+
+            if ($oneUser->getEmail() == $user->getEmail()){
                 $verifica = false;
             }
         }
@@ -58,11 +75,9 @@ class UserCrud
             $bulk->insert($user->insert());
 
             $this->manager->executeBulkWrite('db_cinfo.user', $bulk);
-            echo '1';
             return true;
 
         } else {
-            echo '0';
             return false;
         }
 

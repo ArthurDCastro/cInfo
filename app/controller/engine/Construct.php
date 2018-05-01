@@ -4,21 +4,33 @@
  *
  * Não editar
  */
+
+require_once 'GetClass.php';
+
 abstract class Construct
     {
         const DIRECTORY_VIEW = 'app/views/';
         private $url;
         private $padroes;
         private $base_url;
+        protected $user;
+        protected $dados;
+        protected $grafico;
 
-        /**
+        public function __construct()
+        {
+            $this->user = new GetClass('User');
+            $this->dados = new GetClass('Dados');
+            $this->grafico = new GetClass('Grafico');
+        }
+
+    /**
          * @param mixed $base_url
          */
         public function setBaseUrl($base_url)
         {
             $this->base_url = $base_url;
         }
-
 
         /**
          * @param mixed $url

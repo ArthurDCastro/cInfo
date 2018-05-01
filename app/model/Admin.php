@@ -6,8 +6,6 @@
  * Time: 14:30
  */
 
-require_once 'UserFunc.php';
-
 class Admin extends UserFunc
 {
     public function show(){
