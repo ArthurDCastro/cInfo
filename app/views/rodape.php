@@ -1,7 +1,7 @@
-<div class="ui inverted vertical footer segment">
+<footer class="ui inverted vertical footer segment">
     <div class="ui container">
         <div class="ui stackable inverted divided equal height stackable grid">
-            <div class="seven wide column">
+            <div class="five wide column">
                 <h4 class="ui inverted header">Sobre</h4>
                 <p>Desenvolvemos uma plataforma informatizada para viabilizar o acesso e Interação da comunidade com a política e economia nacional, por meio do acesso a informações do
                     <a href="http://www.portaltransparencia.gov.br/" target="_blank">portal da transparência</a>.</p>
@@ -16,9 +16,9 @@
                     <a href="#" class="item">Transparência</a>
                 </div>
             </div>
-            <div class="five wide column">
+            <div class="seven wide column">
                 <h4 class="ui inverted header">Desenvolvedores</h4>
-                <div class="ui two column grid inverted link list">
+                <div class="ui three column grid inverted link list">
                     <div class="column">
                         <h5 class="ui inverted header">Arthur Castro</h5>
                         <div class="inverted link list">
@@ -53,8 +53,26 @@
                             </a>
                         </div>
                     </div>
+                    <div class="column">
+                        <h5 class="ui inverted header">Vnicius Peres</h5>
+                        <div class="inverted link list">
+                            <a href="https://github.com/ohperes" class="item" target="_blank">
+                                <i class="github icon"></i>
+                                /ohperes
+                            </a>
+                            <a href="https://www.instagram.com/joaolazarim/" class="item" target="_blank">
+                                <i class="instagram icon"></i>
+                                @joaolazarim
+                            </a>
+                            <a href="https://twitter.com/Tekislla" class="item" target="_blank">
+                                <i class="twitter icon"></i>
+                                @Tekislla
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</footer>
+</body>

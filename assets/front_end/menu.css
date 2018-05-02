@@ -20,3 +20,20 @@
     background-color: transparent;
     text-align: left;
 }
+
+
+.home-banner:before {
+
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 110%;
+    max-height: 110%;
+    max-width: 110%;
+    background: url("../files/img/bg404.jpg") no-repeat center center;
+
+    filter: blur(3px);
+}

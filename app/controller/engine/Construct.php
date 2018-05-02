@@ -5,10 +5,9 @@
  * Não editar
  */
 
-require_once 'GetClass.php';
+    require_once 'GetClass.php';
 
-abstract class Construct
-    {
+    abstract class Construct{
         const DIRECTORY_VIEW = 'app/views/';
         private $url;
         private $padroes;
@@ -24,7 +23,7 @@ abstract class Construct
             $this->grafico = new GetClass('Grafico');
         }
 
-    /**
+        /**
          * @param mixed $base_url
          */
         public function setBaseUrl($base_url)
@@ -73,10 +72,15 @@ abstract class Construct
                     @eval('$' . $key . ' = \'' . $value . '\';');
                 } elseif(is_array($value)) {
                     foreach ($value as $val){
-                        @eval('$' . $key . '[] = ' . $val . ';');
+                        if (is_string($val)){
+                            @eval('$' . $key . '[] = \'' . $val . '\';');
+                        } else {
+                            @eval('$' . $key . '[] = {' . $val . '};');
+                        }
                     }
                 } else {
-                    @eval('$' . $key . ' = ' . $value . ';');
+                    @eval('$' . $key . ' = {' . $value . '};');
+
                 }
 
             }

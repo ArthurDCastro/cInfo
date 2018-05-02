@@ -5,5 +5,5 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
 
 
-    <title><?php echo $data['titulo_pagina'] ?></title>
+    <title><?php echo $titulo_pagina ?></title>
 

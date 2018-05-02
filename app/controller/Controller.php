@@ -12,20 +12,23 @@
     class Controller extends Construct
     {
         public function error_404(){
-            $data['titulo_pagina'] = 'Error 404';
+            $data['titulo_pagina'] = 'cInfo - Error 404';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php');
             $this->loadView('error_404.php', $data);
+            $this->loadView('rodape.php');
         }
 
         public function index(){
-            $data['titulo_pagina'] = 'Bem Vindo';
+            $data['titulo_pagina'] = 'cInfo - Bem Vindo';
             $this->loadView('padroes/head.php', $data);
-            $this->loadView('padroes/menu.php', $data);
-            $this->loadView('inicio.php', $data);
-            $this->loadView('rodape.php', $data);
+            $this->loadView('padroes/menu.php');
+            $this->loadView('inicio.php');
+            $this->loadView('rodape.php');
         }
 
         public function sobre(){
-            $data['titulo_pagina'] = 'Sobre';
+            $data['titulo_pagina'] = 'cInfo - Sobre';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('sobre.php', $data);
@@ -33,7 +36,7 @@
         }
 
         public function cadastro(){
-            $data['titulo_pagina'] = 'Cadastre-se';
+            $data['titulo_pagina'] = 'cInfo - Cadastro';
 
             if (isset($_POST['cadastro'])){
                 $user = new User();
@@ -54,7 +57,7 @@
         }
 
         public function crie(){
-            $data['titulo_pagina'] = 'Crie um Gráfico';
+            $data['titulo_pagina'] = 'cInfo - Crie um Gráfico';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('crie.php', $data);
@@ -62,7 +65,7 @@
         }
 
         public function login(){
-            $data['titulo_pagina'] = 'Faça Login';
+            $data['titulo_pagina'] = 'cInfo - Login';
 
             if (isset($_POST['login'])){
                 $user = $this->user->crud->getUser_byEmail($_POST['email']);
@@ -85,7 +88,7 @@
         }
 
         public function feed(){
-            $data['titulo_pagina'] = 'Feed de Notícias';
+            $data['titulo_pagina'] = 'cInfo - Feed';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('feed.php', $data);
