@@ -1,5 +1,6 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
     <link rel="stylesheet" href="assets/front_end/css/login.css">
+    <script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
     <meta charset="UTF-8">
 </head>
 <body>
@@ -42,6 +43,7 @@
                     </div>
                 </button>
                 <h5 id="text_cadastro">Novo por aqui? <a href="cadastro" id="clique_cadastro">Cadastre-se!</a></h5>
+                <div class="ui error message"><?= $error ?></div><?= $error ?>
             </div>
         </form>
         <br><br><br>
@@ -51,5 +53,6 @@
         <br><br><br>
         </div>
     </div>
+<script type="text/javascript" src="assets/front_end/js/login.js"></script>
 </body>
 </html>

@@ -56,6 +56,7 @@
                     </div>
                 </button>
                 <h5 id="text_login">Já tem uma conta? <a href="login" id="clique_login"> Entre!</a></h5>
+                <div class="ui error message"></div>
             </div>
         </form>
         <br><br><br>
@@ -65,5 +66,6 @@
         <br><br><br>
     </div>
 </div>
+<script type="text/javascript" src="assets/front_end/js/cadastro.js"></script>
 </body>
 </html>

@@ -48,6 +48,7 @@
                         <a href="login" class="item">Login</a>
                         <a href="cadastro" class="item">Cadastre-se</a>
                     <?php endif; ?>
+
                 </div>
             </div>
         </div>
