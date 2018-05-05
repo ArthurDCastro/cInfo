@@ -25,7 +25,6 @@
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
             $this->loadView('inicio.php');
-            print_r($_COOKIE);
             $this->loadView('rodape.php');
         }
 
