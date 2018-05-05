@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="../../../assets/front_end/menu.css">
+    <link rel="stylesheet" href="../../../assets/front_end/css/menu.css">
     <link rel="stylesheet" href="assets/vendor/front/semantic/components/dropdown.css">
     <script src="assets/vendor/front/semantic/components/dropdown.js"></script>
     <script src="assets/front_end/js/menu.js"></script>
