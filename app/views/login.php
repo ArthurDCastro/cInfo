@@ -14,11 +14,6 @@
 
 <div class="ui center aligned grid" id="login">
     <div class="column">
-        <h1 class="ui teal image header">
-            <div class="content">
-                <h3 id="text_login">Logue em sua conta!</h3>
-            </div>
-        </h1>
         <br><br>
         <form class="ui large form" action="login" method="post">
             <div class="ui stacked segment">
@@ -26,7 +21,7 @@
                     <h5 id="text_email">Email</h5>
                     <div class="ui left icon input">
                         <i class="mail icon"></i>
-                        <input type="email" name="email" placeholder="E-mail">
+                        <input type="email" name="email" placeholder="E-mail" value="<?= $email ?>">
                     </div>
                 </div>
                 <div class="field">
@@ -43,16 +38,29 @@
                     </div>
                 </button>
                 <h5 id="text_cadastro">Novo por aqui? <a href="cadastro" id="clique_cadastro">Cadastre-se!</a></h5>
-                <div class="ui error message"><?= $error ?></div><?= $error ?>
+                <?php if (isset($error)): ?>
+                    <div class="ui negative message">
+                        <p>
+                            <?= $error ?>
+                        </p>
+                    </div>
+                <?php endif; ?>
+                <div class="ui error message"></div>
             </div>
         </form>
         <br><br><br>
-        <a href="sobre" id="sobre"><b>Sobre</b></a>
-        <a href="index" id="feed"><b>Início</b></a>
-        <a href="crie" id="crie"><b>Crie</b></a>
+        <a href="sobre" id="sobre">
+            <b>Sobre</b>
+        </a>
+        <a href="index" id="feed">
+            <b>Início</b>
+        </a>
+        <a href="transparencia" id="crie">
+            <b>Transparência</b>
+        </a>
         <br><br><br>
-        </div>
     </div>
+</div>
 <script type="text/javascript" src="assets/front_end/js/login.js"></script>
 </body>
 </html>

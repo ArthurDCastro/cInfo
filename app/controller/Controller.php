@@ -74,8 +74,13 @@
                 if ($this->user->func->login($_POST['password'])){
                     header('Location: index');
                 } else {
-                    $data['error'] = 'o seu vagabundo escreve saporra serta!';
-
+                    $login = $user->getLogin();
+                    if(isset($login)){
+                        $data['error'] = 'Senha inválida!';
+                        $data['email'] = $login = $user->getEmail();
+                    } else {
+                        $data['error'] = 'Este email não é cadastrado!';
+                    }
                     $this->loadView('padroes/head.php', $data);
                     $this->loadView('login.php', $data);
                 }
