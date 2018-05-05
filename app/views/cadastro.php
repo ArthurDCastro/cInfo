@@ -1,5 +1,5 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
-    <link rel="stylesheet" href="../../assets/front_end/css/cadastro.css">
+    <link rel="stylesheet" href="assets/front_end/css/cadastro.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -66,6 +66,6 @@
         <br><br><br>
     </div>
 </div>
-<script type="text/javascript" src="../../assets/front_end/js/cadastro.js"></script>
+<script type="text/javascript" src="assets/front_end/js/cadastro.js"></script>
 </body>
 </html>

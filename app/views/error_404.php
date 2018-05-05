@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../assets/front_end/css/error_404.css">
+<link rel="stylesheet" href="assets/front_end/css/error_404.css">
 
 <br>
 
