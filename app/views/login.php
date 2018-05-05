@@ -1,5 +1,5 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
-    <link rel="stylesheet" href="../../assets/front_end/css/login.css">
+    <link rel="stylesheet" href="../../assets/front_end/login.css">
     <script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
     <meta charset="UTF-8">
 </head>
@@ -53,6 +53,6 @@
         <br><br><br>
         </div>
     </div>
-<script type="text/javascript" src="assets/front_end/js/login.js"></script>
+<script type="text/javascript" src="../../assets/front_end/js/login.js"></script>
 </body>
 </html>
