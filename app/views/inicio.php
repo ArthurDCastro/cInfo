@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="assets/vendor/front/bxSlider/jquery.bxslider.css">
-<link rel="stylesheet" href="../../assets/front_end/inicio.css">
+<link rel="stylesheet" href="../../assets/front_end/css/inicio.css">
 <script src="assets/vendor/front/bxSlider/jquery.bxslider.js"></script>
 <script src="../../assets/front_end/js/inicio.js"></script>
 <script rel="stylesheet" src="assets/charts/inicio.js"></script>
