@@ -23,7 +23,7 @@ class GetClass
 
         if ($user->getTipoUser() == 'admin'){
             require_once 'app/model/Admin.php';
-            $this->func['admin'] = new Admin($user);
+            $this->func = new Admin($user);
         } else {
             require_once 'app/model/Comum.php';
             $this->func = new Comum($user);

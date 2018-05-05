@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $config['base_url'] ?>assets/front_end/error_404.css">
+<link rel="stylesheet" href="../../assets/front_end/css/error_404.css">
 
 <br>
 

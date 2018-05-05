@@ -51,7 +51,7 @@
             return $class . '->' . $acao . '();';
         }
 
-        private function getDataUrl(){
+        protected function getDataUrl(){
             $data_url = explode('/',explode($this->base_url, $this->url)[1]);
             $count = count($data_url);
 

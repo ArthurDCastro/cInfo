@@ -49,7 +49,7 @@ class UserCrud
             $array = (array) $document;
         }
 
-        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);;
+        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
     }
 
     public function add(User $user){

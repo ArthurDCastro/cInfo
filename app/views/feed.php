@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/feed.css">
-<script rel="stylesheet" src="assets/front_end/feed.js"></script>
+<script rel="stylesheet" src="../../assets/front_end/js/feed.js"></script>
 <script rel="stylesheet" src="assets/charts/feed.js"></script>
 
 <div class="ui container segment" id="article" style="margin-top: 80px">
@@ -16,8 +16,9 @@
                     </div>
                 </div>
                 <div class="extra text">
-                    Ours is a life of constant reruns. We're always circling back to where we'd we started, then starting all over again. Even if we don't run extra laps that day, we surely will come back for more of the same another day soon.
-
+                    <pre>
+                        <?php var_dump($url) ?>
+                    </pre>
                     <div id="piechart_div"></div>
                 </div>
                 <div class="meta">

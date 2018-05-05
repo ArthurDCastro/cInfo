@@ -1,5 +1,5 @@
-<script rel="stylesheet" src="<?php echo $config['base_url'] ?>assets/charts/crie.js"></script>
-<script rel="stylesheet" src="<?php echo $config['base_url'] ?>assets/front_end/crie.js"></script>
+<script rel="stylesheet" src="assets/charts/crie.js"></script>
+<script rel="stylesheet" src="../../assets/front_end/js/crie.js"></script>
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">
     <div class="ten wide column ui segment">
         <div class="centered">

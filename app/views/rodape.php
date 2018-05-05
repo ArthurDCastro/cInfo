@@ -60,13 +60,13 @@
                                 <i class="github icon"></i>
                                 /ohperes
                             </a>
-                            <a href="https://www.instagram.com/joaolazarim/" class="item" target="_blank">
+                            <a href="https://www.instagram.com/ohhperes/" class="item" target="_blank">
                                 <i class="instagram icon"></i>
-                                @joaolazarim
+                                @ohhperes
                             </a>
-                            <a href="https://twitter.com/Tekislla" class="item" target="_blank">
+                            <a href="https://twitter.com/ohhperes" class="item" target="_blank">
                                 <i class="twitter icon"></i>
-                                @Tekislla
+                                @ohhperes
                             </a>
                         </div>
                     </div>

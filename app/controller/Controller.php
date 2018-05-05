@@ -20,10 +20,12 @@
         }
 
         public function index(){
+
             $data['titulo_pagina'] = 'cInfo - Bem Vindo';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
             $this->loadView('inicio.php');
+            print_r($_COOKIE);
             $this->loadView('rodape.php');
         }
 
@@ -72,6 +74,11 @@
                 $this->user->getUserClass($user);
                 if ($this->user->func->login($_POST['password'])){
                     header('Location: index');
+                } else {
+                    $data['error'] = 'o seu vagabundo escreve saporra serta!';
+
+                    $this->loadView('padroes/head.php', $data);
+                    $this->loadView('login.php', $data);
                 }
             } else {
                 $this->loadView('padroes/head.php', $data);
