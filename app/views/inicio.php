@@ -9,35 +9,26 @@
     <div class="column" id="corpo" style="width: 2002px">
         <ul class="bxslider">
             <li>
-                <div class="ui equal width centered padded grid">
-                    <div class="row">
-                        <div class="black column">
-                            <div id="piechart_div"></div>
-                        </div>
-                    </div>
-                </div>
+            <li class="black" style="height: 550px;
+    position: relative">
+                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
+            </li>
             </li>
             <li>
-                <div class="ui equal width centered padded grid">
-                    <div class="row">
-                        <div class="black column">
-                            <div id="barchart_div"></div>
-                        </div>
-                    </div>
-                </div>
+            <li class="black" style="height: 550px;
+    position: relative">
+                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic2.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
+            </li>
             </li>
             <li>
-                <div class="ui equal width centered padded grid">
-                    <div class="row">
-                        <div class="black column">
-                            <div id="blachart_div"></div>
-                        </div>
-                    </div>
-                </div>
+            <li class="black" style="height: 550px;
+    position: relative">
+                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
+            </li>
             </li>
             <li class="black" style="height: 550px;
     position: relative">
-                <img class="ui center aligned" src="<?php echo $config['base_url'] ?>assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
+                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
             </li>
         </ul>
 

@@ -32,9 +32,13 @@
                         </div>
                     </div>
                     <?php if (isset($_COOKIE['login'])): ?>
-                        <div class="item"></div>
+                        <div class="item">
+                            <button class="ui icon button botao">
+                                <i class="sidebar icon"></i>
+                            </button>
+                        </div>
                         <div class="ui dropdown">
-                            <img class="ui avatar image" src="assets/files/img/avatar/small/elliot.jpg">
+                            <img class="ui avatar image" src="assets/files/img/avatar/small/helen.jpg">
                             <?= $_COOKIE['login'] ?>
                             <i class="dropdown icon"></i>
                             <div class="menu">
@@ -52,4 +56,24 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="ui left demo vertical sidebar labeled icon menu">
+        <a class="item">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item">
+            <i class="book icon"></i>
+            Sobre
+        </a>
+        <a class="item">
+            <i class="chart pie icon"></i>
+            Crie
+        </a>
+        <a class="item">
+            <i class="smile icon"></i>
+            Feed
+        </a>
     </div>

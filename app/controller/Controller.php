@@ -22,9 +22,12 @@
         public function index(){
 
             $data['titulo_pagina'] = 'cInfo - Bem Vindo';
+
+            $data['bruno'] = 'bruno';
+
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
-            $this->loadView('inicio.php');
+            $this->loadView('inicio.php', $data);
             $this->loadView('rodape.php');
         }
 
@@ -68,7 +71,7 @@
         public function login(){
             $data['titulo_pagina'] = 'cInfo - Login';
 
-            if (isset($_POST['login'])){
+            if (isset($_POST['email'])){
                 $user = $this->user->crud->getUser_byEmail($_POST['email']);
                 $this->user->getUserClass($user);
                 if ($this->user->func->login($_POST['password'])){

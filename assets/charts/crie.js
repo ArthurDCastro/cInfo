@@ -1,49 +1,56 @@
+$(document).ready(function(){
+    $("#teste").click(function(){
+        if($("#nome").val() == "eua"){
+            var data = [20,30,40]
+        } else {
+            var data = [50,30,20]
+        }
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx,{
+            type: 'pie',
 
-// Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
+            data: {
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)'
 
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 0
+                }],
 
-// Callback that creates and populates a data table,
-// instantiates the pie chart, passes in the data and
-// draws it.
-function drawChart() {
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: [
+                    'Red',
 
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-        ['Mushrooms', 3],
-        ['Onions', 2],
-        ['Olives', 5],
-        ['Zucchini', 4],
-        ['Pepperoni', 2]
-    ]);
+                    'Blue',
+                    'Yellow'
+                ]
+            }
 
-    // Set chart options
-    var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
-        width:1000,
-        height:525
-    };
-    var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
-    piechart.draw(data, piechart_options);
+        });
+    });
 
-    var barchart_options = {title:'Barchart: How Much Pizza I Ate Last Night',
-        width:400,
-        height:525,
-        legend: 'none'
-    };
-    var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
-    barchart.draw(data, barchart_options);
+    var jqxhr = $.getJSON( "documents/mongoDB/db/dados.json", function() {
+        alert( "success" );
+    });
 
-    var donutchart_options = {
-        title: 'My Daily Activities',
-        width:400,
-        height:525,
-        pieHole: 0.4
-    };
-    var donutchart = new google.visualization.PieChart(document.getElementById('blachart_div'));
-    donutchart.draw(data, donutchart_options);
-}
+    $.getJSON( "documents/mongoDB/db/dados.json", function( data ) {
+        var items = ["<option class=\"item\" data-value=\"null\">...</option>"];
+        $.each( data, function( key, val ) {
+            items.push( "<option id='" + val['codigo'] + "' class='item' data-value='" + val['gasto'] +"'>" + val['nome'] + "</option>" );
+        });
+
+        $( "<select/>", {
+            "class": "ui search dropdown",
+            html: items.join( "" )
+        }).appendTo( ".gasto" );
+    });
+});

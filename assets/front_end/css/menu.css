@@ -37,3 +37,10 @@
 
     filter: blur(3px);*/
 }
+
+@media only screen and (max-width: 767px) {
+    #menu {
+        /*background-color: black;*/
+        visibility: unset;
+    }
+}
