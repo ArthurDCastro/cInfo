@@ -13,13 +13,25 @@ class Dados
     private $nome;
     private $gasto;
     private $pai;
+    private $funcao;
 
-    public function __construct($codigo = '', $nome = '', $gasto = '', $pai = '')
+    public function __construct($codigo = '', $nome = '', $gasto = '', $pai = '', $funcao = '')
     {
         $this->codigo = $codigo;
         $this->nome   = $nome;
         $this->gasto  = $gasto;
         $this->pai    = $pai;
+        $this->funcao = $funcao;
+    }
+
+    public function get_array(){
+        return [
+            $this->codigo,
+            $this->nome,
+            $this->gasto,
+            $this->pai,
+            $this->funcao
+        ];
     }
 
     /**
@@ -53,5 +65,22 @@ class Dados
     {
         return $this->pai;
     }
+
+    /**
+     * @return string
+     */
+    public function getFuncao(): string
+    {
+        return $this->funcao;
+    }
+
+    /**
+     * @param string $funcao
+     */
+    public function setFuncao(string $funcao): void
+    {
+        $this->funcao = $funcao;
+    }
+
 
 }

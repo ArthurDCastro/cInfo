@@ -42,6 +42,7 @@ class DadosCrud
     }
 
     public function getDados_byPai($pai){
+        @$pai = (string) $pai;
         $query = new MongoDB\Driver\Query(['pai' => $pai]);
         $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
 
@@ -50,6 +51,46 @@ class DadosCrud
         foreach ($cursor as $document) {
             $array = (array) $document;
             $list[] = new Dados($array['codigo'], $array['nome'], $array['gasto'], $array['pai']);
+        }
+
+        return $list;
+    }
+
+    public function getDados_byFuncao($funcao){
+
+        $data = $this->getDados_byPai($funcao);
+
+        $allData = $data;
+
+
+        $i = 0;
+        $proximo = $allData[$i];
+        $verifica = $this->getDados_byPai($proximo->getCodigo());
+        while ( isset($verifica)){
+            foreach (@$this->getDados_byPai($proximo->getCodigo()) as $ver){
+                $allData[] = $ver;
+            }
+            $i++;
+            if (isset($allData[$i])){
+                $proximo = $allData[$i];
+                @$verifica = $this->getDados_byPai($proximo->getCodigo());
+            } else {
+                $verifica = null;
+            }
+
+        }
+
+        return $allData;
+
+    }
+
+    public function getAllFuncoes(){
+        $query = new MongoDB\Driver\Query([]);
+        $cursor =  $this->manager->executeQuery('db_cinfo.funcoes', $query);
+
+        foreach ($cursor as $document) {
+            $array = (array) $document;
+            $list[] = $array;
         }
 
         return $list;

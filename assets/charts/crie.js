@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#teste").click(function(){
         if($("#nome").val() == "eua"){
             var data = [20,30,40]
@@ -38,11 +39,8 @@ $(document).ready(function(){
         });
     });
 
-    var jqxhr = $.getJSON( "documents/mongoDB/db/dados.json", function() {
-        alert( "success" );
-    });
 
-    $.getJSON( "documents/mongoDB/db/dados.json", function( data ) {
+    /*$.getJSON( "documents/mongoDB/db/dados.json", function( data ) {
         var items = ["<option class=\"item\" data-value=\"null\">...</option>"];
         $.each( data, function( key, val ) {
             items.push( "<option id='" + val['codigo'] + "' class='item' data-value='" + val['gasto'] +"'>" + val['nome'] + "</option>" );
@@ -52,5 +50,5 @@ $(document).ready(function(){
             "class": "ui search dropdown",
             html: items.join( "" )
         }).appendTo( ".gasto" );
-    });
+    });*/
 });

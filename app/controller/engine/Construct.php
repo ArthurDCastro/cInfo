@@ -15,12 +15,14 @@
         protected $user;
         protected $dados;
         protected $grafico;
+        protected $newData;
 
         public function __construct()
         {
             $this->user = new GetClass('User');
             $this->dados = new GetClass('Dados');
             $this->grafico = new GetClass('Grafico');
+            $this->newData = new GetClass('NewData');
         }
 
         /**
@@ -75,7 +77,7 @@
                         if (is_string($val)){
                             @eval('$' . $key . '[] = \'' . $val . '\';');
                         } else {
-                            @eval('$' . $key . '[] = {' . $val . '};');
+                            //@eval('$' . $key . '[] = {' . $val . '};');
                         }
                     }
                 } else {

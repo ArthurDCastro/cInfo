@@ -31,31 +31,24 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label>Ano de Exercício</label>
-                        <div class="field">
-                            <div class="ui fluid search selection dropdown">
-                                <input type="hidden" name="country">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Exercício</div>
-                                <div class="menu">
-                                    <div class="item" data-value="2017">2017</div>
-                                    <div class="item" data-value="2016">2016</div>
-                                    <div class="item" data-value="2015">2015</div>
-                                    <div class="item" data-value="2014">2014</div>
-                                </div>
-                            </div>
-                        </div>
+                        <label>Assunto de gasto</label>
+                        <select id="funcao" multiple="" class="ui dropdown">
+                            <option value="">Assunto de gasto</option>
+                            <?php foreach ($data['funcoes'] as $func): ?>
+                                <option value="<?= $func['codigo'] ?>"><?= $func['nome'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="field gastos">
                         <label>Gastos</label>
                         <div class="field">
                             <select class="ui search dropdown gasto">
-
+                                <option class="item" data-value="null">...</option>
                             </select>
                         </div>
                         <div class="field">
                             <select class="ui search dropdown gasto">
-                                
+                                <option class="item" data-value="null">...</option>
                             </select>
                         </div>
                     </div>

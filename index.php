@@ -10,6 +10,10 @@
 
     $action = @explode('/',explode($base_url, $url)[1])[0];
 
+    if ($action == 'app'){
+        echo '<script>alert(' . @explode('/',explode($base_url, $url)[1])[0] . '</script>';
+    }
+
     if ($action == ""){
         $action = 'index';
     }

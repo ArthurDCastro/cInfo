@@ -4,6 +4,20 @@ $(document).ready(function() {
         .dropdown()
     ;
 
+    $(function () {
+        $('#funcao').change(function () {
+            $.post('app/controller/crie.php',
+                {
+                    acao: 'funcao',
+                    vals: $('#funcao').val()
+                }, function (dados) {
+                    var dbParam = JSON.parse(dados);
+                    alert(dbParam)
+                });
+
+        })
+    });
+
     var max_fields = 3; //maximum input boxes allowed
     var wrapper = $(".gastos"); //Fields wrapper
     var add_button = $(".add_field_button"); //Add button ID
@@ -27,11 +41,3 @@ $(document).ready(function() {
     })
 
 });
-
-/*
-$(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-}
-
- <i class="remove icon"></i>excluir
-
- */

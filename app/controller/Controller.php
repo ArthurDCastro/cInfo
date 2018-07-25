@@ -62,6 +62,9 @@
 
         public function crie(){
             $data['titulo_pagina'] = 'cInfo - Crie um Gráfico';
+
+            $data['funcoes'] = $this->dados->crud->getAllFuncoes();
+
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('crie.php', $data);
