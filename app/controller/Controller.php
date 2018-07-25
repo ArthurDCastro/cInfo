@@ -114,10 +114,28 @@
 
         public function graficos(){
             $data['titulo_pagina'] = 'cInfo - Graficos';
+
+            $data['graficos'] = [
+                [
+                    "nome"  => "Show",
+                    "data"  => "22/07/18",
+                    "user"  => "vini",
+                    "dados" => [
+                        "nome"  => "mec",
+                        "valor" => "104290580220.5"
+                    ],[
+                    "nome"  => "saude",
+                    "valor" => "42727319637.21"
+                    ]
+                ]
+            ];
+
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('graficos.php', $data);
             $this->loadView('rodape.php', $data);
+
+
         }
 
     }
