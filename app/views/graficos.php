@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="assets/front_end/css/graficos.css">
 <br><br>
-<?php  if (!isset($dados['graficos'])): ?>
+<?php  if (!isset($data['graficos'])): ?>
 
 <div class="ui middle aligned center aligned grid" id="article">
     <div class="ui container">

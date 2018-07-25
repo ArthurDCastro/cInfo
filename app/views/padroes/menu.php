@@ -37,6 +37,9 @@
                     </div>
                 </div>
                 <?php if (isset($_COOKIE['login'])): ?>
+                    <div class="item">
+
+                    </div>
                     <div id="some" class="ui dropdown">
                         <img class="ui avatar image" src="assets/files/img/avatar/small/helen.jpg">
                         <?= $_COOKIE['login'] ?>
