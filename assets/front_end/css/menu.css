@@ -42,5 +42,19 @@
     #menu {
         /*background-color: black;*/
         visibility: unset;
+
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #some{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #aparecer{
+        display: none;
     }
 }

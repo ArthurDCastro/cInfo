@@ -109,4 +109,12 @@
             $this->loadView('rodape.php', $data);
         }
 
+        public function graficos(){
+            $data['titulo_pagina'] = 'cInfo - Graficos';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('graficos.php', $data);
+            $this->loadView('rodape.php', $data);
+        }
+
     }
