@@ -1,2 +1,2 @@
 # control
-Uma biblioteca MVC desenvolvida em PHP, olha aia  
+Uma biblioteca MVC desenvolvida em PHP
