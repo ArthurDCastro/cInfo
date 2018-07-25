@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="assets/front_end/css/graficos.css">
-
 <br><br>
+<?php  if (!isset($dados['graficos'])): ?>
+
 <div class="ui middle aligned center aligned grid" id="article">
     <div class="ui container">
 
@@ -12,13 +13,14 @@
         </div>
     </div>
 </div>
-<br><br>
+
+<?php else: ?>
 
 <div class="ui container segment">
     <div class="ui link cards">
         <div class="card">
             <div class="image">
-                <img src="/images/avatar2/large/matthew.png">
+                <img src="">
             </div>
             <div class="content">
                 <div class="header">Matt Giampietro</div>
@@ -66,3 +68,6 @@
         </div>
     </div>
 </div>
+
+<?php endif; ?>
+<br><br>
