@@ -4,31 +4,32 @@
 <script src="assets/front_end/js/inicio.js"></script>
 <script rel="stylesheet" src="assets/charts/inicio.js"></script>
 
-<div style="margin-top: 80px"></div>
-<div class="ui two column centered grid">
+<div style="margin-top: 110px"></div>
+<div class="ui two column centered grid" style="padding: 0% 4%">
     <div class="column" id="corpo" style="width: 2002px">
         <ul class="bxslider">
-            <li>
-            <li class="black" style="height: 550px;
-    position: relative">
-                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
-            </li>
-            </li>
-            <li>
-            <li class="black" style="height: 550px;
-    position: relative">
-                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic2.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
-            </li>
-            </li>
-            <li>
-            <li class="black" style="height: 550px;
-    position: relative">
-                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
-            </li>
+            <li class="black" style="height: 550px; position: relative">
+                <div class="ui container">
+                    <img src="assets/files/img/1.jpg" style="width: 100%; height: 100%;">
+                </div>
             </li>
             <li class="black" style="height: 550px;
     position: relative">
-                <img class="ui center aligned" src="assets/vendor/front/bxSlider/images/pic1.jpg" style="width:100%; margin: 0; background: yellow; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%) "/>
+                <div class="ui container">
+                    <img src="assets/files/img/2.jpg" style="width: 100%; height: 100%;">
+                </div>
+            </li>
+            <li class="black" style="height: 550px;
+    position: relative">
+                <div class="ui container">
+                    <img src="assets/files/img/3.jpg" style="width: 100%; height: 100%;">
+                </div>
+            </li>
+            <li class="black" style="height: 550px;
+    position: relative">
+                <div class="ui container">
+                    <img src="assets/files/img/4.jpg" style="width: 100%; height: 100%;">
+                </div>
             </li>
         </ul>
 
