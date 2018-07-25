@@ -2,7 +2,7 @@
 <script rel="stylesheet" src="assets/front_end/js/feed.js"></script>
 <script rel="stylesheet" src="assets/charts/feed.js"></script>
 
-<div class="ui container segment" id="article" style="margin-top: 80px">
+<div class="ui container segment" id="article">
     <div class="ui feed">
         <div class="event">
             <div class="label">
