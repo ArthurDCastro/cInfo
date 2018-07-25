@@ -1,6 +1,6 @@
 <?php
 
-$config['base_url']     = 'http://localhost/control/';
+$config['base_url']     = 'http://localhost/cInfo/';
 $config['views_padrao'] = 'padroes/';
 
 $config['banco'] = [
