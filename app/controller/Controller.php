@@ -117,9 +117,9 @@
 
             $data['graficos'] = [
                 [
-                    "nome"  => "Show",
+                    "nome"  => "Gráfico sobre Saúde",
                     "data"  => "22/07/18",
-                    "user"  => "vini",
+                    "user"  => "ohperes",
                     "dados" => [
                         "nome"  => "mec",
                         "valor" => "104290580220.5"
@@ -127,7 +127,68 @@
                     "nome"  => "saude",
                     "valor" => "42727319637.21"
                     ]
+                ],
+                [
+                    "nome"  => "Gráfico sobre Educação",
+                    "data"  => "28/07/18",
+                    "user"  => "Tekislla",
+                    "dados" => [
+                        "nome"  => "educacao",
+                        "valor" => "534290589480.5"
+                    ],[
+                    "nome"  => "salario",
+                    "valor" => "323232323232.21"
                 ]
+                ],
+                [
+                    "nome"  => "Gráfico sobre Educação",
+                    "data"  => "28/07/18",
+                    "user"  => "Tekislla",
+                    "dados" => [
+                        "nome"  => "educacao",
+                        "valor" => "534290589480.5"
+                    ],[
+                    "nome"  => "salario",
+                    "valor" => "323232323232.21"
+                ]
+                ],
+                [
+                    "nome"  => "Gráfico sobre Educação",
+                    "data"  => "28/07/18",
+                    "user"  => "Tekislla",
+                    "dados" => [
+                        "nome"  => "educacao",
+                        "valor" => "534290589480.5"
+                    ],[
+                    "nome"  => "salario",
+                    "valor" => "323232323232.21"
+                ]
+                ],
+                [
+                    "nome"  => "Gráfico sobre Educação",
+                    "data"  => "28/07/18",
+                    "user"  => "Tekislla",
+                    "dados" => [
+                        "nome"  => "educacao",
+                        "valor" => "534290589480.5"
+                    ],[
+                    "nome"  => "salario",
+                    "valor" => "323232323232.21"
+                ]
+                ],
+                [
+                    "nome"  => "Gráfico sobre Educação",
+                    "data"  => "28/07/18",
+                    "user"  => "Tekislla",
+                    "dados" => [
+                        "nome"  => "educacao",
+                        "valor" => "534290589480.5"
+                    ],[
+                    "nome"  => "salario",
+                    "valor" => "323232323232.21"
+                ]
+                ],
+
             ];
 
             $this->loadView('padroes/head.php', $data);

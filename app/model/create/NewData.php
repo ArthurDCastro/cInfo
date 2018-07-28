@@ -1,12 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Arthur Castro
- * Date: 17/07/2018
- * Time: 19:19
+ * User: Pichau
+ * Date: 28/07/2018
+ * Time: 01:03
  */
-
-class NewData
-{
-
-}
