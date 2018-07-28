@@ -107,7 +107,7 @@
         <i class="users icon"></i>
         Amigos
     </a>
-    <a class="item user_option">
+    <a href="graficos" class="item user_option">
         <i class="chart pie icon"></i>
         Gráficos
     </a>
