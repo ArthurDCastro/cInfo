@@ -141,9 +141,9 @@
                 ]
                 ],
                 [
-                    "nome"  => "Gráfico sobre Educação",
-                    "data"  => "28/07/18",
-                    "user"  => "Tekislla",
+                    "nome"  => "Gráfico sobre Batata",
+                    "data"  => "12/07/12",
+                    "user"  => "TukLukDuk",
                     "dados" => [
                         "nome"  => "educacao",
                         "valor" => "534290589480.5"
@@ -153,9 +153,9 @@
                 ]
                 ],
                 [
-                    "nome"  => "Gráfico sobre Educação",
-                    "data"  => "28/07/18",
-                    "user"  => "Tekislla",
+                    "nome"  => "Gráfico sobre Capivaras",
+                    "data"  => "66/07/18",
+                    "user"  => "Joãozin",
                     "dados" => [
                         "nome"  => "educacao",
                         "valor" => "534290589480.5"
@@ -165,9 +165,9 @@
                 ]
                 ],
                 [
-                    "nome"  => "Gráfico sobre Educação",
-                    "data"  => "28/07/18",
-                    "user"  => "Tekislla",
+                    "nome"  => "Gráfico Inutil",
+                    "data"  => "00/00/00",
+                    "user"  => "souUmMerda",
                     "dados" => [
                         "nome"  => "educacao",
                         "valor" => "534290589480.5"
@@ -177,9 +177,9 @@
                 ]
                 ],
                 [
-                    "nome"  => "Gráfico sobre Educação",
-                    "data"  => "28/07/18",
-                    "user"  => "Tekislla",
+                    "nome"  => "Gráfico sobre GAMES",
+                    "data"  => "42/07/42",
+                    "user"  => "dudu_GAMER",
                     "dados" => [
                         "nome"  => "educacao",
                         "valor" => "534290589480.5"
