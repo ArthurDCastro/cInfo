@@ -199,4 +199,52 @@
 
         }
 
+        public function amigos(){
+            $data['titulo_pagina'] = 'cInfo - Amigos';
+
+            $data['amigos'] = [
+                [
+                    "nome"       => "Brayn Mayke",
+                    "dt_comeco"  => "19/08/18",
+                    "user"       => "Bryant",
+                    "foto"       => "assets/files/img/maykinho.jpg",
+                ],
+                [
+                    "nome"       => "PAAS Henrique",
+                    "dt_comeco"  => "13/12/18",
+                    "user"       => "PAAS",
+                    "foto"       => "assets/files/img/henriquinho.jpg",
+                ],
+                [
+                    "nome"       => "Luiz Fhynbeen Bruno",
+                    "dt_comeco"  => "11/10/18",
+                    "user"       => "feio",
+                    "foto"       => "assets/files/img/bruninho.jpg",
+                ],
+                [
+                    "nome"       => "Castro Viana Dias de Arthur",
+                    "dt_comeco"  => "77/08/18",
+                    "user"       => "LukDuk",
+                    "foto"       => "assets/files/img/castrinho3.jpg",
+                ],
+                [
+                    "nome"       => "Souza Pedro Lazarim de João",
+                    "dt_comeco"  => "23/11/18",
+                    "user"       => "Tekislalsa",
+                    "foto"       => "assets/files/img/lazinha.jpg",
+                ],
+                [
+                    "nome"       => "Peres Vinícius",
+                    "dt_comeco"  => "24/10/18",
+                    "user"       => "ohhhperes",
+                    "foto"       => "assets/files/img/peresinho.jpg",
+                ],
+
+            ];
+
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('amigos.php', $data);
+            $this->loadView('rodape.php', $data);
+        }
     }

@@ -17,7 +17,7 @@
     <div class="ui  segment" id="fora">
         <div class="ui link cards" id="cards">
             <?php foreach ($data['graficos'] as $grafico): ?>
-                 <div class="card column" id="card">
+                 <div class="ui card" id="card">
                     <div class="image">
                         <img src="assets/files/img/g_pizza.png">
                     </div>
