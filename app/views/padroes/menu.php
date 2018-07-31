@@ -46,7 +46,7 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             <a class="item">Perfil</a>
-                            <a class="item">Amigos</a>
+                            <a class="item" href="amigos">Amigos</a>
                             <a class="item" href="graficos">Gráficos</a>
                             <a class="item" href="logout">Sair</a>
                         </div>
@@ -103,11 +103,11 @@
         <i class="id card icon"></i>
         Perfil
     </a>
-    <a class="item user_option">
+    <a href="amigos" class="item user_option">
         <i class="users icon"></i>
         Amigos
     </a>
-    <a class="item user_option">
+    <a href="graficos" class="item user_option">
         <i class="chart pie icon"></i>
         Gráficos
     </a>
