@@ -12,9 +12,25 @@ $(document).ready(function() {
                     vals: $('#funcao').val()
                 }, function (dados) {
                     var dbParam = JSON.parse(dados);
-                    alert(dbParam)
-                });
+                    var txt = '<option class="item" data-value="null">...</option>';
+                    var list = [];
 
+                    for (x in dbParam) {
+                        list = dbParam[x];
+                        txt += '<option class="item" data-value="' + list[0] + '">' + list[1] + "</option>";
+                    }
+
+                    var classe = document.getElementsByClassName('gasto');
+                    for (y in classe){
+                        classe[y].getElementsByTagName('select')[0].innerHTML = txt;
+                    }
+                })
+        });
+
+        $('#add_field_button').click(function () {
+            /*var gasto = $('#gastos').eq(0).html();
+            $('#gastos').append(gasto);*/
+            //TODO fazer o add
         })
     });
 

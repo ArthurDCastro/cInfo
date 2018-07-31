@@ -39,7 +39,7 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="field gastos">
+                    <div class="field" id="gastos">
                         <label>Gastos</label>
                         <div class="field">
                             <select class="ui search dropdown gasto">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui vertical animated circular mini button add_field_button" tabindex="0" onclick="">
+                        <div class="ui vertical animated circular mini button" id="add_field_button" tabindex="0" onclick="">
                             <div class="hidden content">Mais</div>
                             <div class="visible content">
                                 <i class="add icon"></i>
