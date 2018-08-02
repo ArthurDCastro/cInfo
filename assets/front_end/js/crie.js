@@ -1,4 +1,19 @@
 $(document).ready(function() {
+
+    $('.ui.form')
+        .form({
+            fields: {
+                titulo: 'empty',
+                tipo: 'empty',
+                gasto: 'empty'
+            }
+        })
+    ;
+
+    $('.clear').click(function () {
+        $('#grafico').remove();
+    });
+
     $('select.dropdown')
         .dropdown()
     ;
@@ -23,5 +38,25 @@ $(document).ready(function() {
                     classe[y].getElementsByTagName('select')[0].innerHTML = txt;
                 }
             })
+    });
+
+    $('#salvar').click(function () {
+        if( $('.ui.form').form('is valid')) {
+            $.post('app/controller/crie.php',
+                {
+                    acao: 'salvar',
+                    vals: {
+                        dados: $('#gasto').val(),
+                        titulo: $('#titulo').val(),
+                        tipo: $('#tipo').val()
+
+                    }
+                }, function (dados) {
+
+                })
+        } else {
+            $('.ui.form').form('validate form')
+        }
+
     });
 });

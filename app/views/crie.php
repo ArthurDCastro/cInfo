@@ -11,11 +11,11 @@
     <div class="seven wide column middle aligned">
         <div class="ui segment">
             <form class="ui form">
-                <h4 class="ui dividing header">Shipping Information</h4>
+                <h4 class="ui dividing header">Informações do Grafico</h4>
                 <div class="field">
                     <label>Título do Gráfico</label>
                     <div class="field">
-                        <input type="text" name="name" placeholder="Título" id="titulo">
+                        <input type="text" name="titulo" placeholder="Título" id="titulo">
                     </div>
                     <div class="field">
                         <label>Tipo de Gráfico</label>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="field">
                         <label>Assunto de gasto</label>
-                        <select id="funcao" multiple="" class="ui dropdown">
+                        <select id="funcao" name="funcao" multiple="" class="ui dropdown">
                             <option value="">Assunto de gasto</option>
                             <?php foreach ($data['funcoes'] as $func): ?>
                                 <option value="<?= $func['codigo'] ?>"><?= $func['nome'] ?></option>
@@ -43,7 +43,7 @@
                     <div class="field" id="gastos">
                         <label>Gastos</label>
                         <div class="field">
-                            <select id="gasto" multiple="" class="ui dropdown gasto">
+                            <select id="gasto" multiple="" name="gasto" class="ui dropdown gasto">
                                 <option value="">Gasto</option>
                             </select>
                         </div>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui vertical animated red button" tabindex="0">
+                            <div class="ui clear vertical animated red button" tabindex="0">
                                 <div class="visible content">Cancelar</div>
                                 <div class="hidden content">
                                     <i class="remove icon"></i>
@@ -81,7 +81,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </form>

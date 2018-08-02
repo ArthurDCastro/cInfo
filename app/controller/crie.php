@@ -50,17 +50,20 @@ switch ($_POST['acao']){
         $dados = new DadosCrud();
 
         $grafico = [
-            "nome"  => $_POST['vals']['titulo'],
-            "data"  => date("Y-m-d H:i:s"),
-            "user"  => $_COOKIE['login'],
-            "dados" => []
+            "titulo"  => $_POST['vals']['titulo'],
+            "tipo"    => $_POST['vals']['tipo'],
+            "data"    => date("Y-m-d H:i:s"),
+            "user"    => $_COOKIE['login'],
+            "dados"   => []
         ];
 
         foreach ($_POST['vals']['dados'] as $dado){
+            $d = $dados->getDados_byCodigo($dado);
+
             $grafico['dados'][] = [
-                'nome'   => $dado['titulo'],
-                'gasto'  => $dado['gasto'],
-                'codigo' => $dado['codigo']
+                'nome'   => $d->getNome(),
+                'gasto'  => $d->getGasto(),
+                'codigo' => $dado
             ];
         }
 
