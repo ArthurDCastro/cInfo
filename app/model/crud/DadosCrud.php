@@ -31,9 +31,10 @@ class DadosCrud
     }
 
     public function getDados_byCodigo($codigo){
-        $query = new MongoDB\Driver\Query(['codigo' => $codigo]);
+        $query = new MongoDB\Driver\Query(['codigo' => (string) $codigo]);
         $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
 
+        $array = [];
         foreach ($cursor as $document) {
             $array = (array) $document;
         }

@@ -1,9 +1,11 @@
 <script rel="stylesheet" src="assets/front_end/js/crie.js"></script>
 <link rel="stylesheet" href="assets/front_end/css/crie.css">
+<script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
+<link rel="stylesheet" href="assets/vendor/front/semantic/components/form.css">
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">
     <div class="seven wide column ui segment center aligned">
         <div class="centered" id="chart">
-            <canvas id="myChart" width="400" height="400"></canvas>
+
         </div>
     </div>
     <div class="seven wide column middle aligned">
@@ -13,19 +15,18 @@
                 <div class="field">
                     <label>Título do Gráfico</label>
                     <div class="field">
-                        <input type="text" name="name" placeholder="Título" id="nome">
+                        <input type="text" name="name" placeholder="Título" id="titulo">
                     </div>
                     <div class="field">
                         <label>Tipo de Gráfico</label>
                         <div class="field">
                             <div class="ui fluid search selection dropdown">
-                                <input type="hidden" name="country">
+                                <input type="hidden" name="tipo" id="tipo">
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Selecione o Tipo de Gráfico</div>
                                 <div class="menu">
                                     <div class="item" data-value="pie"><i class="pie chart icon"></i>Pizza</div>
-                                    <div class="item" data-value="bar"><i class="bar chart icon"></i>Barra</div>
-                                    <div class="item" data-value="donut"><i class="pie chart icon"></i>Donut</div>
+                                    <div class="item" data-value="doughnut"><i class="pie chart icon"></i>Donut</div>
                                 </div>
                             </div>
                         </div>
@@ -42,25 +43,11 @@
                     <div class="field" id="gastos">
                         <label>Gastos</label>
                         <div class="field">
-                            <select class="ui search dropdown gasto">
-                                <option class="item" data-value="null">...</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <select class="ui search dropdown gasto">
-                                <option class="item" data-value="null">...</option>
+                            <select id="gasto" multiple="" class="ui dropdown gasto">
+                                <option value="">Gasto</option>
                             </select>
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="ui vertical animated circular mini button" id="add_field_button" tabindex="0" onclick="">
-                            <div class="hidden content">Mais</div>
-                            <div class="visible content">
-                                <i class="add icon"></i>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="fields">
                         <div class="field">
                             <div class="ui vertical animated green button" tabindex="0" id="teste">
@@ -71,7 +58,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <div class="ui vertical animated blue button" tabindex="0">
+                            <div class="ui vertical animated blue button" tabindex="0" id="salvar">
                                 <div class="visible content">Salvar</div>
                                 <div class="hidden content">
                                     <i class="save icon"></i>
@@ -102,9 +89,3 @@
     </div>
 </div>
 <script rel="stylesheet" src="assets/charts/crie.js"></script>
-
-<div class="ui form">
-    <div class="field" id="select">
-
-    </div>
-</div>

@@ -25,4 +25,47 @@ switch ($_POST['acao']){
         $vals = json_encode($data);
         header("Conten-type: application/json");
         echo $vals;
+
+        break;
+
+    case 'teste':
+        $dados = new DadosCrud();
+
+        $list = $_POST['vals'];
+
+        $vals = [];
+        foreach ($list as $item){
+            $dado = $dados->getDados_byCodigo($item);
+            $vals['codigo'][] = $dado->getCodigo();
+            $vals['nome'][] = $dado->getNome();
+            $vals['gasto'][] = (float) $dado->getGasto();
+        }
+
+        $vals = json_encode($vals);
+        header("Conten-type: application/json");
+        echo $vals;
+        break;
+
+    case 'salvar':
+        $dados = new DadosCrud();
+
+        $grafico = [
+            "nome"  => $_POST['vals']['titulo'],
+            "data"  => date("Y-m-d H:i:s"),
+            "user"  => $_COOKIE['login'],
+            "dados" => []
+        ];
+
+        foreach ($_POST['vals']['dados'] as $dado){
+            $grafico['dados'][] = [
+                'nome'   => $dado['titulo'],
+                'gasto'  => $dado['gasto'],
+                'codigo' => $dado['codigo']
+            ];
+        }
+
+        $vals = json_encode($grafico);
+        header("Conten-type: application/json");
+        echo $vals;
+        break;
 }
