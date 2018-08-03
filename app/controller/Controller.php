@@ -247,4 +247,13 @@
             $this->loadView('amigos.php', $data);
             $this->loadView('rodape.php', $data);
         }
+
+        public function perfil(){
+            $data['titulo_pagina'] = 'cInfo - Perfil';
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('perfil.php', $data);
+            $this->loadView('rodape.php', $data);
+        }
+
     }
