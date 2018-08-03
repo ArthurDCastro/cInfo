@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    //$("#img-out").hide();
+
     $('.ui.form')
         .form({
             fields: {
@@ -18,7 +20,14 @@ $(document).ready(function() {
         .dropdown()
     ;
 
+    $('#id').hide();
+
+    $('#titulo').change(function () {
+        $('#grafico_titulo').text($('#titulo').val());
+    });
+
     $('#funcao').change(function () {
+        $('#gasto').parent().addClass('loading');
         $.post('app/controller/crie.php',
             {
                 acao: 'funcao',
@@ -37,7 +46,9 @@ $(document).ready(function() {
                 for (y in classe){
                     classe[y].getElementsByTagName('select')[0].innerHTML = txt;
                 }
-            })
+            }
+        );
+        $('#gasto').parent().removeClass('loading');
     });
 
     $('#salvar').click(function () {
@@ -48,15 +59,69 @@ $(document).ready(function() {
                     vals: {
                         dados: $('#gasto').val(),
                         titulo: $('#titulo').val(),
-                        tipo: $('#tipo').val()
+                        tipo: $('#tipo').val(),
+                        id: $('#id').val()
 
                     }
                 }, function (dados) {
+                    var dado = JSON.parse(dados);
 
+                    $('.ui.basic.modal')
+                        .modal('show')
+                    ;
+
+                    $('#id').val(dado['codigo'])
                 })
         } else {
             $('.ui.form').form('validate form')
         }
 
     });
+
+    function saveAs(uri, filename) {
+
+        var link = document.createElement('a');
+
+        if (typeof link.download === 'string') {
+
+            link.href = uri;
+            link.download = filename;
+
+            //Firefox requires the link to be in the body
+            document.body.appendChild(link);
+
+            //simulate click
+            link.click();
+
+            //remove the link when done
+            document.body.removeChild(link);
+
+        } else {
+
+            window.open(uri);
+
+        }
+    }
+
+    $("#export").click(function() {
+        html2canvas($("#print"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                $("#img-out").html(canvas);
+
+                var imgData = canvas.toDataURL();
+                document.getElementById('img-out').src = imgData;
+
+                document.getElementById('salvar').addEventListener('click', function(e){
+                    this.href = imgData; // source
+                    this.download = 'canvas.png'; // nome da imagem
+                    return false;
+                });
+            }
+        });
+    });
+
+
 });

@@ -17,7 +17,7 @@ class GraficoCrud
 
     public function getAllData(){
         $query = new MongoDB\Driver\Query([]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.graficos', $query);
+        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
 
         $list = [];
 
@@ -29,11 +29,20 @@ class GraficoCrud
         return $list;
     }
 
-    public function add(Grafico $grafico){
+    public function add($grafico){
 
         $bulk = new MongoDB\Driver\BulkWrite;
 
-        $bulk->insert($grafico->insert());
+        $bulk->insert($grafico);
+
+        $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
+    }
+
+    public function update($grafico){
+
+        $bulk = new MongoDB\Driver\BulkWrite;
+
+        $bulk->update(['codigo' => $grafico['codigo']], $grafico);
 
         $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
     }

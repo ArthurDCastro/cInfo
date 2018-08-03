@@ -48,8 +48,16 @@ switch ($_POST['acao']){
 
     case 'salvar':
         $dados = new DadosCrud();
+        $graficos = new GraficoCrud();
+
+        if ($_POST['vals']['id'] == ''){
+            $id = '';
+        } else{
+            $id = $_POST['vals']['id'];
+        }
 
         $grafico = [
+            "codigo"      => (string) $id,
             "titulo"  => $_POST['vals']['titulo'],
             "tipo"    => $_POST['vals']['tipo'],
             "data"    => date("Y-m-d H:i:s"),
@@ -67,8 +75,22 @@ switch ($_POST['acao']){
             ];
         }
 
+        if ($_POST['vals']['id'] == ''){
+
+            $grafico['codigo'] = uniqid();
+
+            $graficos->add($grafico);
+
+        } else {
+
+            $graficos->update($grafico);
+
+        }
+
         $vals = json_encode($grafico);
+
         header("Conten-type: application/json");
+
         echo $vals;
         break;
 }

@@ -3,13 +3,7 @@ $(document).ready(function(){
     $("#teste").click(function(){
         if( $('.ui.form').form('is valid')) {
             $('#grafico').remove();
-            $('#chart').html(
-                '<div class="grafico"><h3 class="ui grey header">\n' +
-                '  <i class="pie chart icon"></i>\n' +
-                '  <div class="content">\n' +
-                $('#titulo').val() +
-                '  </div>\n' +
-                '</h3><canvas id="myChart" width="400" height="300"></canvas></div>');
+            $('#chart').html('<div id="grafico"><canvas id="myChart" width="400" height="500"></canvas></div>').hide();
 
             var list = [];
             var gastos = $('#gasto').val();
@@ -79,6 +73,8 @@ $(document).ready(function(){
 
 
                 });
+
+            $('#chart').show(1000);
         } else {
             $('.ui.form').form('validate form')
         }

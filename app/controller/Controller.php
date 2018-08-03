@@ -65,6 +65,13 @@
 
             $data['funcoes'] = $this->dados->crud->getAllFuncoes();
 
+            if (isset($this->getDataUrl()[0])){
+                $data['url'] = $this->getDataUrl();
+            } else {
+                $data['url'] = '';
+            }
+
+
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('crie.php', $data);
