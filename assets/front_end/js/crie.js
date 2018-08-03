@@ -12,13 +12,21 @@ $(document).ready(function() {
         })
     ;
 
-    $('.clear').click(function () {
-        $('#grafico').remove();
+    $('#gasto').change(function () {
+        if ($('#gasto').val().length > 2){
+            $('#gasto').addClass('disabled')
+        }
     });
 
     $('select.dropdown')
         .dropdown()
     ;
+
+    $('.clear').click(function () {
+        $('#grafico').remove();
+    });
+
+
 
     $('#id').hide();
 

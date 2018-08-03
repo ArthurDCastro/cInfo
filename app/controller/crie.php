@@ -12,6 +12,11 @@ require_once '../model/crud/UserCrud.php';
 
 require_once '../model/create/Dados.php';
 
+function cmp($a, $b) {
+    return $a[1] > $b[1];
+}
+
+
 switch ($_POST['acao']){
     case 'funcao':
         $dados = new DadosCrud();
@@ -22,6 +27,9 @@ switch ($_POST['acao']){
                 $data[] = $v->get_array();
             }
         }
+
+        usort($data, 'cmp');
+
         $vals = json_encode($data);
         header("Conten-type: application/json");
         echo $vals;

@@ -67,6 +67,13 @@ $(document).ready(function(){
                             display: true,
                             position: 'top',
                             text: $('#titulo').val()
+                        },
+                        options: {
+                            events: ['click'],
+                            legend: {
+                                display: true,
+                                hidden: true
+                            }
                         }
 
                     });
