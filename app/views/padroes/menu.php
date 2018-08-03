@@ -45,7 +45,7 @@
                         <?= $_COOKIE['login'] ?>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                            <a class="item">Perfil</a>
+                            <a class="item" href="perfil">Perfil</a>
                             <a class="item" href="amigos">Amigos</a>
                             <a class="item" href="graficos">Gráficos</a>
                             <a class="item" href="logout">Sair</a>
@@ -99,7 +99,7 @@
         <i class="reply grey icon"></i>
         Voltar
     </a>
-    <a class="item user_option">
+    <a href="perfil" class="item user_option">
         <i class="id card icon"></i>
         Perfil
     </a>
