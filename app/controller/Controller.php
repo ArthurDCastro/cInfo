@@ -206,10 +206,10 @@
 
         }
 
-        public function amigos(){
-            $data['titulo_pagina'] = 'cInfo - Amigos';
+        public function seguidores(){
+            $data['titulo_pagina'] = 'cInfo - Seguidores';
 
-            $data['amigos'] = [
+            $data['seguidores'] = [
                 [
                     "nome"       => "Brayn Mayke",
                     "dt_comeco"  => "19/08/18",
@@ -251,7 +251,7 @@
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
-            $this->loadView('amigos.php', $data);
+            $this->loadView('seguidores.php', $data);
             $this->loadView('rodape.php', $data);
         }
 
