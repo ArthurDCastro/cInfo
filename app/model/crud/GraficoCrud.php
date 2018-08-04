@@ -29,6 +29,18 @@ class GraficoCrud
         return $list;
     }
 
+    public function getGraficos_byCodigo($codigo){
+        $query = new MongoDB\Driver\Query(['codigo' => (string) $codigo]);
+        $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
+
+        $array = [];
+        foreach ($cursor as $document) {
+            $array = (array) $document;
+        }
+
+        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+    }
+
     public function add($grafico){
 
         $bulk = new MongoDB\Driver\BulkWrite;

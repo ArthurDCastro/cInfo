@@ -59,7 +59,7 @@
                                 <a class="item" href="perfil">Perfil</a>
                                 <a class="item" href="amigos">Amigos</a>
                                 <a class="item" href="graficos">Gráficos</a>
-                                <a class="item" href="logout">Sair</a>
+                                <a class="inverted red item" href="logout">Sair</a>
                             </div>
                         </div>
 
