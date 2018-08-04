@@ -21,7 +21,8 @@ switch ($_POST['acao']){
 
     case 'graficos':
         $crud = new GraficoCrud();
-        $data['graficos'] = $crud->getGraficos_byUser($_COOKIE['login']);
+        $graficos = $crud->getGraficos_byUser($_COOKIE['login']);
+
 
         include "../views/graficos.php";
         break;

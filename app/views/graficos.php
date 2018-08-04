@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="assets/front_end/css/graficos.css">
 
-<?php  if (!isset($data['graficos'])): ?>
+<?php  if (!isset($graficos)): ?>
     <div class="ui middle aligned center aligned grid">
         <div class="ui container" id="erro">
             <div class="ui negative message">
@@ -14,17 +14,18 @@
 <?php else: ?>
     <div id="conteudo">
         <div class="ui link cards" id="cards">
-            <?php foreach ($data['graficos'] as $grafico): ?>
+            <?php foreach ($graficos as $grafico): ?>
+
                 <div class="ui centered card">
                     <div class="image">
                         <img src="assets/files/img/g_pizza.png">
                     </div>
                     <div class="content">
-                        <div class="header"><?= $grafico['nome'] ?></div>
+                        <div class="header"><?= $grafico->getTitulo() ?></div>
                     </div>
                     <div class="extra content">
-                        <span class="right floated">Criado em: <?= $grafico['data'] ?></span>
-                        <span>Feito por: <?= $grafico['user'] ?></span>
+                        <span class="right floated">Criado em: <?= $grafico->getData() ?></span>
+                        <span>Feito por: <?= $grafico->getUser() ?></span>
                     </div>
                 </div>
             <?php endforeach; ?>

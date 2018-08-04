@@ -45,12 +45,15 @@ class GraficoCrud
         $query = new MongoDB\Driver\Query(['user' => (string) $login]);
         $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
 
-        $array = [];
+        $list = [];
         foreach ($cursor as $document) {
             $array = (array) $document;
+            $list[] = new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+
         }
 
-        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+
+        return $list;
     }
 
     public function add($grafico){
