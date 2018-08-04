@@ -1,1 +1,24 @@
-[]
+[
+    {
+        "_id": {
+            "$oid": "5b6517aa607d9e16d8007fb4"
+        },
+        "codigo": "5b6517aadcd29",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-04 05:04:10",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "AGENCIA NACIONAL DE TELECOMUNICACOES-CE",
+                "gasto": "3144575.02",
+                "codigo": "413010"
+            },
+            {
+                "nome": "AGENCIA NACIONAL DE TELECOMUNICACOES-GO",
+                "gasto": "3229046.37",
+                "codigo": "413008"
+            }
+        ]
+    }
+]
