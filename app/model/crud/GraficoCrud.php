@@ -31,7 +31,19 @@ class GraficoCrud
 
     public function getGraficos_byCodigo($codigo){
         $query = new MongoDB\Driver\Query(['codigo' => (string) $codigo]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
+        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
+
+        $array = [];
+        foreach ($cursor as $document) {
+            $array = (array) $document;
+        }
+
+        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+    }
+
+    public function getGraficos_byUser($login){
+        $query = new MongoDB\Driver\Query(['user' => (string) $login]);
+        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
 
         $array = [];
         foreach ($cursor as $document) {
