@@ -11,7 +11,7 @@ $config['banco'] = [
         'user'    => [
             'file' => 'documents/mongoDB/db/user.json'
         ],
-        'graficos' => [
+        'grafico' => [
             'file'  => 'documents/mongoDB/db/grafico.json'
         ],
         'dados' => [
