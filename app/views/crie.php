@@ -1,9 +1,11 @@
-<script rel="stylesheet" src="assets/vendor/front/html2canvas/html2canvas.js"></script>
+<script type="text/javascript" src="assets/vendor/front/html2canvas/html2canvas.js"></script>
 <script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
-<script rel="stylesheet" src="assets/front_end/js/crie.js"></script>
-<script rel="stylesheet" src="assets/charts/crie.js"></script>
+
+<script type="text/javascript" src="assets/front_end/js/crie.js"></script>
+<script type="text/javascript" src="assets/charts/crie.js"></script>
 
 <link rel="stylesheet" href="assets/front_end/css/crie.css">
+
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/form.css">
 
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">

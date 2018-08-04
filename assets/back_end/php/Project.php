@@ -20,6 +20,10 @@ class Project
         return json_decode(file_get_contents($caminho), true);
     }
 
+    public function setJson(string $caminho, array $array){
+        file_put_contents($caminho, json_encode($array, JSON_PRETTY_PRINT));
+    }
+
     public function updateData(){
         foreach ($this->banco['collections'] as $collection => $caminho){
             $list = $this->getJson($caminho['file']);
@@ -52,6 +56,25 @@ class Project
                 $this->manager->executeBulkWrite('db_cinfo.' . $collection, $bulk);
             }
 
+        }
+    }
+
+    public function downloadData(){
+        foreach ($this->banco['collections'] as $collection => $caminho){
+
+            print_r($collection);
+            echo "\n";
+
+            $query = new MongoDB\Driver\Query([]);
+            $cursor =  $this->manager->executeQuery('db_cinfo.' . $collection, $query);
+
+            $list = [];
+
+            foreach ($cursor as $document) {
+                $list[] = (array) $document;
+            }
+
+            $this->setJson($caminho['file'], $list);
         }
     }
 

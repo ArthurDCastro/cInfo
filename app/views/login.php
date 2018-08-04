@@ -1,6 +1,11 @@
+
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
     <link rel="stylesheet" href="assets/front_end/css/login.css">
+    <link rel="stylesheet" href="assets/vendor/front/semantic/components/dropdown.css">
+
     <script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
+    <script type="text/javascript" src="assets/vendor/front/semantic/components/dropdown.js"></script>
+
     <meta charset="UTF-8">
 </head>
 <body>
@@ -62,5 +67,26 @@
     </div>
 </div>
 <script type="text/javascript" src="assets/front_end/js/login.js"></script>
+
+<?php if ($data['url'][0] == 'new'): ?>
+    <!-- Confirmação de cadastro -->
+    <div class="ui basic modal">
+        <div class="ui icon header">
+            <i class="user icon"></i>
+            Cadastro Concluido
+        </div>
+        <div class="content">
+            <p>Seu cadastro foi concluído com sucesso! Para efetuar o login basta clicar em continuar e em seguida digitar seu login e sua senha.</p>
+        </div>
+        <div class="actions">
+
+            <div class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                Continuar
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
 </body>
 </html>

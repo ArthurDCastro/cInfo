@@ -19,6 +19,9 @@ $config['banco'] = [
         ],
         'funcoes' => [
             'file'  => 'documents/mongoDB/db/funcoes.json'
+        ],
+        'seguidores' => [
+            'file'  => 'documents/mongoDB/db/seguidores.json'
         ]
     ]
 ];

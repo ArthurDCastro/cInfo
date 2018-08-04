@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="assets/front_end/css/cadastro.css">
     <meta charset="UTF-8">
 </head>
+
 <body>
 <div class="ui center aligned grid" id="menu">
     <div class="ten wide column centered">

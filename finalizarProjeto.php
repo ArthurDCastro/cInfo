@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Arthur Castro
- * Date: 18/03/2018
- * Time: 00:17
- */
+
+    include "config/config.php";
+include "assets/back_end/php/Project.php";
+
+$project = new Project($config['banco']);
+
+$project->downloadData();

@@ -52,7 +52,7 @@
 
                 $this->user->crud->add($user);
 
-                header('Location: login');
+                header('Location: login/new');
             } else {
                 $this->loadView('padroes/head.php', $data);
                 $this->loadView('cadastro.php', $data);

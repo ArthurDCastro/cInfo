@@ -1,14 +1,42 @@
 [
-
-  {
-    "_id": {
-      "$oid": "5aadb9db607d9e277cdbff69"
+    {
+        "_id": {
+            "$oid": "5ae7b264607d9e36c800468a"
+        },
+        "nome": "Arthur Dias Viana de Catro",
+        "login": "LukDuk",
+        "tipo_user": "admin",
+        "password": "$1$dDGzb8e3$8XfEfjr7TKdD8Yc6h3P.h\/",
+        "email": "arthurcastro078@gmail.com"
     },
-    "login": "LukDuk",
-    "nome": "Arthur",
-    "password": "0714",
-    "email": "arthurcastro078@gmail.com",
-    "tipo_user": "admin"
-  }
-
+    {
+        "_id": {
+            "$oid": "5ae9bfb6607d9e36c800468d"
+        },
+        "nome": "Jo\u00e3o Pedro Lazarim de Souza",
+        "login": "Tekislla",
+        "tipo_user": "admin",
+        "password": "$1$LxsQRnGK$vfk199RZXquz2AiSrnoeS1",
+        "email": "jplazarim@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "5aec8315607d9e36c800468e"
+        },
+        "nome": "Vinicius Peres",
+        "login": "ohPeres",
+        "tipo_user": "admin",
+        "password": "$1$ldqy0aHh$JvJnRCjiQOVUzE8Dy4mzh1",
+        "email": "peresvini2@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "5af31e95607d9e36c8004695"
+        },
+        "nome": "Bruno Luiz Fhynbeen da Silva",
+        "login": "Fhynbeen ",
+        "tipo_user": "comum",
+        "password": "$1$wSLTlG1c$irIBwkZUBnMpAZrmPznR6\/",
+        "email": "brunoluizfhynbeen@gmail.com"
+    }
 ]

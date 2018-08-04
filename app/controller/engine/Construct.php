@@ -15,12 +15,14 @@
         protected $user;
         protected $dados;
         protected $grafico;
+        protected $seguidores;
 
         public function __construct()
         {
             $this->user = new GetClass('User');
             $this->dados = new GetClass('Dados');
             $this->grafico = new GetClass('Grafico');
+            $this->grafico = new GetClass('Seguidores');
         }
 
         /**
