@@ -1,13 +1,13 @@
-#article {
-    margin-top: 50px;
-}
 #cards {
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-#fora {
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: #f2f2f2;
+     margin-top: 1.5%;
+     margin-bottom: 1.5%;
+ }
 
+#erro {
+    margin: 3%;
+
+}
+
+#darkred {
+    color: darkred;
 }

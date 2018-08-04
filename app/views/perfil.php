@@ -2,6 +2,7 @@
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
 
 <br><br><br><br><br><br>
+
 <div class="ui container">
     <img id="borda" class="ui centered small circular image" src="assets/files/img/lazinha.jpg">
     <div class="ui top attached tabular menu">
