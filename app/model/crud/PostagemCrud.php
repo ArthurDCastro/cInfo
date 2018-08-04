@@ -30,7 +30,7 @@ class PostagemCrud
             $grafico = new GraficoCrud();
             $grafico = $grafico->getGraficos_byCodigo($array[$grafico]);
 
-            $list[] = new Postagem($user, $grafico, $array['descricao'], );
+            $list[] = new Postagem($user, $grafico, $array['descricao']);
         }
 
         return $list;
