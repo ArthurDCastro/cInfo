@@ -18,14 +18,16 @@
 
                 <div class="ui centered card">
                     <div class="image">
-                        <img src="assets/files/img/g_pizza.png">
+                        <img src="assets/files/img/g_pizza.png" alt="">
                     </div>
                     <div class="content">
-                        <div class="header"><?= $grafico->getTitulo() ?></div>
+                        <div class="ui center aligned header"><?= $grafico->getTitulo() ?></div>
                     </div>
                     <div class="extra content">
-                        <span class="right floated">Criado em: <?= $grafico->getData() ?></span>
-                        <span>Feito por: <?= $grafico->getUser() ?></span>
+                        <span class="left floated">Criado em: <?= $grafico->getData() ?></span>
+                    </div>
+                    <div class="extra content">
+                        <span class="left floated">Feito por: <?= $grafico->getUser() ?></span>
                     </div>
                 </div>
             <?php endforeach; ?>
