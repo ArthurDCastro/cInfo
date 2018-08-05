@@ -24,28 +24,6 @@
     </div>
     <div class="ui bottom attached segment">
         <div class="ui three column grid" id="conteudo">
-            <div class="two column" style="margin-top: 2%; margin-bottom: 2%; margin-left: 2%">
-                <label for="nome"><b>Seguidores</b></label>
-                <p>
-                    xxx Seguidores
-                </p>
-                <label for="nome"><b>Nome de Usuário</b></label>
-                <p>
-                    Tekislla
-                </p>
-            </div>
-            <div class="two column" style="margin-top: 2%; margin-bottom: 2%; margin-left: 15%">
-                <label for="nome"><b>Seguindo</b></label>
-                <p>
-                    xxx Seguindo
-                </p>
-
-                <label for="nome"><b>Nome</b></label>
-                <p>
-                    João Pedro Lazarim de Souza
-                </p>
-            </div>
-
 
         </div>
     </div>

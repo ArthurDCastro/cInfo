@@ -16,7 +16,7 @@ require_once '../model/create/Dados.php';
 
 switch ($_POST['acao']){
     case 'perfil':
-        echo '<b>perfil</b>';
+        include "../views/perfil_usuario.php";
         break;
 
     case 'graficos':
