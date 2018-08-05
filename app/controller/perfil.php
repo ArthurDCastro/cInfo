@@ -75,6 +75,6 @@ switch ($_POST['acao']){
         break;
 
     case 'editar':
-        echo '<b>editar</b>';
+        include "../views/editar_perfil.php";
         break;
 }
