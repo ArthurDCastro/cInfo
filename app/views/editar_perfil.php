@@ -4,14 +4,14 @@
         <br>
         <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" placeholder="João Pedro Lazarim de Souza" style="width: 100%">
+            <input type="text" value="João Pedro Lazarim de Souza" style="width: 100%">
         </div>
         <br><br>
         <label><b>Email</b></label>
         <br>
         <div class="ui left icon input">
             <i class="mail icon"></i>
-            <input type="text" placeholder="jplazarim@gmail.com" style="width: 100%">
+            <input type="text" value="jplazarim@gmail.com" style="width: 100%">
         </div>
         <br><br>
         <label><b>Nova Senha</b></label>
@@ -21,10 +21,10 @@
             <input type="text" placeholder="*****" style="width: 100%">
         </div>
         <br><br><br>
-        <button name="salvar" class="ui animated green large submit button" tabindex="0">
-            <div class="visible content">Salvar</div>
+        <button name="cancelar" class="ui animated red large submit button" tabindex="0">
+            <div class="visible content">Cancelar</div>
             <div class="hidden content">
-                <i class="upload icon"></i>
+                <i class="cancel icon"></i>
             </div>
         </button>
     </div>
@@ -33,7 +33,7 @@
         <br>
         <div class="ui left icon input">
             <i class="unhide icon"></i>
-            <input type="text" placeholder="Tekislla" style="width: 100%">
+            <input type="text" value="Tekislla" style="width: 100%">
         </div>
         <br><br>
         <label><b>Senha Antiga</b></label>
@@ -50,10 +50,10 @@
             <input type="text" placeholder="*****" style="width: 100%">
         </div>
         <br><br><br>
-        <button name="cancelar" class="ui animated red large submit button" tabindex="0">
-            <div class="visible content">Cancelar</div>
+        <button name="salvar" class="ui animated green large submit button" tabindex="0">
+            <div class="visible content">Salvar</div>
             <div class="hidden content">
-                <i class="cancel icon"></i>
+                <i class="upload icon"></i>
             </div>
         </button>
     </form>
