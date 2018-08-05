@@ -48,7 +48,12 @@ class GraficoCrud
         $list = [];
         foreach ($cursor as $document) {
             $array = (array) $document;
-            $list[] = new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+            $dados = [];
+
+            foreach ( (array) $array['dados'] as $dad){
+                $dados[] = (array) $dad;
+            }
+            $list[] = new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $dados, $array['codigo']);
 
         }
 

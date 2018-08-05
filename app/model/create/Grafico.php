@@ -13,14 +13,16 @@ class Grafico
     private $user;
     private $data;
     private $dados;
+    private $codigo;
 
-    public function __construct($titulo = '', $tipo = '', $user = '', $data = '', $dados = [])
+    public function __construct($titulo = '', $tipo = '', $user = '', $data = '', $dados = [], $codigo = '')
     {
-        $this->titulo = $titulo;
-        $this->tipo   = $tipo;
-        $this->user   = $user;
-        $this->data   = $data;
-        $this->dados  = $dados;
+        $this->titulo  = $titulo;
+        $this->tipo    = $tipo;
+        $this->user    = $user;
+        $this->data    = $data;
+        $this->dados   = $dados;
+        $this->codigo  = $codigo;
     }
 
     public function insert(){
@@ -32,6 +34,22 @@ class Grafico
             'data'   => $this->data,
             'dados'  => $this->dados
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * @param string $codigo
+     */
+    public function setCodigo($codigo): void
+    {
+        $this->codigo = $codigo;
     }
 
     /**
