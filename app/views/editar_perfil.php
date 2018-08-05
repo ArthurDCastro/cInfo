@@ -17,7 +17,7 @@
         <label><b>Nova Senha</b></label>
         <br>
         <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="lock icon"></i>
             <input type="text" placeholder="*****" style="width: 100%">
         </div>
         <br><br><br>
@@ -32,21 +32,21 @@
         <label><b>Nome de Usuário</b></label>
         <br>
         <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="unhide icon"></i>
             <input type="text" placeholder="Tekislla" style="width: 100%">
         </div>
         <br><br>
         <label><b>Senha Antiga</b></label>
         <br>
         <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="lock icon"></i>
             <input type="text" placeholder="*****" style="width: 100%">
         </div>
         <br><br>
         <label><b>Confirme a Senha</b></label>
         <br>
         <div class="ui left icon input">
-            <i class="user icon"></i>
+            <i class="lock icon"></i>
             <input type="text" placeholder="*****" style="width: 100%">
         </div>
         <br><br><br>
