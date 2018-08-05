@@ -64,7 +64,6 @@
             $data['titulo_pagina'] = 'cInfo - Crie um Gráfico';
 
             $data['funcoes'] = $this->dados->crud->getAllFuncoes();
-
             if (isset($this->getDataUrl()[0])){
                 $data['url'] = $this->getDataUrl();
             } else {
