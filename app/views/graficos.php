@@ -111,8 +111,6 @@
                         ],
                         borderWidth: 0
                     }],
-
-                    // These labels appear in the legend and in the tooltips when hovering different arcs
                     labels: label
                 },
                 title: {
