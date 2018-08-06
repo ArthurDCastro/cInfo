@@ -22,7 +22,7 @@ $(document).ready(function() {
             }
 
         }
-        var d = [dados[0], dados[1]];
+
 
         var label = [];
         for (i in $('#' + id).find('.nome')) {
@@ -37,7 +37,7 @@ $(document).ready(function() {
             type: $('#tipo-' + id).text(),
             data: {
                 datasets: [{
-                    data: d,
+                    data: dados,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.8)',
                         'rgba(54, 162, 235, 0.8)',
