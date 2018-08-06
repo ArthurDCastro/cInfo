@@ -1,10 +1,15 @@
 $(document).ready(function() {
-    $('#oculta').hide();
+    //$('#oculta').hide();
 
-    $('.msgExcluir').click(function () {
-        $('#modal_excluir').modal('show');
+    $('.msgExcluirasd').click(function () {
         var id = $(this).parent().attr('id');
-        $('#oculta').text(id);
+        var txt = document.getElementById('oculta').textContent;
+        alert(id + '-' + txt);
+        if (id =! txt){
+            $('#modal_excluir').modal('show');
+            $('#oculta').html(id)
+        }
+
     });
 
     $('#excluir').click(function () {
@@ -12,13 +17,13 @@ $(document).ready(function() {
         $.post('app/controller/perfil.php',
             {
                 acao: 'excluir',
-                id: $('#oculta').text()
+                id: $('#oculta').html()
             }, function (dados) {
+                $('#conteudo').html('');
                 $('#conteudo').html(dados);
             }
         );
-
-        $('#oculta').text('');
+       alert('olhai');
 
     });
 

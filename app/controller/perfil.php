@@ -65,7 +65,7 @@ switch ($_POST['acao']){
 
         break;
 
-    case 'grafico_individual':
+    case 'individual':
         include "../views/grafico_individual.php";
         break;
 }

@@ -39,7 +39,7 @@
     <div id="conteudo">
         <div class="ui link cards" id="cards">
             <?php foreach ($graficos as $grafico): ?>
-                <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico individual" >
+                <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico" >
                     <a class="ui corner red label msgExcluir">
                         <i class="remove icon"></i>
                     </a>
@@ -53,7 +53,7 @@
                     <div class="image" style="padding: 15px">
                         <canvas id="grafico-<?= $grafico->getCodigo() ?>" width="100" height="100"></canvas>
                     </div>
-                    <div class="content">
+                    <div class="content individual">
                         <div class="header"><?= $grafico->getTitulo() ?></div>
                         <div class="meta">
                             <span class="date">Criado em: <?= $grafico->getData() ?></span>
