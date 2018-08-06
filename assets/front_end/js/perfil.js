@@ -59,7 +59,7 @@ $(document).ready(function() {
         $.post('app/controller/perfil.php',
             {
                 acao: 'individual',
-                id: $(this).parent().attr('id')
+                id: $(this).parent().attr('id'),
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
