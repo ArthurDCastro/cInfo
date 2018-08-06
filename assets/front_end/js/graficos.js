@@ -78,4 +78,5 @@ $(document).ready(function() {
         });
     });
 });
+
 Chart.defaults.global.legend.display = false;
