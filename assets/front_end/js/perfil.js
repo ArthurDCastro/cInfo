@@ -54,6 +54,18 @@ $(document).ready(function() {
         );
     });
 
+    $('.individual').click(function () {
+
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'individual',
+                id: $(this).parent().attr('id')
+            }, function (dados) {
+                $('#conteudo').html(dados);
+            }
+        );
+    });
+
     $('#seguidores').click(function () {
         $('.item').removeClass('active');
 

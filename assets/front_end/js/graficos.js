@@ -7,7 +7,6 @@ $(document).ready(function() {
         $('#oculta').html(id);
     });
 
-
     $('.info').hide();
 
     $('.grafico').each(function () {
