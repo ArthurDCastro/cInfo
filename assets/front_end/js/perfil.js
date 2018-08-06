@@ -32,7 +32,7 @@ $(document).ready(function() {
         $.post('app/controller/perfil.php',
             {
                 acao: 'excluir',
-                id: $(this).parent().attr('id')
+                id: $('#oculta').html()
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
