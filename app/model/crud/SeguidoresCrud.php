@@ -41,6 +41,14 @@ class SeguidoresCrud
         return $this->getData(['seguindo' => $seguindo]);
     }
 
+    public function getRelacao($seguindo, $seguidor){
+        if (isset($this->getData(['seguindo' => $seguindo, 'seguidor' => $seguidor])[0])) {
+            return $this->getData(['seguindo' => $seguindo, 'seguidor' => $seguidor])[0];
+        } else {
+            return new Seguidores(new User(), new User());
+        }
+    }
+
     public function getSeguidores_byDti($dti){
         return $this->getData(['dti' => $dti]);
     }

@@ -78,14 +78,8 @@
                     foreach ($value as $val){
                         if (is_string($val)){
                             @eval('$' . $key . '[] = \'' . $val . '\';');
-                        } else {
-                           // @eval('$' . $key . '[] = {' . $val . '};');
                         }
                     }
-                } else {
-                    var_dump([$key, $value]);
-                    @eval('$' . $key . ' = {' . $value . '};');
-
                 }
 
             }

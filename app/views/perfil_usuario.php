@@ -1,32 +1,11 @@
-<div class="two column" style="margin-top: 2%; margin-bottom: 2%; margin-left: 5%">
-    <label><b>Seguidores</b></label>
-    <p>
-        xxx Seguidores
-    </p>
-    <br>
-    <label><b>Nome de Usuário</b></label>
-    <p>
-        Tekislla
-    </p>
-    <br>
-    <label><b>Gráficos Criados</b></label>
-    <p>
-        xxx Gráficos
-    </p>
+
+<div class="ui header">
+    <h1 class="ui left floated blue header" style="width: 100%">
+        <?= $data['user']->getLogin(); ?>
+        <button id="relacao" class="ui right floated basic blue circular button">Seguir</button>
+    </h1>
+    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
 </div>
-<div class="two column" style="margin-top: 2%; margin-bottom: 2%; margin-left: 15%">
-    <label><b>Seguindo</b></label>
-    <p>
-        xxx Seguindo
-    </p>
-    <br>
-    <label><b>Nome</b></label>
-    <p>
-        João Pedro Lazarim de Souza
-    </p>
-    <br>
-    <label><b>Publicações Curtidas</b></label>
-    <p>
-        xxx Publicações
-    </p>
-</div>
+<h4 class="ui horizontal divider header">
+    Publicações
+</h4>

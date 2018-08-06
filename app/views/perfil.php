@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="assets/front_end/css/perfil.css">
+<link rel="stylesheet" href="assets/vendor/front/semantic/components/button.css">
+
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
 
 <br><br><br><br><br><br>
@@ -25,26 +27,61 @@
     <?php endif; ?>
     <div class="ui top attached tabular menu">
         <a id="perfil" class="active item">
-            Perfil
+            <div class="ui mini horizontal statistic">
+                <div class="value"></div>
+                <div class="label">
+                    Perfil
+                </div>
+            </div>
         </a>
         <a id="graficos" class="item">
-            Gráficos
+            <div class="ui mini horizontal statistic">
+                <div class="value">
+                    2,204
+                </div>
+                <div class="label">
+                    Gráficos
+                </div>
+            </div>
         </a>
         <a id="seguidores" class="item">
-            Seguidores
+            <div class="ui mini horizontal statistic">
+                <div class="value">
+                    2,204
+                </div>
+                <div class="label">
+                    Seguidores
+                </div>
+            </div>
         </a>
         <a  id="seguindo" class="item">
-            Seguindo
+            <div class="ui mini horizontal statistic">
+                <div class="value">
+                    2,204
+                </div>
+                <div class="label">
+                    Seguindo
+                </div>
+            </div>
         </a>
-        <a id="editar" class="item">
-            Editar
-        </a>
+        <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
+            <a id="editar" class="item">
+                <div class="ui mini horizontal statistic">
+                    <div class="value"></div>
+                    <div class="label">
+                        Editar
+                    </div>
+                </div>
+            </a>
+        <?php endif; ?>
     </div>
     <div class="ui bottom attached segment">
-        <div class="ui three column grid" id="conteudo">
-
+        <div id="conteudo">
+            <?php include 'perfil_usuario.php'?>
         </div>
     </div>
 </div>
+
+<div id="user"><?= $data['user']->getLogin(); ?></div>
 
 <br>

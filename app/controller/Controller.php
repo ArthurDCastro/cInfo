@@ -125,6 +125,10 @@
 
         public function perfil(){
             $data['titulo_pagina'] = 'cInfo - Perfil';
+            $data['url'] = @$this->getDataUrl();
+
+            $data['user'] = $this->user->crud->getUser_byLogin($data['url'][0]);
+
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
             $this->loadView('perfil.php', $data);
