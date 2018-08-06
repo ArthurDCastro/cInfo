@@ -49,14 +49,12 @@
                     </div>
 
                     <?php if (isset($_COOKIE['login'])): ?>
-                        <div id="some" class="ui item dropdown">
+                        <a id="some" class="item" href="perfil">
                             <img class="ui avatar image" src="assets/files/img/avatar/small/helen.jpg">
-                            <a class="item" href="perfil"><?= $_COOKIE['login'] ?></a>
-                        </div>
+                            <?= $_COOKIE['login'] ?>
+                        </a>
 
-                        <div class="item">
-                            <a class="item" href="logout">Sair</a>
-                        </div>
+                        <a class="item" href="logout">Sair</a>
                     <?php else: ?>
                             <a id="some" href="login" class="item some">Login</a>
                             <a id="some" href="cadastro" class="item some">Cadastre-se</a>
