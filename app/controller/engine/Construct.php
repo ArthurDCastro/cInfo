@@ -16,6 +16,7 @@
         protected $dados;
         protected $grafico;
         protected $seguidores;
+        protected $postagem;
 
         public function __construct()
         {
@@ -23,6 +24,7 @@
             $this->dados = new GetClass('Dados');
             $this->grafico = new GetClass('Grafico');
             $this->grafico = new GetClass('Seguidores');
+            $this->grafico = new GetClass('Postagem');
         }
 
         /**

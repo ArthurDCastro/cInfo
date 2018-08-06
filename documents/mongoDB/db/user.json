@@ -1,7 +1,7 @@
 [
     {
         "_id": {
-            "$oid": "5b65164f607d9e1208001e22"
+            "$oid": "5b651c9a607d9e2de8004fd2"
         },
         "nome": "Arthur Dias Viana de Catro",
         "login": "LukDuk",
@@ -11,7 +11,7 @@
     },
     {
         "_id": {
-            "$oid": "5b65164f607d9e1208001e23"
+            "$oid": "5b651c9a607d9e2de8004fd3"
         },
         "nome": "Jo\u00e3o Pedro Lazarim de Souza",
         "login": "Tekislla",
@@ -21,7 +21,7 @@
     },
     {
         "_id": {
-            "$oid": "5b65164f607d9e1208001e24"
+            "$oid": "5b651c9a607d9e2de8004fd4"
         },
         "nome": "Vinicius Peres",
         "login": "ohPeres",
@@ -31,12 +31,22 @@
     },
     {
         "_id": {
-            "$oid": "5b65164f607d9e1208001e25"
+            "$oid": "5b651c9a607d9e2de8004fd5"
         },
         "nome": "Bruno Luiz Fhynbeen da Silva",
         "login": "Fhynbeen ",
         "tipo_user": "comum",
         "password": "$1$wSLTlG1c$irIBwkZUBnMpAZrmPznR6\/",
         "email": "brunoluizfhynbeen@gmail.com"
+    },
+    {
+        "_id": {
+            "$oid": "5b67979e607d9e16d8007fbd"
+        },
+        "nome": "olhai",
+        "login": "eita",
+        "tipo_user": "comum",
+        "password": "$1$eZ823HOb$7aIZX520m.tVfuihhCaXX.",
+        "email": "eita@olhai"
     }
 ]

@@ -4,6 +4,7 @@
 <br><br><br><br>
 <div class="ui container segment" id="article">
     <div class="ui feed">
+
         <div class="event">
             <div class="label">
                 <img src="assets/files/img/avatar/small/joe.jpg">

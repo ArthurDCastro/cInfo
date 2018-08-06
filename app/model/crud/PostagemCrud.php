@@ -15,8 +15,8 @@ class PostagemCrud
         $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     }
 
-    public function getAllData(){
-        $query = new MongoDB\Driver\Query([]);
+    protected function getData($query){
+        $query = new MongoDB\Driver\Query($query);
         $cursor =  $this->manager->executeQuery('db_cinfo.postagem', $query);
 
         $list = [];
@@ -34,5 +34,23 @@ class PostagemCrud
         }
 
         return $list;
+
+    }
+
+    public function getAllData(){
+        return $this->getData([]);
+    }
+
+    public function getPublicacoes_bySeguindo(array $seguidores){
+        $list = [];
+        foreach ($seguidores as $seguidor){
+            $list[] = $this->getData(['user' => $seguidor]);
+        }
+
+        return $list;
+    }
+
+    public function getPublicacoes_byUser($user){
+        return $this->getData(['user' => $user]);
     }
 }

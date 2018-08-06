@@ -4,10 +4,9 @@
         <?php foreach ($segue as $s): ?>
             <div class="ui centered card">
                 <div class="image">
-
                 </div>
                 <div class="content">
-                    <a class="header"><?= $s->getSeguidor()->getNome() ?></a>
+                    <a class="header"><?= $s->getSeguindo()->getNome()   ?></a>
                 </div>
             </div>
         <?php endforeach; ?>

@@ -1,1 +1,56 @@
-[]
+[
+    {
+        "_id": {
+            "$oid": "5b67a21f2b377e3c5c11f195"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "Tekislla",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b67a283f4ec813c5c7ea4bb"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "ohPeres",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b67a28af4ec813c5c7ea4bc"
+        },
+        "seguidor": "Tekislla",
+        "seguindo": "LukDuk",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b67a28cf4ec813c5c7ea4bd"
+        },
+        "seguidor": "Tekislla",
+        "seguindo": "ohPeres",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b67a28ff4ec813c5c7ea4be"
+        },
+        "seguidor": "ohPeres",
+        "seguindo": "Tekislla",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b67a291f4ec813c5c7ea4bf"
+        },
+        "seguidor": "ohPeres",
+        "seguindo": "LukDuk",
+        "dti": "2018-08-06 02:35:06",
+        "dtf": ""
+    }
+]

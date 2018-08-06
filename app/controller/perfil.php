@@ -10,9 +10,11 @@ require_once '../model/crud/DadosCrud.php';
 require_once '../model/crud/GraficoCrud.php';
 require_once '../model/crud/UserCrud.php';
 require_once '../model/crud/SeguidoresCrud.php';
-require_once '../model/create/Grafico.php';
 
+require_once '../model/create/Grafico.php';
 require_once '../model/create/Dados.php';
+require_once '../model/create/User.php';
+require_once '../model/create/Seguidores.php';
 
 switch ($_POST['acao']){
     case 'perfil':
@@ -38,50 +40,19 @@ switch ($_POST['acao']){
         break;
 
     case 'seguidores':
-        $data['seguidores'] = [
-            [
-                "nome"       => "Brayn Mayke",
-                "dt_comeco"  => "19/08/18",
-                "user"       => "Bryant",
-                "foto"       => "assets/files/img/maykinho.jpg",
-            ],
-            [
-                "nome"       => "PAAS Henrique",
-                "dt_comeco"  => "13/12/18",
-                "user"       => "PAAS",
-                "foto"       => "assets/files/img/henriquinho.jpg",
-            ],
-            [
-                "nome"       => "Luiz Fhynbeen Bruno",
-                "dt_comeco"  => "11/10/18",
-                "user"       => "feio",
-                "foto"       => "assets/files/img/bruninho.jpg",
-            ],
-            [
-                "nome"       => "Castro Viana Dias de Arthur",
-                "dt_comeco"  => "77/08/18",
-                "user"       => "LukDuk",
-                "foto"       => "assets/files/img/castrinho3.jpg",
-            ],
-            [
-                "nome"       => "Souza Pedro Lazarim de João",
-                "dt_comeco"  => "23/11/18",
-                "user"       => "Tekislalsa",
-                "foto"       => "assets/files/img/lazinha.jpg",
-            ],
-            [
-                "nome"       => "Peres Vinícius",
-                "dt_comeco"  => "24/10/18",
-                "user"       => "ohhhperes",
-                "foto"       => "assets/files/img/peresinho.jpg",
-            ],
+        $crud = new SeguidoresCrud();
 
-        ];
+        $segue = $crud->getSeguidores_bySeguindo($_COOKIE['login']);
+
         include "../views/seguidores.php";
         break;
 
     case 'seguindo':
-        echo '<b>seguindo</b>';
+        $crud = new SeguidoresCrud();
+
+        $segue = $crud->getSeguindo_bySeguidor($_COOKIE['login']);
+
+        include "../views/seguindo.php";
         break;
 
     case 'editar':

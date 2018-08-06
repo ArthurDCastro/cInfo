@@ -7,7 +7,7 @@ class Seguidores
     private $dti;
     private $dtf;
 
-    public function __construct($seguidor = '', $seguindo = '', $dti = '', $dtf = '')
+    public function __construct(User $seguidor, User $seguindo, $dti = '', $dtf = '')
     {
         $this->seguidor = $seguidor;
         $this->seguindo = $seguindo;
@@ -28,7 +28,7 @@ class Seguidores
     /**
      * @return string
      */
-    public function getSeguidor(): string
+    public function getSeguidor()
     {
         return $this->seguidor;
     }
@@ -36,7 +36,7 @@ class Seguidores
     /**
      * @param string $seguidor
      */
-    public function setSeguidor(string $seguidor): void
+    public function setSeguidor( $seguidor)
     {
         $this->seguidor = $seguidor;
     }
@@ -44,7 +44,7 @@ class Seguidores
     /**
      * @return string
      */
-    public function getSeguindo(): string
+    public function getSeguindo()
     {
         return $this->seguindo;
     }
@@ -52,7 +52,7 @@ class Seguidores
     /**
      * @param string $seguindo
      */
-    public function setSeguindo(string $seguindo): void
+    public function setSeguindo( $seguindo)
     {
         $this->seguindo = $seguindo;
     }
