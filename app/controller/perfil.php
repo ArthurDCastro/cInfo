@@ -20,9 +20,22 @@ switch ($_POST['acao']){
         break;
 
     case 'graficos':
+    $crud = new GraficoCrud();
+    $graficos = $crud->getGraficos_byUser($_COOKIE['login']);
+
+
+    include "../views/graficos.php";
+    break;
+
+    case 'excluir':
         $crud = new GraficoCrud();
         $graficos = $crud->getGraficos_byUser($_COOKIE['login']);
+        foreach ($graficos as $grafico) {
+            $codigo = $grafico->getCodigo();
 
+            return $codigo;
+        }
+        $graficos[0] = $crud->delete($codigo);
 
         include "../views/graficos.php";
         break;

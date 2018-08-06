@@ -27,6 +27,20 @@ $(document).ready(function() {
         );
     });
 
+    $('#excluir').click(function () {
+        $('.item').removeClass('active');
+
+        $('#graficos').toggleClass('active');
+
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'excluir'
+            }, function (dados) {
+                $('#conteudo').html(dados);
+            }
+        );
+    });
+
     $('#seguidores').click(function () {
         $('.item').removeClass('active');
 

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/front_end/css/graficos.css">
+<script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
 
 <?php  if (!isset($graficos)): ?>
     <div class="ui middle aligned center aligned grid">
@@ -14,10 +15,11 @@
 <?php else: ?>
     <div id="conteudo">
         <div class="ui link cards" id="cards">
-
             <?php foreach ($graficos as $grafico): ?>
-
                 <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico">
+                    <a id="excluir" class="ui corner red label">
+                        <i class="remove icon"></i>
+                    </a>
                     <div class="info">
                         <div id="tipo-<?= $grafico->getCodigo() ?>"><?= $grafico->getTipo() ?></div>
                         <?php foreach ($grafico->getDados() as $dado): ?>
@@ -28,7 +30,6 @@
                     <div class="image" style="padding: 15px">
                         <canvas id="grafico-<?= $grafico->getCodigo() ?>" width="100" height="100"></canvas>
                     </div>
-
                     <div class="content">
                         <div class="header"><?= $grafico->getTitulo() ?></div>
                         <div class="meta">
