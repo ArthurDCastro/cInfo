@@ -17,7 +17,7 @@
         <div class="ui link cards" id="cards">
             <?php foreach ($graficos as $grafico): ?>
                 <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico">
-                    <a id="excluir" class="ui corner red label">
+                    <a class="ui corner red label excluir">
                         <i class="remove icon"></i>
                     </a>
                     <div class="info">
@@ -55,10 +55,9 @@
 
         $('.grafico').each(function () {
 
-            var dados = [];
-
             var id = $(this).attr('id');
 
+            var dados = [];
             for (i in $('#' + id).find('.gasto')) {
                 var g = $('#' + id).find('.gasto').eq(i).text();
                 if ( g.length > 1){
@@ -66,9 +65,7 @@
                 }
 
             }
-
             var d = [dados[0], dados[1]];
-
 
             var label = [];
             for (i in $('#' + id).find('.nome')) {

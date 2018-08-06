@@ -27,14 +27,12 @@ $(document).ready(function() {
         );
     });
 
-    $('#excluir').click(function () {
-        $('.item').removeClass('active');
-
-        $('#graficos').toggleClass('active');
+    $('.excluir').click(function () {
 
         $.post('app/controller/perfil.php',
             {
-                acao: 'excluir'
+                acao: 'excluir',
+                id: $(this).parent().attr('id')
             }, function (dados) {
                 $('#conteudo').html(dados);
             }

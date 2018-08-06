@@ -79,11 +79,11 @@ class GraficoCrud
         $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
     }
 
-    public function delete($grafico){
+    public function delete($codigo){
 
         $bulk = new MongoDB\Driver\BulkWrite;
 
-        $bulk->delete(['codigo' => new MongoDB\BSON\ObjectID($grafico)]);
+        $bulk->delete(['codigo' => $codigo]);
 
         $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
     }
