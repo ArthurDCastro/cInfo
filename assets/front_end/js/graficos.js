@@ -35,7 +35,6 @@ $(document).ready(function() {
         var ctx = document.getElementById('grafico-' + id).getContext('2d');
         var myChart = new Chart(ctx, {
             type: $('#tipo-' + id).text(),
-
             data: {
                 datasets: [{
                     data: dados,
@@ -67,15 +66,19 @@ $(document).ready(function() {
                     ],
                     borderWidth: 0
                 }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
                 labels: label
             },
-            title: {
-                display: true,
-                position: 'top',
-                text: 'olhai'
+            options: {
+                legend: {
+                    display: true,
+                    hidden: true
+                }
             }
 
         });
     });
 });
-Chart.defaults.global.legend.display = false;
+
+Chart.default.global.legend.display = false;

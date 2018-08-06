@@ -5,7 +5,6 @@ $(document).ready(function(){
             $('#grafico').remove();
             $('#chart').html('<div id="grafico"><canvas id="myChart" width="400" height="500"></canvas></div>').hide();
 
-            var list = [];
             var gastos = $('#gasto').val();
 
             $.post('app/controller/crie.php',
