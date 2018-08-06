@@ -25,6 +25,19 @@
             <img src="assets/files/img/image.png">
         </div>
     <?php endif; ?>
+    <div class="ui header">
+        <h1 class="ui left floated blue header" style="width: 100%">
+            <?= $data['user']->getLogin(); ?>
+            <?php if ($data['user']->getLogin() != $_COOKIE['login']): ?>
+                <?php if($data['relacao']->getSeguidor()->getLogin() != '' and $data['relacao']->getDtf() == ''): ?>
+                    <button id='seguir' class="ui right floated blue circular button" value="unfollow">Seguindo</button>
+                <?php else: ?>
+                    <button id="seguir" class="ui right floated blue circular basic button" value="follow">Seguir</button>
+                <?php endif;?>
+            <?php endif; ?>
+        </h1>
+        <div class="sub header">bio</div>
+    </div>
     <div class="ui top attached tabular menu">
         <a id="perfil" class="active item">
             <div class="ui mini horizontal statistic">

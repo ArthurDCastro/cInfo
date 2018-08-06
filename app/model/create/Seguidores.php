@@ -6,22 +6,42 @@ class Seguidores
     private $seguindo;
     private $dti;
     private $dtf;
+    private $id;
 
-    public function __construct(User $seguidor, User $seguindo, $dti = '', $dtf = '')
+    public function __construct(User $seguidor, User $seguindo, $dti = '', $dtf = '', $id = '')
     {
         $this->seguidor = $seguidor;
         $this->seguindo = $seguindo;
         $this->dti = $dti;
         $this->dtf = $dtf;
+        $this->id = $id;
     }
+
+    /**
+     * @return string
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function setId(string $id): void
+    {
+        $this->id = $id;
+    }
+
+
 
     public function insert(){
         return [
-            '_id'   => new MongoDB\BSON\ObjectId,
-            'seguidor' => $this->seguidor,
-            'seguindo' => $this->seguindo,
+            'seguidor' => $this->seguidor->getLogin(),
+            'seguindo' => $this->seguindo->getLogin(),
             'dti'   => $this->dti,
             'dtf'   => $this->dtf,
+            'id'    => $this->id
         ];
     }
 

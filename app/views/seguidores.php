@@ -2,7 +2,7 @@
 <div id="conteudo">
     <div id="cards" class="ui link cards">
         <?php foreach ($segue as $s): ?>
-            <div class="ui centered card">
+            <div class="ui centered card seguidores">
                 <div class="image">
 
                 </div>
