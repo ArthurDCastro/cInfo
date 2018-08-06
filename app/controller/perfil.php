@@ -20,6 +20,8 @@ require_once '../model/create/Seguidores.php';
 switch ($_POST['acao']){
 
     case 'perfil':
+        $crud = new UserCrud();
+        $data['user'] = $crud->getUser_byLogin($_POST['user']);
         include "../views/perfil_usuario.php";
     break;
 
