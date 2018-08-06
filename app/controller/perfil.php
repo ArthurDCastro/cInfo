@@ -25,7 +25,7 @@ switch ($_POST['acao']){
 
     case 'graficos':
     $crud = new GraficoCrud();
-    $graficos = $crud->getGraficos_byUser($_COOKIE['login']);
+    $graficos = $crud->getGraficos_byUser($_POST['user']);
 
 
     include "../views/graficos.php";
@@ -36,7 +36,7 @@ switch ($_POST['acao']){
 
         $crud->delete($_POST['id']);
 
-        $graficos = $crud->getGraficos_byUser($_COOKIE['login']);
+        $graficos = $crud->getGraficos_byUser($_POST['user']);
 
         include "../views/graficos.php";
         break;
@@ -44,7 +44,7 @@ switch ($_POST['acao']){
     case 'seguidores':
         $crud = new SeguidoresCrud();
 
-        $segue = $crud->getSeguidores_bySeguindo($_COOKIE['login']);
+        $segue = $crud->getSeguidores_bySeguindo($_POST['user']);
 
         include "../views/seguidores.php";
         break;
@@ -52,7 +52,7 @@ switch ($_POST['acao']){
     case 'seguindo':
         $crud = new SeguidoresCrud();
 
-        $segue = $crud->getSeguindo_bySeguidor($_COOKIE['login']);
+        $segue = $crud->getSeguindo_bySeguidor($_POST['user']);
 
         include "../views/seguindo.php";
         break;
@@ -61,14 +61,25 @@ switch ($_POST['acao']){
         include "../views/editar_perfil.php";
         break;
 
-    case 'addFoto':
-
-        break;
-
     case 'individual':
         $crud = new GraficoCrud();
         $grafico = $crud->getGraficos_byCodigo($_POST['id']);
 
         include "../views/grafico_individual.php";
         break;
+
+    case 'relacao':
+        $crud = new SeguidoresCrud();
+        $relacao = $crud->getRelacao($_POST['user'], $_COOKIE['login']);
+        $seg = $relacao->getSeguidor();
+        $dtf = $relacao->getDtf();
+
+        if (isset($seg) and !isset($dtf)){
+            echo $seg->getLogin() . ' - ' . $dtf;
+            echo true;
+        } else {
+            echo false;
+        }
+        break;
+
 }

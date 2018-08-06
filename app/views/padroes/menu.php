@@ -2,8 +2,6 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/components/dropdown.css">
     <script src="assets/vendor/front/semantic/components/dropdown.js"></script>
     <script src="assets/front_end/js/menu.js"></script>
-    <script src="assets/front_end/js/perfil.js"></script>
-
 </head>
 
 <body>
@@ -50,7 +48,7 @@
                     </div>
 
                     <?php if (isset($_COOKIE['login'])): ?>
-                        <a id="some" class="item" href="perfil">
+                        <a id="some" class="item" href="perfil/<?=$_COOKIE['login']?>">
                             <img class="ui avatar image" src="assets/files/img/avatar/small/helen.jpg">
                             <?= $_COOKIE['login'] ?>
                         </a>

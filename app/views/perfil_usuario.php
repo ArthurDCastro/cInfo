@@ -29,4 +29,6 @@
     <p>
         xxx Publicações
     </p>
+        <button id="relacao" class="ui basic blue circular button">Seguir</button>
 </div>
+

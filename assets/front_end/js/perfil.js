@@ -13,6 +13,24 @@ $(document).ready(function() {
         $('#submit').trigger('click');
     });
 
+    $('#user').hide();
+
+    $('#relacao').click(function () {
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'relacao',
+                user: $('#user').text()
+            }, function (relacao) {
+                if (relacao){
+                    $('#relacao').removeClass('basic');
+                    $('#relacao').text('Seguindo');
+                } else {
+                    $(this).removeClass('basic');
+                    $(this).addClass('basic');
+                    $(this).text('Seguir')
+                }
+            });
+    });
 
     $('#perfil').click(function () {
         $('.item').removeClass('active');
@@ -21,7 +39,8 @@ $(document).ready(function() {
 
         $.post('app/controller/perfil.php',
             {
-                acao: 'perfil'
+                acao: 'perfil',
+                user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
@@ -31,23 +50,12 @@ $(document).ready(function() {
     $('#graficos').click(function () {
         $('.item').removeClass('active');
 
-        $('#graficos').toggleClass('active');
+        $('#graficos').addClass('active');
 
         $.post('app/controller/perfil.php',
             {
-                acao: 'graficos'
-            }, function (dados) {
-                $('#conteudo').html(dados);
-            }
-        );
-    });
-
-    $('.individual').click(function () {
-
-        $.post('app/controller/perfil.php',
-            {
-                acao: 'individual',
-                id: $(this).parent().attr('id')
+                acao: 'graficos',
+                user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
@@ -57,11 +65,12 @@ $(document).ready(function() {
     $('#seguidores').click(function () {
         $('.item').removeClass('active');
 
-        $('#seguidores').toggleClass('active');
+        $('#seguidores').addClass('active');
 
         $.post('app/controller/perfil.php',
             {
-                acao: 'seguidores'
+                acao: 'seguidores',
+                user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
@@ -71,11 +80,11 @@ $(document).ready(function() {
     $('#seguindo').click(function () {
         $('.item').removeClass('active');
 
-        $('#seguindo').toggleClass('active');
-
+        $('#seguindo').addClass('active');
         $.post('app/controller/perfil.php',
             {
-                acao: 'seguindo'
+                acao: 'seguindo',
+                user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
@@ -89,7 +98,21 @@ $(document).ready(function() {
 
         $.post('app/controller/perfil.php',
             {
-                acao: 'editar'
+                acao: 'editar',
+                user: $('#user').text()
+            }, function (dados) {
+                $('#conteudo').html(dados);
+            }
+        );
+    });
+
+    $('.individual').click(function () {
+
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'individual',
+                id: $(this).parent().attr('id'),
+                user: $('#user').attr('id')
             }, function (dados) {
                 $('#conteudo').html(dados);
             }
