@@ -45,7 +45,6 @@
 
         </div>
     </div>
-    <!--<img class="ui small circular image" src="assets/files/img/lazinha.jpg" style="position: absolute; margin-left: 43.15%; margin-top: -7.5%; border: 2px;">-->
 </div>
 
 <br>
