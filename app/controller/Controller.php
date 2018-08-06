@@ -132,6 +132,9 @@
             $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
             $data['seguindo'] = $this->seguidores->crud->getSeguindo_bySeguidor($data['user']->getLogin());
 
+            if ($data['user']->getLogin() != $_COOKIE['login']){
+                $data['relacao'] = $this->seguidores->crud->getRelacao($data['user']->getLogin(), $_COOKIE['login']);
+            }
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);

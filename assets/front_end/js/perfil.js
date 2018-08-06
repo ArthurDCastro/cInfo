@@ -15,23 +15,6 @@ $(document).ready(function() {
 
     $('#user').hide();
 
-    $('#relacao').click(function () {
-        $.post('app/controller/perfil.php',
-            {
-                acao: 'relacao',
-                user: $('#user').text()
-            }, function (relacao) {
-                if (relacao){
-                    $('#relacao').removeClass('basic');
-                    $('#relacao').text('Seguindo');
-                } else {
-                    $(this).removeClass('basic');
-                    $(this).addClass('basic');
-                    $(this).text('Seguir')
-                }
-            });
-    });
-
     $('#perfil').click(function () {
         $('.item').removeClass('active');
 
@@ -58,6 +41,7 @@ $(document).ready(function() {
                 user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
+                $('#graficos .statistic .value').text($('.grafico').length);
             }
         );
     });
@@ -73,6 +57,7 @@ $(document).ready(function() {
                 user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
+                $('#seguidores .statistic .value').text($('.seguidores').length);
             }
         );
     });
@@ -87,6 +72,7 @@ $(document).ready(function() {
                 user: $('#user').text()
             }, function (dados) {
                 $('#conteudo').html(dados);
+                $('#seguindo .statistic .value').text($('.seguindo').length);
             }
         );
     });
@@ -118,4 +104,26 @@ $(document).ready(function() {
             }
         );
     });
+
+    $('#seguir').click(function () {
+
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'relacao',
+                user: $('#user').text(),
+                val:  $('#seguir').val()
+            }, function (relacao) {
+                if (relacao == 'unfollow'){
+                    $('#seguir').addClass('basic');
+                    $('#seguir').text('Seguir');
+                    $('#seguir').val('follow');
+                } else if (relacao == 'follow') {
+                    $('#seguir').removeClass('basic');
+                    $('#seguir').text('Seguindo');
+                    $('#seguir').val('unfollow');
+                }
+
+            }
+        );
+    })
 });

@@ -19,11 +19,14 @@ class SeguidoresCrud
         foreach ($cursor as $document) {
             $array = (array) $document;
 
-            $user = new UserCrud();
-            $seguidor = $user->getUser_byLogin($array['seguidor']);
-            $seguindo = $user->getUser_byLogin($array['seguindo']);
+            if ($array['dtf'] == ''){
+                $user = new UserCrud();
+                $seguidor = $user->getUser_byLogin($array['seguidor']);
+                $seguindo = $user->getUser_byLogin($array['seguindo']);
 
-            $list[] = new Seguidores($seguidor, $seguindo, $array['dti'], $array['dtf']);
+                $list[] = new Seguidores($seguidor, $seguindo, $array['dti'], $array['dtf'], $array['id']);
+            }
+
         }
 
         return $list;
@@ -42,8 +45,15 @@ class SeguidoresCrud
     }
 
     public function getRelacao($seguindo, $seguidor){
-        if (isset($this->getData(['seguindo' => $seguindo, 'seguidor' => $seguidor])[0])) {
-            return $this->getData(['seguindo' => $seguindo, 'seguidor' => $seguidor])[0];
+
+        foreach ($this->getData(['seguindo' => $seguindo, 'seguidor' => $seguidor]) as $dado){
+            $dtf = $dado->getDtf();
+            if ($dtf == ''){
+                $fim = $dado;
+            }
+        }
+        if (isset($fim)) {
+            return $fim;
         } else {
             return new Seguidores(new User(), new User());
         }
@@ -62,15 +72,23 @@ class SeguidoresCrud
         $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
     }
 
-    public function delete($dtf){
+    public function delete(Seguidores $seguidores){
 
         $bulk = new MongoDB\Driver\BulkWrite;
 
-        $bulk->insert(['dtf' => $dtf]);
+        $bulk->update(['id' => $seguidores->getId()], $seguidores->insert());
 
         $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
     }
 
+    public function update(Seguidores $seguidores){
+
+        $bulk = new MongoDB\Driver\BulkWrite;
+
+        $bulk->update(['id' => $seguidores->getId()], $seguidores->insert());
+
+        $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
+    }
 
 
 }

@@ -1,3 +1,6 @@
+<h4 class="ui horizontal divider header">
+    Editar Perfil
+</h4>
 <div class="two column" style="margin-top: 2%; margin-bottom: 2%; margin-left: 5%">
     <form action="">
         <label><b>Nome</b></label>

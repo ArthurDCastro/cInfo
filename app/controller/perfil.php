@@ -21,7 +21,13 @@ switch ($_POST['acao']){
 
     case 'perfil':
         $crud = new UserCrud();
+        $crudSeg = new SeguidoresCrud();
         $data['user'] = $crud->getUser_byLogin($_POST['user']);
+
+        if ($data['user']->getLogin() != $_COOKIE['login']){
+            $data['relacao'] = $crudSeg->getRelacao($data['user']->getLogin(), $_COOKIE['login']);
+        }
+
         include "../views/perfil_usuario.php";
     break;
 
@@ -73,14 +79,22 @@ switch ($_POST['acao']){
     case 'relacao':
         $crud = new SeguidoresCrud();
         $relacao = $crud->getRelacao($_POST['user'], $_COOKIE['login']);
-        $seg = $relacao->getSeguidor();
+        $seguidor = $relacao->getSeguidor()->getLogin();
         $dtf = $relacao->getDtf();
 
-        if (isset($seg) and !isset($dtf)){
-            echo $seg->getLogin() . ' - ' . $dtf;
-            echo true;
-        } else {
-            echo false;
+        if ($seguidor != '' and $dtf == '' and $_POST['val'] == 'unfollow'){
+            $relacao->setDtf(date('Y-m-d H:i:s'));
+            $crud->delete($relacao);
+            echo 'unfollow';
+        } elseif (($seguidor == '' or  $dtf != '') and $_POST['val'] == 'follow') {
+            $crudUser = new UserCrud();
+            $relacao->setId(uniqid());
+            $relacao->setSeguidor($crudUser->getUser_byLogin($_COOKIE['login']));
+            $relacao->setSeguindo($crudUser->getUser_byLogin($_POST['user']));
+            $relacao->setDti(date('Y-m-d H:i:s'));
+            $relacao->setDtf('');
+            $crud->add($relacao);
+            echo 'follow';
         }
         break;
 
