@@ -34,9 +34,10 @@
             </div>
         </div>
     </div>
+    <!--Modal FIM -->
     <div id="oculta"></div>
     <div id="conteudo">
-        <div class="ui cards" id="cards">
+        <div class="ui link cards" id="cards">
             <?php foreach ($graficos as $grafico): ?>
                 <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico">
                     <a class="ui corner red label msgExcluir">
@@ -60,7 +61,7 @@
                     </div>
                     <div class="extra content">
                         <a>
-                            <i class="users icon"></i>
+                            <i class="user icon"></i>
                             <?= $grafico->getUser() ?>
                         </a>
                     </div>

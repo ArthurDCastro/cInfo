@@ -16,10 +16,11 @@ require_once '../model/create/Dados.php';
 require_once '../model/create/User.php';
 require_once '../model/create/Seguidores.php';
 
+
 switch ($_POST['acao']){
     case 'perfil':
         include "../views/perfil_usuario.php";
-        break;
+    break;
 
     case 'graficos':
     $crud = new GraficoCrud();

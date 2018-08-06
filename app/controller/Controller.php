@@ -207,6 +207,7 @@
             } else {
                 rename($target_file, $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
             }
+
             echo '<img src="' . $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType . '">';
         }
 

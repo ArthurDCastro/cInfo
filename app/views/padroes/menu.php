@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="assets/vendor/front/semantic/components/dropdown.css">
     <script src="assets/vendor/front/semantic/components/dropdown.js"></script>
     <script src="assets/front_end/js/menu.js"></script>
+    <script src="assets/front_end/js/perfil.js"></script>
 
 </head>
 
