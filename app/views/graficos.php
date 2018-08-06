@@ -15,7 +15,7 @@
     </div>
 <?php else: ?>
     <!--Modal  -->
-    <div class="ui basic modal">
+    <div class="ui basic modal" id="modal_excluir">
         <div class="ui icon header">
             <i class="trash alternate outline icon"></i>
             Excluir Gráfico
@@ -28,7 +28,7 @@
                 <i class="remove icon"></i>
                 Não
             </div>
-            <div class="ui green ok inverted button excluir">
+            <div class="ui green ok inverted button" id="excluir">
                 <i class="checkmark icon"></i>
                 Sim
             </div>

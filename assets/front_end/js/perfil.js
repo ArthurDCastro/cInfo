@@ -42,18 +42,6 @@ $(document).ready(function() {
         );
     });
 
-    $('.excluir').click(function () {
-
-        $.post('app/controller/perfil.php',
-            {
-                acao: 'excluir',
-                id: $('#oculta').html()
-            }, function (dados) {
-                $('#conteudo').html(dados);
-            }
-        );
-    });
-
     $('#seguidores').click(function () {
         $('.item').removeClass('active');
 

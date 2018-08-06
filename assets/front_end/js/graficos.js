@@ -2,9 +2,24 @@ $(document).ready(function() {
     $('#oculta').hide();
 
     $('.msgExcluir').click(function () {
-        $('.ui.basic.modal').modal('show');
-        var id = $(this).parent().attr('id')
-        $('#oculta').html(id);
+        $('#modal_excluir').modal('show');
+        var id = $(this).parent().attr('id');
+        $('#oculta').text(id);
+    });
+
+    $('#excluir').click(function () {
+
+        $.post('app/controller/perfil.php',
+            {
+                acao: 'excluir',
+                id: $('#oculta').text()
+            }, function (dados) {
+                $('#conteudo').html(dados);
+            }
+        );
+
+        $('#oculta').text('');
+
     });
 
 
@@ -35,6 +50,7 @@ $(document).ready(function() {
         var ctx = document.getElementById('grafico-' + id).getContext('2d');
         var myChart = new Chart(ctx, {
             type: $('#tipo-' + id).text(),
+
             data: {
                 datasets: [{
                     data: dados,
@@ -66,19 +82,17 @@ $(document).ready(function() {
                     ],
                     borderWidth: 0
                 }],
-
-                // These labels appear in the legend and in the tooltips when hovering different arcs
                 labels: label
             },
-            options: {
-                legend: {
-                    display: true,
-                    hidden: true
-                }
+            title: {
+                display: true,
+                position: 'top',
+                text: 'olhai'
             }
 
         });
     });
 });
 
-Chart.default.global.legend.display = false;
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.tooltips.enabled = false;
