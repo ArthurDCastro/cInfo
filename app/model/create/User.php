@@ -13,14 +13,16 @@ class User
     private $password;
     private $nome;
     private $email;
+    private $foto;
 
-    public function __construct($tipo_user = '', $login = '', $password = '', $nome = '', $email = '')
+    public function __construct($tipo_user = '', $login = '', $password = '', $nome = '', $email = '', $foto = '')
     {
         $this->tipo_user = $tipo_user;
         $this->login = $login;
         $this->password = $password;
         $this->nome = $nome;
         $this->email = $email;
+        $this->foto = $foto;
     }
 
     public function insert(){
@@ -30,7 +32,8 @@ class User
             'login'     => $this->login,
             'tipo_user' => $this->tipo_user,
             'password'  => crypt($this->password),
-            'email'     => $this->email
+            'email'     => $this->email,
+            'foto'      => $this->foto
         ];
     }
 
@@ -112,6 +115,22 @@ class User
     public function setEmail($email): void
     {
         $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFoto(): string
+    {
+        return $this->foto;
+    }
+
+    /**
+     * @param string $foto
+     */
+    public function setFoto(string $foto): void
+    {
+        $this->foto = $foto;
     }
 
 

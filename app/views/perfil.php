@@ -4,7 +4,11 @@
 <br><br><br><br><br><br>
 
 <div class="ui container">
-    <img id="borda" class="ui centered small circular image" src="assets/files/img/lazinha.jpg">
+    <?php if ( isset( $data['foto'])): ?>
+        <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
+    <?php else: ?>
+        <img id="borda" class="ui centered small circular image">
+    <?php endif; ?>
     <div class="ui top attached tabular menu">
         <a id="perfil" class="active item">
             Perfil
