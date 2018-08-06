@@ -7,7 +7,7 @@
                 <div class="image">
                 </div>
                 <div class="content">
-                    <a class="header"><?= $s->getSeguindo()->getNome()   ?></a>
+                    <a href="perfil/<?= $s->getSeguindo()->getLogin() ?>" class="header"><?= $s->getSeguindo()->getLogin()   ?></a>
                 </div>
             </div>
         <?php endforeach; ?>
