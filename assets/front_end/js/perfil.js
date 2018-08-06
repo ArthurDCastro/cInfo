@@ -42,24 +42,12 @@ $(document).ready(function() {
         );
     });
 
-    $('.excluir').click(function () {
-
-        $.post('app/controller/perfil.php',
-            {
-                acao: 'excluir',
-                id: $('#oculta').html()
-            }, function (dados) {
-                $('#conteudo').html(dados);
-            }
-        );
-    });
-
     $('.individual').click(function () {
 
         $.post('app/controller/perfil.php',
             {
                 acao: 'individual',
-                id: $(this).parent().attr('id'),
+                id: $(this).parent().attr('id')
             }, function (dados) {
                 $('#conteudo').html(dados);
             }

@@ -1,15 +1,13 @@
 $(document).ready(function() {
-    //$('#oculta').hide();
+    $('#oculta').hide();
 
-    $('.msgExcluirasd').click(function () {
+    $('.msgExcluir').click(function () {
         var id = $(this).parent().attr('id');
-        var txt = document.getElementById('oculta').textContent;
-        alert(id + '-' + txt);
-        if (id =! txt){
+        var txt = $('#oculta').html();
+        if (id != txt){
             $('#modal_excluir').modal('show');
             $('#oculta').html(id)
         }
-
     });
 
     $('#excluir').click(function () {
@@ -23,8 +21,6 @@ $(document).ready(function() {
                 $('#conteudo').html(dados);
             }
         );
-       alert('olhai');
-
     });
 
     $('.info').hide();
@@ -51,7 +47,7 @@ $(document).ready(function() {
             }
         }
 
-        var ctx = document.getElementById('grafico-' + id).getContext('2d');
+        var ctx = document.getElementById('chart-' + id).getContext('2d');
         var myChart = new Chart(ctx, {
             type: $('#tipo-' + id).text(),
 
