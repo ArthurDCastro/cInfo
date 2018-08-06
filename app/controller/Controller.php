@@ -128,6 +128,10 @@
             $data['url'] = @$this->getDataUrl();
 
             $data['user'] = $this->user->crud->getUser_byLogin($data['url'][0]);
+            $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
+            $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
+            $data['seguindo'] = $this->seguidores->crud->getSeguindo_bySeguidor($data['user']->getLogin());
+
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
