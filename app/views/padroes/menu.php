@@ -51,14 +51,14 @@
                     <?php if (isset($_COOKIE['login'])): ?>
                         <div class="item"></div>
 
-                        <div id="some" class="ui dropdown">
+                        <div id="some" class="ui item dropdown">
                             <img class="ui avatar image" src="assets/files/img/avatar/small/helen.jpg">
                             <?= $_COOKIE['login'] ?>
                             <i class="dropdown icon"></i>
                             <div class="menu">
-                                <a class="item" href="perfil">Perfil</a>
-                                <a class="item" href="amigos">Amigos</a>
-                                <a class="item" href="graficos">Gráficos</a>
+                                <a class="item" href="perfil/my">Perfil</a>
+                                <a class="item" href="perfil/amigos">Amigos</a>
+                                <a class="item" href="perfil/graficos">Gráficos</a>
                                 <a class="inverted red item" href="logout">Sair</a>
                             </div>
                         </div>
