@@ -23,8 +23,8 @@
             $this->user = new GetClass('User');
             $this->dados = new GetClass('Dados');
             $this->grafico = new GetClass('Grafico');
-            $this->grafico = new GetClass('Seguidores');
-            $this->grafico = new GetClass('Postagem');
+            $this->seguidores = new GetClass('Seguidores');
+            $this->postagem = new GetClass('Postagem');
         }
 
         /**

@@ -4,7 +4,7 @@
         <?= $data['user']->getLogin(); ?>
         <button id="relacao" class="ui right floated basic blue circular button">Seguir</button>
     </h1>
-    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+    <div class="sub header">bio</div>
 </div>
 <h4 class="ui horizontal divider header">
     Publicações

@@ -37,7 +37,7 @@
         <a id="graficos" class="item">
             <div class="ui mini horizontal statistic">
                 <div class="value">
-                    2,204
+                    <?= count($data['graficos']) ?>
                 </div>
                 <div class="label">
                     Gráficos
@@ -47,7 +47,7 @@
         <a id="seguidores" class="item">
             <div class="ui mini horizontal statistic">
                 <div class="value">
-                    2,204
+                    <?= count($data['seguidores']) ?>
                 </div>
                 <div class="label">
                     Seguidores
@@ -57,7 +57,7 @@
         <a  id="seguindo" class="item">
             <div class="ui mini horizontal statistic">
                 <div class="value">
-                    2,204
+                    <?= count($data['seguindo']) ?>
                 </div>
                 <div class="label">
                     Seguindo
