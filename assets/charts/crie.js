@@ -63,13 +63,7 @@ $(document).ready(function(){
                             // These labels appear in the legend and in the tooltips when hovering different arcs
                             labels: label
                         },
-                        title: {
-                            display: true,
-                            position: 'top',
-                            text: $('#titulo').val()
-                        },
                         options: {
-                            events: ['click'],
                             legend: {
                                 display: true,
                                 hidden: true
