@@ -67,7 +67,7 @@ switch ($_POST['acao']){
 
     case 'individual':
         $crud = new GraficoCrud();
-        $grafico = $crud->getGraficos_byCodigo($_POST['codigo']);
+        $grafico = $crud->getGraficos_byCodigo($_POST['id']);
 
         include "../views/grafico_individual.php";
         break;
