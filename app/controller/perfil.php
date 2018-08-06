@@ -58,4 +58,8 @@ switch ($_POST['acao']){
     case 'editar':
         include "../views/editar_perfil.php";
         break;
+
+    case 'addFoto':
+
+        break;
 }

@@ -1,4 +1,8 @@
 #borda{
     border-style: solid;
     border-color: #e8e8e8;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
 }

@@ -1,4 +1,19 @@
 $(document).ready(function() {
+    $('.blurring.dimmable.image').dimmer({
+        on: 'hover'
+    });
+
+    $('#fileinfo').hide();
+
+    $('#input_foto').click(function () {
+        $('#fileToUpload').trigger('click');
+    });
+
+    $('#fileToUpload').change(function () {
+        $('#submit').trigger('click');
+    });
+
+
     $('#perfil').click(function () {
         $('.item').removeClass('active');
 
