@@ -63,7 +63,8 @@
                         <div class="default text">Selecione o Tipo de Gráfico</div>
                         <div class="menu">
                             <div class="item" data-value="pie"><i class="pie chart icon"></i>Pizza</div>
-                            <div class="item" data-value="doughnut"><i class="pie chart icon"></i>Donut</div>
+                            <div class="item" data-value="doughnut"><i class="dot circle icon"></i>Donut</div>
+                            <div class="item" data-value="polarArea"><i class="bullseye icon"></i>Area Polar</div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +136,7 @@
         Gráfico Salvo
     </div>
     <div class="content">
-        <p>Seu gráfico foi salvo com sucesso, ele esta disponivel no seu <a href="graficos">portifolio de graficos</a>. Se quiser compartilhar em outras redes sociais ou apenas exportar só clicar em continuar e em seguida no botão compartilhar.</p>
+        <p>Seu gráfico foi salvo com sucesso, ele esta disponivel no seu <b><a href="graficos">portifolio de graficos</a></b>. Se quiser compartilhar em outras redes sociais ou apenas exportar só clicar em continuar e em seguida no botão compartilhar.</p>
     </div>
     <div class="actions">
 
