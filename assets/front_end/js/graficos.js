@@ -22,7 +22,6 @@ $(document).ready(function() {
 
     });
 
-
     $('.info').hide();
 
     $('.grafico').each(function () {

@@ -39,7 +39,7 @@
     <div id="conteudo">
         <div class="ui link cards" id="cards">
             <?php foreach ($graficos as $grafico): ?>
-                <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico">
+                <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico individual" >
                     <a class="ui corner red label msgExcluir">
                         <i class="remove icon"></i>
                     </a>
@@ -48,7 +48,7 @@
                         <?php foreach ($grafico->getDados() as $dado): ?>
                             <div class="nome"><?= $dado['nome']?></div>
                             <div class="gasto"><?= $dado['gasto']?></div>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
                     </div>
                     <div class="image" style="padding: 15px">
                         <canvas id="grafico-<?= $grafico->getCodigo() ?>" width="100" height="100"></canvas>

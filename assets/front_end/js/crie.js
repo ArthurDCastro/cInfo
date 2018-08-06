@@ -26,8 +26,6 @@ $(document).ready(function() {
         $('#grafico').remove();
     });
 
-
-
     $('#id').hide();
 
     $('#titulo').change(function () {

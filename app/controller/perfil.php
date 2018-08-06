@@ -18,6 +18,7 @@ require_once '../model/create/Seguidores.php';
 
 
 switch ($_POST['acao']){
+
     case 'perfil':
         include "../views/perfil_usuario.php";
     break;
@@ -62,5 +63,9 @@ switch ($_POST['acao']){
 
     case 'addFoto':
 
+        break;
+
+    case 'grafico_individual':
+        include "../views/grafico_individual.php";
         break;
 }
