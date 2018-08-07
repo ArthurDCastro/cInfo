@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="assets/front_end/css/graficos.css">
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
 <script type="text/javascript" src="assets/front_end/js/graficos.js"></script>
-
+<!--TODO tirar excluir para outros users-->
 <?php  if (!isset($graficos)): ?>
     <div class="ui middle aligned center aligned grid">
         <div class="ui container" id="erro">

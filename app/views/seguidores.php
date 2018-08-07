@@ -7,7 +7,7 @@
 
                 </div>
                 <div class="content">
-                    <a class="header"><?= $s->getSeguidor()->getNome() ?></a>
+                    <a href="perfil/<?= $s->getSeguidor()->getLogin() ?>" class="header"><?= $s->getSeguidor()->getLogin() ?></a>
                 </div>
             </div>
         <?php endforeach; ?>

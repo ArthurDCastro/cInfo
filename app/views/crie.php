@@ -115,10 +115,11 @@
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui vertical animated blue basic small button" tabindex="0" id="export">
+                        <div class="ui blue basic small pointing dropdown button" tabindex="0">
                             <div class="visible content">Compartilhar</div>
-                            <div class="hidden content">
-                                <i class="share icon"></i>
+                            <div class="ui menu">
+                                <div class="active blue item">Publicar</div>
+                                <div class="active red item">Exportar</div>
                             </div>
                         </div>
                     </div>
@@ -139,17 +140,15 @@
         <p>Seu gráfico foi salvo com sucesso, ele esta disponivel no seu <b><a href="graficos">portifolio de graficos</a></b>. Se quiser compartilhar em outras redes sociais ou apenas exportar só clicar em continuar e em seguida no botão compartilhar.</p>
     </div>
     <div class="actions">
-
+        <div class="ui blue ok inverted button" id="clear">
+            <i class="checkmark icon"></i>
+            Criar outro grafico
+        </div>
         <div class="ui green ok inverted button">
             <i class="checkmark icon"></i>
             Continuar
         </div>
     </div>
-</div>
-
-
-<div id="img-out">
-    <a id="salvar"></a>
 </div>
 
 

@@ -26,6 +26,10 @@ $(document).ready(function() {
         $('#grafico').remove();
     });
 
+    $('#clear').click(function () {
+        $('.clear').trigger("click");
+    });
+
     $('#id').hide();
 
     $('#titulo').change(function () {
