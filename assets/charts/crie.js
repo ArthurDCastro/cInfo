@@ -4,6 +4,7 @@ $(document).ready(function(){
         if( $('.ui.form').form('is valid')) {
             $('#grafico').remove();
             $('#chart').html('<div id="grafico"><canvas id="myChart" width="400" height="500"></canvas></div>').hide();
+            $('#chartModal').html('<div id="graficoModal"><canvas id="myChartModal" width="400" height="400"></canvas></div>');
 
             var gastos = $('#gasto').val();
 
@@ -25,7 +26,8 @@ $(document).ready(function(){
                     }
 
                     var ctx = document.getElementById("myChart").getContext('2d');
-                    var myChart = new Chart(ctx, {
+                    var cty = document.getElementById("myChartModal").getContext('2d');
+                    var values = {
                         type: $('#tipo').val(),
                         data: {
                             datasets: [{
@@ -69,7 +71,10 @@ $(document).ready(function(){
                             }
                         }
 
-                    });
+                    };
+                    var myChart = new Chart(ctx, values);
+                    var myChartModal = new Chart(cty, values);
+
 
 
                 });
