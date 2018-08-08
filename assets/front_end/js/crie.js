@@ -76,7 +76,7 @@ $(document).ready(function() {
                 }, function (dados) {
                     var dado = JSON.parse(dados);
 
-                    $('.ui.basic.modal')
+                    $('#salvo')
                         .modal('show')
                     ;
 
@@ -88,7 +88,12 @@ $(document).ready(function() {
 
     });
 
-    function saveAs(uri, filename) {
+    $('#share').click(function () {
+        $('#tituloModal').html($('#titulo').val());
+        $('#publicar').modal('show');
+    });
+
+    /*function saveAs(uri, filename) {
 
         var link = document.createElement('a');
 
@@ -131,7 +136,7 @@ $(document).ready(function() {
                 });
             }
         });
-    });
+    });*/
 
 
 });

@@ -1,5 +1,6 @@
 <script type="text/javascript" src="assets/vendor/front/html2canvas/html2canvas.js"></script>
 <script type="text/javascript" src="assets/vendor/front/semantic/components/form.js"></script>
+<script type="text/javascript" src="assets/vendor/front/semantic/components/modal.js"></script>
 
 <script type="text/javascript" src="assets/front_end/js/crie.js"></script>
 <script type="text/javascript" src="assets/charts/crie.js"></script>
@@ -7,6 +8,7 @@
 <link rel="stylesheet" href="assets/front_end/css/crie.css">
 
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/form.css">
+<link rel="stylesheet" href="assets/vendor/front/semantic/components/modal.css">
 
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">
     <div class="seven wide column ui segment center aligned">
@@ -115,11 +117,10 @@
                         </div>
                     </div>
                     <div class="field">
-                        <div class="ui blue basic small pointing dropdown button" tabindex="0">
+                        <div class="ui vertical animated blue basic small button" tabindex="0" id="share">
                             <div class="visible content">Compartilhar</div>
-                            <div class="ui menu">
-                                <div class="active blue item">Publicar</div>
-                                <div class="active red item">Exportar</div>
+                            <div class="hidden content">
+                                <i class="share icon"></i>
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,7 @@
 </div>
 
 <!-- Confirmação de salvo -->
-<div class="ui basic modal">
+<div class="ui basic modal" id="salvo">
     <div class="ui icon header">
         <i class="save icon"></i>
         Gráfico Salvo
@@ -151,4 +152,45 @@
     </div>
 </div>
 
+<div class="ui fullscreen modal" id="publicar">
+    <i class="close icon"></i>
+    <div class="header" id="tituloModal">
 
+    </div>
+    <div class="scrolling image content">
+        <div class="ui large image">
+            <div id="chartModal" style=" width:400px; height:500px"></div>
+        </div>
+        <div class="description" style="width: 100%">
+            <div class="ui feed">
+                <div class="event">
+                    <div class="label">
+                        <img src="assets/files/img/avatar/small/joe.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="summary">
+                            <a id="userModal"></a>
+                            <div class="date" id="dataModal">
+                                agora mesmo
+                            </div>
+                        </div>
+                        <div class="ui form">
+                            <div class="field">
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Nope
+        </div>
+        <div class="ui positive right labeled icon button">
+            Yep, that's me
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
