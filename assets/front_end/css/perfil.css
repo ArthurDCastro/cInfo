@@ -6,3 +6,11 @@
     justify-content: center;
     align-items: center
 }
+
+#trap{
+    background-image: linear-gradient( to bottom, transparent, transparent, transparent, white 70%), url("../../files/img/4.jpg") ;
+    background-size: 100%;
+    background-position: top;
+    position: relative;
+
+}

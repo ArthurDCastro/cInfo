@@ -3,28 +3,28 @@
 
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
 
-<br><br><br><br><br><br>
+<div id="trap">
+    <br><br><br><br><br><br>
+    <div class="ui container">
+        <?php if ( isset( $data['foto'])): ?>
+            <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
+        <?php else: ?>
+            <div id="borda" class="ui centered small circular image blurring dimmable">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <form id="fileinfo" action="addFoto" method="post" enctype="multipart/form-data">
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input type="submit" id="submit">
+                            </form>
 
-<div class="ui container">
-    <?php if ( isset( $data['foto'])): ?>
-        <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
-    <?php else: ?>
-        <div id="borda" class="ui centered small circular image blurring dimmable">
-            <div class="ui dimmer">
-                <div class="content">
-                    <div class="center">
-                        <form id="fileinfo" action="addFoto" method="post" enctype="multipart/form-data">
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" id="submit">
-                        </form>
-
-                        <div class="ui inverted button" id="input_foto">Add Foto</div>
+                            <div class="ui inverted button" id="input_foto">Add Foto</div>
+                        </div>
                     </div>
                 </div>
+                <img src="assets/files/img/image.png">
             </div>
-            <img src="assets/files/img/image.png">
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
     <div class="ui header">
         <h1 class="ui left floated blue header" style="width: 100%">
             <?= $data['user']->getLogin(); ?>
@@ -94,7 +94,7 @@
         </div>
     </div>
 </div>
-
 <div id="user"><?= $data['user']->getLogin(); ?></div>
-
 <br>
+</div>
+

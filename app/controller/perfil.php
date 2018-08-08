@@ -35,7 +35,6 @@ switch ($_POST['acao']){
     $crud = new GraficoCrud();
     $graficos = $crud->getGraficos_byUser($_POST['user']);
 
-
     include "../views/graficos.php";
     break;
 

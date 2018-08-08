@@ -84,12 +84,6 @@ $(document).ready(function() {
                 }],
                 labels: label
             },
-            title: {
-                display: true,
-                position: 'top',
-                text: 'olhai'
-            }
-
         });
     });
 });
