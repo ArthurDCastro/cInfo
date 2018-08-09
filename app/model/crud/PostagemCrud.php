@@ -44,10 +44,17 @@ class PostagemCrud
     public function getPublicacoes_bySeguindo(array $seguidores){
         $list = [];
         foreach ($seguidores as $seguidor){
-            $list[] = $this->getData(['user' => $seguidor]);
+            $data = $this->getData(['user' => $seguidor]);
+            if (count($data) > 1){
+                $list[] = $data;
+            }
         }
 
-        return $list;
+        if (isset($list[0])){
+            return $list;
+        } else {
+            return null;
+        }
     }
 
     public function getPublicacoes_byUser($user){

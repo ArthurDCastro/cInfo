@@ -115,7 +115,7 @@
 
             $seguidores = $this->seguidores->crud->getSeguindo_bySeguidor($_COOKIE['login']);
 
-            $data['publicacoes'] = $this->publicacoes->crud->getPublicacoes_bySeguindo($seguidores);
+            $data['publicacoes'] = $this->postagem->crud->getPublicacoes_bySeguindo($seguidores);
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
