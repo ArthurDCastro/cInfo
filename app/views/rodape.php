@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <h5 class="ui inverted header">Vnicius Peres</h5>
+                        <h5 class="ui inverted header">Vinicius Peres</h5>
                         <div class="inverted link list">
                             <a href="https://github.com/ohperes" class="item" target="_blank">
                                 <i class="github icon"></i>
