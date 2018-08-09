@@ -3,6 +3,10 @@
 <script rel="stylesheet" src="assets/charts/feed.js"></script>
 <br><br><br><br>
 <div class="ui container segment" id="article">
+    <pre>
+        <?php var_dump($data['publicacoes']);?>
+    </pre>
+    <?php if (isset($data['publicacoes'])): ?>
     <div class="ui feed">
 
         <div class="event">
@@ -341,4 +345,5 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 </div>
