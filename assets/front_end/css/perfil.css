@@ -4,11 +4,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    margin-top: 9%;
+    border-width: 4px;
 }
 
 #trap{
-    background-image: linear-gradient( to bottom, transparent, transparent, transparent, white 70%), url("../../files/img/4.jpg") ;
+    background-image: linear-gradient( to bottom, transparent 85%, white, white, white,white,white), url("../../files/img/capa.jpg");
     background-size: 100%;
     background-position: top;
     position: relative;

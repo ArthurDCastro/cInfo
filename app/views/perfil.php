@@ -2,10 +2,7 @@
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/button.css">
 
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
-
-<div id="trap">
-    <br><br><br><br><br><br>
-    <div class="ui container">
+    <div id="trap"><br>
         <?php if ( isset( $data['foto'])): ?>
             <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
         <?php else: ?>
@@ -17,7 +14,6 @@
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" id="submit">
                             </form>
-
                             <div class="ui inverted button" id="input_foto">Add Foto</div>
                         </div>
                     </div>
@@ -25,6 +21,8 @@
                 <img src="assets/files/img/image.png">
             </div>
         <?php endif; ?>
+    </div>
+    <div class="ui container">
     <div class="ui header">
         <h1 class="ui left floated blue header" style="width: 100%">
             <?= $data['user']->getLogin(); ?>

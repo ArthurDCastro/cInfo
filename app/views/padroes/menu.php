@@ -53,7 +53,7 @@
                             <?= $_COOKIE['login'] ?>
                         </a>
 
-                        <a class="item" href="logout">Sair</a>
+                        <a id="some" class="item" href="logout">Sair</a>
                     <?php else: ?>
                             <a id="some" href="login" class="item some">Login</a>
                             <a id="some" href="cadastro" class="item some">Cadastre-se</a>
