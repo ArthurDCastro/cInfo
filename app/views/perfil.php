@@ -5,7 +5,7 @@
     <div id="trap"><br>
         <?php if ( isset( $data['foto'])): ?>
             <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
-        <?php else: ?>
+        <?php elseif ($data['user']->getLogin() == $_COOKIE['login']): ?>
             <div id="borda" class="ui centered small circular image blurring dimmable">
                 <div class="ui dimmer">
                     <div class="content">
@@ -20,6 +20,8 @@
                 </div>
                 <img src="assets/files/img/image.png">
             </div>
+        <?php else: ?>
+            <img id="borda" class="ui centered small circular image" src="assets/files/img/image.png">
         <?php endif; ?>
     </div>
     <div class="ui container">

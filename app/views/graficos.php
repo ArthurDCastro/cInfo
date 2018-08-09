@@ -15,6 +15,7 @@
     </div>
 <?php else: ?>
     <!--Modal  -->
+<?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
     <div class="ui basic modal" id="modal_excluir">
         <div class="ui icon header">
             <i class="trash alternate outline icon"></i>
@@ -34,14 +35,17 @@
             </div>
         </div>
     </div>
+<?php endif; ?>
     <!--Modal FIM -->
     <div id="oculta"></div>
         <div class="ui link cards" id="cards">
             <?php foreach ($graficos as $grafico): ?>
                 <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico" >
-                    <a class="ui corner red label msgExcluir">
-                        <i class="remove icon"></i>
-                    </a>
+                    <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
+                        <a class="ui corner red label msgExcluir">
+                            <i class="remove icon"></i>
+                        </a>
+                    <?php endif; ?>
                     <div class="info">
                         <div id="tipo-<?= $grafico->getCodigo() ?>"><?= $grafico->getTipo() ?></div>
                         <?php foreach ($grafico->getDados() as $dado): ?>
