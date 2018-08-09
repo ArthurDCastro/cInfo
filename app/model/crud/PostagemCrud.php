@@ -60,4 +60,13 @@ class PostagemCrud
     public function getPublicacoes_byUser($user){
         return $this->getData(['user' => $user]);
     }
+
+    public function add(Postagem $postagem){
+
+        $bulk = new MongoDB\Driver\BulkWrite;
+
+        $bulk->insert($postagem->insert());
+
+        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+    }
 }

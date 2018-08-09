@@ -123,6 +123,18 @@
             $this->loadView('rodape.php', $data);
         }
 
+        public function post(){
+            $url = $this->getDataUrl();
+            $post = new Postagem($_COOKIE['login'], $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'));
+
+            echo '<pre>';
+            var_dump($post);
+            echo '</pre>';
+            $this->postagem->crud->add($post);
+
+            header('Location: ../feed');
+        }
+
         public function perfil(){
             $data['titulo_pagina'] = 'cInfo - Perfil';
             $data['url'] = @$this->getDataUrl();

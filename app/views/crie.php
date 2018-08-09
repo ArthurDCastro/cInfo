@@ -157,40 +157,42 @@
     <div class="header" id="tituloModal">
 
     </div>
-    <div class="scrolling image content">
-        <div class="ui large image">
-            <div id="chartModal" style=" width:400px; height:500px"></div>
-        </div>
-        <div class="description" style="width: 100%">
-            <div class="ui feed">
-                <div class="event">
-                    <div class="label">
-                        <img src="assets/files/img/avatar/small/joe.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a id="userModal"></a>
-                            <div class="date" id="dataModal">
-                                agora mesmo
-                            </div>
+    <form id="post" action="post" method="post">
+        <div class="scrolling image content">
+            <div class="ui large image">
+                <div id="chartModal" style=" width:400px; height:500px"></div>
+            </div>
+            <div class="description" style="width: 100%">
+                <div class="ui feed">
+                    <div class="event">
+                        <div class="label">
+                            <img src="assets/files/img/avatar/small/joe.jpg">
                         </div>
-                        <div class="ui form">
-                            <div class="field">
-                                <textarea></textarea>
+                        <div class="content">
+                            <div class="summary">
+                                <a id="userModal"><?=$_COOKIE['login']?></a>
+                                <div class="date" id="dataModal">
+                                    agora mesmo
+                                </div>
+                            </div>
+                            <div class="ui form">
+                                <div class="field">
+                                    <textarea name="descricao"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="actions">
-        <div class="ui black deny button">
-            Nope
+        <div class="actions">
+            <div class="ui black deny button">
+                Cancelar
+            </div>
+            <button type="submit" class="ui positive right labeled icon button">
+                Postar
+                <i class="checkmark icon"></i>
+            </button>
         </div>
-        <div class="ui positive right labeled icon button">
-            Yep, that's me
-            <i class="checkmark icon"></i>
-        </div>
-    </div>
+    </form>
 </div>

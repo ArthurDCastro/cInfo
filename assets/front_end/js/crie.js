@@ -2,6 +2,8 @@ $(document).ready(function() {
 
     //$("#img-out").hide();
 
+    $('#share').hide();
+
     $('.ui.form')
         .form({
             fields: {
@@ -80,7 +82,8 @@ $(document).ready(function() {
                         .modal('show')
                     ;
 
-                    $('#id').val(dado['codigo'])
+                    $('#id').val(dado['codigo']);
+                    $('#share').show();
                 })
         } else {
             $('.ui.form').form('validate form')
@@ -90,6 +93,7 @@ $(document).ready(function() {
 
     $('#share').click(function () {
         $('#tituloModal').html($('#titulo').val());
+        $('#post').attr('action',$('#post').attr('action') + '/' + $('#id').val());
         $('#publicar').modal('show');
     });
 

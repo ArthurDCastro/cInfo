@@ -6,7 +6,7 @@
     <pre>
         <?php var_dump($data['publicacoes']);?>
     </pre>
-    <?php if (isset($data['publicacoes'])): ?>
+    <?php //if (isset($data['publicacoes'])): ?>
     <div class="ui feed">
 
         <div class="event">
@@ -345,5 +345,18 @@
             </div>
         </div>
     </div>
-    <?php endif; ?>
+    <?php //else: ?>
+        <div class="ui middle aligned center aligned grid" id="div1">
+            <div class="ui container">
+
+                <div class="ui warning message">
+                    <div class="header">
+                        Sem postagens
+                    </div>
+                    <p>Ops, seus seguidores ainda não postaram nenhum <gráfico class="."></gráfico></p>
+                </div>
+            </div>
+        </div>
+        <br>
+    <?php //endif; ?>
 </div>

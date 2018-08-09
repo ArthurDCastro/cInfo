@@ -11,6 +11,7 @@ class Comentarios
     private $user;
     private $comentario;
     private $data;
+    private $codigo;
 
     /**
      * Comentarios constructor.
@@ -18,12 +19,31 @@ class Comentarios
      * @param $comentario
      * @param $data
      */
-    public function __construct($user, $comentario, $data)
+    public function __construct($user = '', $comentario = '', $data = '', $codigo = '')
     {
         $this->user = $user;
         $this->comentario = $comentario;
         $this->data = $data;
+        $this->codigo = $codigo;
     }
+
+    /**
+     * @return string
+     */
+    public function getCodigo(): string
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * @param string $codigo
+     */
+    public function setCodigo(string $codigo): void
+    {
+        $this->codigo = $codigo;
+    }
+
+
 
     /**
      * @return mixed

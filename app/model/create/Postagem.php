@@ -25,7 +25,7 @@ class Postagem
      * @param $like
      * @param $data
      */
-    public function __construct(User $user, Grafico $grafico, string $descricao, $comentarios, array $like, string $data)
+    public function __construct($user, $grafico, $descricao, $comentarios, array $like, string $data)
     {
         $this->user = $user;
         $this->grafico = $grafico;
@@ -33,6 +33,24 @@ class Postagem
         $this->comentarios = $comentarios;
         $this->like = $like;
         $this->data = $data;
+    }
+
+    public function insert(){
+        $comentarios = [];
+        foreach ($this->comentarios as $coment){
+            $comentarios[] = $coment->getCodigo();
+        }
+
+
+        return [
+            '_id'       => new MongoDB\BSON\ObjectId,
+            'user'      => $this->user,
+            'grafico'     => $this->grafico,
+            'descricao' => $this->descricao,
+            'comentarios'  => $comentarios,
+            'like'     => $this->like,
+            'data'      => $this->data
+        ];
     }
 
     /**
