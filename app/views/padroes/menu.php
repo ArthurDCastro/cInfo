@@ -108,14 +108,6 @@
             <i class="id card icon"></i>
             Perfil
         </a>
-        <a href="amigos" class="item user_option">
-            <i class="users icon"></i>
-            Amigos
-        </a>
-        <a href="graficos" class="item user_option">
-            <i class="chart pie icon"></i>
-            Gráficos
-        </a>
         <a href="logout" class="item user_option">
             <i class="power off icon"></i>
             Sair
