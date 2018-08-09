@@ -38,7 +38,14 @@ class GraficoCrud
             $array = (array) $document;
         }
 
-        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $array['dados']);
+        $dados = [];
+        $dado = new DadosCrud();
+        foreach ($array['dados'] as $da){
+            $i = (array) $da;
+            $dados[] =  $dado->getDados_byCodigo($i['codigo']);
+        }
+
+        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $dados);
     }
 
     public function getGraficos_byUser($login){

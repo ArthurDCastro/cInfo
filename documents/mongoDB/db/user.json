@@ -7,7 +7,8 @@
         "login": "LukDuk",
         "tipo_user": "admin",
         "password": "$1$dDGzb8e3$8XfEfjr7TKdD8Yc6h3P.h\/",
-        "email": "arthurcastro078@gmail.com"
+        "email": "arthurcastro078@gmail.com",
+        "foto": ""
     },
     {
         "_id": {
@@ -17,7 +18,8 @@
         "login": "Tekislla",
         "tipo_user": "admin",
         "password": "$1$LxsQRnGK$vfk199RZXquz2AiSrnoeS1",
-        "email": "jplazarim@gmail.com"
+        "email": "jplazarim@gmail.com",
+        "foto": ""
     },
     {
         "_id": {
@@ -27,26 +29,18 @@
         "login": "ohPeres",
         "tipo_user": "admin",
         "password": "$1$ldqy0aHh$JvJnRCjiQOVUzE8Dy4mzh1",
-        "email": "peresvini2@gmail.com"
+        "email": "peresvini2@gmail.com",
+        "foto": ""
     },
     {
         "_id": {
-            "$oid": "5b651c9a607d9e2de8004fd5"
-        },
-        "nome": "Bruno Luiz Fhynbeen da Silva",
-        "login": "Fhynbeen ",
-        "tipo_user": "comum",
-        "password": "$1$wSLTlG1c$irIBwkZUBnMpAZrmPznR6\/",
-        "email": "brunoluizfhynbeen@gmail.com"
-    },
-    {
-        "_id": {
-            "$oid": "5b67979e607d9e16d8007fbd"
+            "$oid": "5b68929e607d9e10ac007519"
         },
         "nome": "olhai",
-        "login": "eita",
+        "login": "olhai",
         "tipo_user": "comum",
-        "password": "$1$eZ823HOb$7aIZX520m.tVfuihhCaXX.",
-        "email": "eita@olhai"
+        "password": "$1$B0kP1Kor$.Dsm5y8dITsR\/LwwCWxZX0",
+        "email": "olah@olhia",
+        "foto": ""
     }
 ]

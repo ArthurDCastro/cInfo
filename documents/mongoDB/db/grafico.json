@@ -1,28 +1,6 @@
 [
     {
         "_id": {
-            "$oid": "5b67943a607d9e16d8007fba"
-        },
-        "codigo": "5b67943ac105c",
-        "titulo": "aa",
-        "tipo": "pie",
-        "data": "2018-08-06 02:20:10",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "CONAB - SEDE SUREG SAO PAULO",
-                "gasto": "25152208.36",
-                "codigo": "135325"
-            },
-            {
-                "nome": "CONAB SEDE SUREG ACRE",
-                "gasto": "4857126.76",
-                "codigo": "135605"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "5b6797ba607d9e16d8007fbe"
         },
         "codigo": "5b6797ba77f17",
@@ -40,6 +18,270 @@
                 "nome": "CONAB - SEDE SUREG SAO PAULO",
                 "gasto": "25152208.36",
                 "codigo": "135325"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b67ed3c607d9e16d8007fce"
+        },
+        "codigo": "5b67ed3c6290f",
+        "titulo": "asd",
+        "tipo": "polarArea",
+        "data": "2018-08-06 08:39:56",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "COO-GERAL GEST.PESSOL CIVIL MILITAR DO ANT.DF",
+                "gasto": "1101158965.34",
+                "codigo": "201064"
+            },
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b688205607d9e10ac007513"
+        },
+        "codigo": "5b688205e38ec",
+        "titulo": "a",
+        "tipo": "pie",
+        "data": "2018-08-06 19:14:45",
+        "user": null,
+        "dados": [
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            },
+            {
+                "nome": "ESCOLA NACIONAL DA ADMINISTRACAO PUBLICA-ENAP",
+                "gasto": "54795527.07",
+                "codigo": "47210"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b688207607d9e10ac007514"
+        },
+        "codigo": "5b68820712984",
+        "titulo": "a",
+        "tipo": "pie",
+        "data": "2018-08-06 19:14:47",
+        "user": null,
+        "dados": [
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            },
+            {
+                "nome": "ESCOLA NACIONAL DA ADMINISTRACAO PUBLICA-ENAP",
+                "gasto": "54795527.07",
+                "codigo": "47210"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d39b607d9e10ac00758a"
+        },
+        "codigo": "5b68d39bbf65a",
+        "titulo": "olhai",
+        "tipo": "doughnut",
+        "data": "2018-08-07 01:02:51",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
+                "gasto": "600172496.8",
+                "codigo": "201013"
+            },
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d62e607d9e10ac00758b"
+        },
+        "codigo": "5b68d62e9c4dc",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 01:13:50",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            },
+            {
+                "nome": "ESCOLA NACIONAL DA ADMINISTRACAO PUBLICA-ENAP",
+                "gasto": "54795527.07",
+                "codigo": "47210"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d662607d9e10ac00758c"
+        },
+        "codigo": "5b68d66244ee8",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 01:14:42",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "CENTRAL DE COMPRAS E CONTRATACOES - CENTRAL",
+                "gasto": "1571466.1",
+                "codigo": "201057"
+            },
+            {
+                "nome": "CENTRO CULTURAL PACO IMPERIAL-RJ",
+                "gasto": "2640162.28",
+                "codigo": "343023"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d6cf607d9e10ac00758d"
+        },
+        "codigo": "5b68d6cfc668c",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 01:19:11",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "AGENCIA NACIONAL DO CINEMA \u00b1 ANCINE",
+                "gasto": "873147194.39",
+                "codigo": "42206"
+            },
+            {
+                "nome": "ASSESSORIA DE COMUNICACAO SOCIAL",
+                "gasto": "10510426.8",
+                "codigo": "420017"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d7ff607d9e10ac00758e"
+        },
+        "codigo": "5b68d7ff2483b",
+        "titulo": "olhai",
+        "tipo": "doughnut",
+        "data": "2018-08-07 01:21:35",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "CONAB - SEDE SUREG SAO PAULO",
+                "gasto": "25152208.36",
+                "codigo": "135325"
+            },
+            {
+                "nome": "CONAB SEDE SUREG ACRE",
+                "gasto": "4857126.76",
+                "codigo": "135605"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d81d607d9e10ac00758f"
+        },
+        "codigo": "5b68d81d4537f",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 01:22:05",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
+                "gasto": "600172496.8",
+                "codigo": "201013"
+            },
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d85c607d9e10ac007590"
+        },
+        "codigo": "5b68d85cb0064",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 01:23:08",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            },
+            {
+                "nome": "ESCOLA NACIONAL DA ADMINISTRACAO PUBLICA-ENAP",
+                "gasto": "54795527.07",
+                "codigo": "47210"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b68d8a8607d9e10ac007591"
+        },
+        "codigo": "5b68d8a8261f3",
+        "titulo": "eita",
+        "tipo": "pie",
+        "data": "2018-08-07 01:24:24",
+        "user": "olhai",
+        "dados": [
+            {
+                "nome": "AGENCIA NACIONAL DE TELECOMUNICACOES-CE",
+                "gasto": "3144575.02",
+                "codigo": "413010"
+            },
+            {
+                "nome": "AGENCIA NACIONAL DE TELECOMUNICACOES-GO",
+                "gasto": "3229046.37",
+                "codigo": "413008"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b69d85f607d9e10ac007593"
+        },
+        "codigo": "5b69d85fabf28",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-07 19:35:27",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "BIBLIOTECA CENTRAL DA UFPB",
+                "gasto": "1903971.41",
+                "codigo": "153070"
+            },
+            {
+                "nome": "BIBLIOTECA CENTRAL DA UFPE",
+                "gasto": "106005.44",
+                "codigo": "153092"
             }
         ]
     }

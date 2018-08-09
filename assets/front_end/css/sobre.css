@@ -6,12 +6,19 @@
     padding: 10px;
 }
 #divLeft{
+    font-size: large;
     text-align: justify;
 }
 #divRight{
     text-align: justify;
+    font-size: large;
+
 }
 #img1{
     width: 90%;
-    height: 30%;
+    height: 40%;
+}
+
+#img2{
+width: 100%;
 }

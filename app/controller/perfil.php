@@ -33,6 +33,8 @@ switch ($_POST['acao']){
 
     case 'graficos':
     $crud = new GraficoCrud();
+    $crudUser = new UserCrud();
+    $data['user'] = $crudUser->getUser_byLogin($_POST['user']);
     $graficos = $crud->getGraficos_byUser($_POST['user']);
 
     include "../views/graficos.php";
@@ -40,8 +42,12 @@ switch ($_POST['acao']){
 
     case 'excluir':
         $crud = new GraficoCrud();
+        $crudUser = new UserCrud();
+        $data['user'] = $crudUser->getUser_byLogin($_POST['user']);
 
-        $crud->delete($_POST['id']);
+        if ($data['user']->getLogin() == $_COOKIE['login']){
+            $crud->delete($_POST['id']);
+        }
 
         $graficos = $crud->getGraficos_byUser($_POST['user']);
 
