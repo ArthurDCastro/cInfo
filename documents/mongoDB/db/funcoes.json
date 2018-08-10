@@ -1,175 +1,175 @@
 [
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6a"
+            "$oid": "5b6cc836607d9e19c0003f76"
         },
         "codigo": "22000",
         "nome": "Agricultura"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6b"
+            "$oid": "5b6cc836607d9e19c0003f77"
         },
         "codigo": "28000",
         "nome": "Com\u00e9rcio e Servi\u00e7os"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6c"
+            "$oid": "5b6cc836607d9e19c0003f78"
         },
         "codigo": "20113",
         "nome": "Administra\u00e7\u00e3o"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6d"
+            "$oid": "5b6cc836607d9e19c0003f79"
         },
         "codigo": "24000",
         "nome": "Ci\u00eancia e Tecnologia"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6e"
+            "$oid": "5b6cc836607d9e19c0003f7a"
         },
         "codigo": "39000",
         "nome": "Transporte"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f6f"
+            "$oid": "5b6cc836607d9e19c0003f7b"
         },
         "codigo": "42000",
         "nome": "Cultura"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f70"
+            "$oid": "5b6cc836607d9e19c0003f7c"
         },
         "codigo": "52000",
         "nome": "Defesa"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f71"
+            "$oid": "5b6cc836607d9e19c0003f7d"
         },
         "codigo": "26000",
         "nome": "Educa\u00e7\u00e3o"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f72"
+            "$oid": "5b6cc836607d9e19c0003f7e"
         },
         "codigo": "25000",
         "nome": "Fazenda"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f73"
+            "$oid": "5b6cc836607d9e19c0003f7f"
         },
         "codigo": "53000",
         "nome": "Integra\u00e7\u00e3o Nacional"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f74"
+            "$oid": "5b6cc836607d9e19c0003f80"
         },
         "codigo": "30000",
         "nome": "Seguran\u00e7a P\u00fablica"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f75"
+            "$oid": "5b6cc836607d9e19c0003f81"
         },
         "codigo": "33000",
         "nome": "Previdencia Social"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f76"
+            "$oid": "5b6cc836607d9e19c0003f82"
         },
         "codigo": "36000",
         "nome": "Sa\u00fade"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f77"
+            "$oid": "5b6cc836607d9e19c0003f83"
         },
         "codigo": "37000",
         "nome": "Transaparencia"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f78"
+            "$oid": "5b6cc836607d9e19c0003f84"
         },
         "codigo": "56000",
         "nome": "Cidades"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f79"
+            "$oid": "5b6cc836607d9e19c0003f85"
         },
         "codigo": "41000",
         "nome": "Comunica\u00e7\u00e3o"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7a"
+            "$oid": "5b6cc836607d9e19c0003f86"
         },
         "codigo": "35000",
         "nome": "Rela\u00e7\u00f5es Exteriores"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7b"
+            "$oid": "5b6cc836607d9e19c0003f87"
         },
         "codigo": "32000",
         "nome": "Energia"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7c"
+            "$oid": "5b6cc836607d9e19c0003f88"
         },
         "codigo": "55000",
         "nome": "Desenvolvimento Social"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7d"
+            "$oid": "5b6cc836607d9e19c0003f89"
         },
         "codigo": "51000",
         "nome": "Esporte"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7e"
+            "$oid": "5b6cc836607d9e19c0003f8a"
         },
         "codigo": "44000",
         "nome": "Meio Ambiente"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f7f"
+            "$oid": "5b6cc836607d9e19c0003f8b"
         },
         "codigo": "40000",
         "nome": "Trabalho"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f80"
+            "$oid": "5b6cc836607d9e19c0003f8c"
         },
         "codigo": "54000",
         "nome": "Turismo"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f81"
+            "$oid": "5b6cc836607d9e19c0003f8d"
         },
         "codigo": "81000",
         "nome": "Direitos Humanos"
     },
     {
         "_id": {
-            "$oid": "5b651c9b607d9e2de8005f82"
+            "$oid": "5b6cc836607d9e19c0003f8e"
         },
         "codigo": "20000",
         "nome": "Presidencia da Republica"

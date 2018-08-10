@@ -22,6 +22,9 @@ $config['banco'] = [
         ],
         'seguidores' => [
             'file'  => 'documents/mongoDB/db/seguidores.json'
+        ],
+        'postagem' => [
+            'file'  => 'documents/mongoDB/db/postagem.json'
         ]
     ]
 ];

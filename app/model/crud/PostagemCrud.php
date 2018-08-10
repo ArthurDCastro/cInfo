@@ -28,9 +28,9 @@ class PostagemCrud
             $user = $user->getUser_byLogin($array['user']);
 
             $grafico = new GraficoCrud();
-            $grafico = $grafico->getGraficos_byCodigo($array[$grafico]);
+            $grafico = $grafico->getGraficos_byCodigo($array['grafico']);
 
-            $list[] = new Postagem($user, $grafico, $array['descricao']);
+            $list[] = new Postagem($user, $grafico, $array['descricao'], $array['comentarios'], $array['like'], $array['data']);
         }
 
         return $list;
@@ -41,12 +41,16 @@ class PostagemCrud
         return $this->getData([]);
     }
 
-    public function getPublicacoes_bySeguindo(array $seguidores){
+    public function getPublicacoes_bySeguindo(array $seguidores, $user){
         $list = [];
+        $seguidores[] = $user;
+
         foreach ($seguidores as $seguidor){
             $data = $this->getData(['user' => $seguidor]);
-            if (count($data) > 1){
-                $list[] = $data;
+            if (count($data) >= 1){
+                foreach ($data as $dt){
+                    $list[] = $dt;
+                }
             }
         }
 

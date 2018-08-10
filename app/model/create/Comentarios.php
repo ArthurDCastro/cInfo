@@ -12,6 +12,7 @@ class Comentarios
     private $comentario;
     private $data;
     private $codigo;
+    private $postagem;
 
     /**
      * Comentarios constructor.
@@ -19,12 +20,29 @@ class Comentarios
      * @param $comentario
      * @param $data
      */
-    public function __construct($user = '', $comentario = '', $data = '', $codigo = '')
+    public function __construct($user = '', $comentario = '', $data = '', $codigo = '', $postagem = '')
     {
         $this->user = $user;
         $this->comentario = $comentario;
         $this->data = $data;
         $this->codigo = $codigo;
+        $this->postagem = $postagem;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPostagem(): string
+    {
+        return $this->postagem;
+    }
+
+    /**
+     * @param string $postagem
+     */
+    public function setPostagem(string $postagem): void
+    {
+        $this->postagem = $postagem;
     }
 
     /**

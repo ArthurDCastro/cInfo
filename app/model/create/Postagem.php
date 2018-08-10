@@ -44,6 +44,7 @@ class Postagem
 
         return [
             '_id'       => new MongoDB\BSON\ObjectId,
+            'id'       => uniqid(),
             'user'      => $this->user,
             'grafico'     => $this->grafico,
             'descricao' => $this->descricao,

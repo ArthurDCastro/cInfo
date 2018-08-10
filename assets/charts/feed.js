@@ -1,48 +1,66 @@
+$(document).ready(function() {
+    $('.info').hide();
 
-// Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart']});
+    $('.grafico').each(function () {
 
-// Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(drawChart);
+        var id = $(this).attr('id');
 
-// Callback that creates and populates a data table,
-// instantiates the pie chart, passes in the data and
-// draws it.
-function drawChart() {
+        var dados = [];
+        for (i in $('#' + id).find('.gasto')) {
+            var g = $('#' + id).find('.gasto').eq(i).text();
+            if ( g.length > 1){
+                dados.push($('#' + id).find('.gasto').eq(i).text());
+            }
 
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-        ['Mushrooms', 3],
-        ['Onions', 2],
-        ['Olives', 5],
-        ['Zucchini', 4],
-        ['Pepperoni', 2]
-    ]);
+        }
 
-    // Set chart options
-    var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
-        width:400,
-        height:300};
-    var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
-    piechart.draw(data, piechart_options);
 
-    var barchart_options = {title:'Barchart: How Much Pizza I Ate Last Night',
-        width:400,
-        height:300,
-        legend: 'none'};
-    var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
-    barchart.draw(data, barchart_options);
+        var label = [];
+        for (i in $('#' + id).find('.nome')) {
+            var n = $('#' + id).find('.nome').eq(i).text();
+            if ( n.length > 1) {
+                label.push($('#' + id).find('.nome').eq(i).text());
+            }
+        }
+        var ctx = document.getElementById('chart-' + id).getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: $('#tipo-' + id).text(),
+            data: {
+                datasets: [{
+                    data: dados,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)',
 
-    var donutchart_options = {
-        title: 'My Daily Activities',
-        width:400,
-        height:300,
-        pieHole: 0.4
-    };
+                        'rgba(105, 255, 221, 0.8)',
+                        'rgba(92, 78, 232, 0.8)',
+                        'rgba(232, 176, 78, 0.8)',
+                        'rgba(180, 255, 86, 0.8)',
 
-    var donutchart = new google.visualization.PieChart(document.getElementById('donutchart_div'));
-    donutchart.draw(data, donutchart_options);
-}
+                        'rgba(246, 211, 62, 0.8)',
+                        'rgba(38, 212, 46, 0.8)',
+                        'rgba(164, 38, 212, 0.8)',
+                        'rgba(246, 100, 44, 0.8)',
+
+                        'rgba(140, 92, 255, 0.8)',
+                        'rgba(232, 75, 67, 0.8)',
+                        'rgba(114, 232, 67, 0.8)',
+                        'rgba(73, 228, 255, 0.8)'
+
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 0
+                }],
+                labels: label
+            }
+        });
+    });
+
+});
+
+Chart.defaults.global.legend.position = 'bottom';

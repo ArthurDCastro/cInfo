@@ -49,7 +49,6 @@
 
                     <?php if (isset($_COOKIE['login'])): ?>
                         <a id="some" class="item" href="perfil/<?=$_COOKIE['login']?>">
-                            <img class="ui avatar image" src="assets/files/img/avatar/small/joe.jpg">
                             <?= $_COOKIE['login'] ?>
                         </a>
 
