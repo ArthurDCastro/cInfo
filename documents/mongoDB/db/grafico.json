@@ -306,5 +306,27 @@
                 "codigo": "47210"
             }
         ]
+    },
+    {
+        "_id": {
+            "$oid": "5b6ccf93607d9e10ac007627"
+        },
+        "codigo": "5b6ccf935a4c9",
+        "titulo": "oljsahd",
+        "tipo": "doughnut",
+        "data": "2018-08-10 01:34:43",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
+                "gasto": "600172496.8",
+                "codigo": "201013"
+            },
+            {
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            }
+        ]
     }
 ]
