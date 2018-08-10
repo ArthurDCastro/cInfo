@@ -1,19 +1,19 @@
 <div class="ui form">
     <div class="two fields">
         <div class=" left floated column" style="margin-top: 4%; margin-bottom: 2%; margin-left: 20%">
-            <form action="">
+            <form action="editar_perfil" method="post" id="form1">
                 <label><b>Nome</b></label>
                 <br>
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" value="João Pedro Lazarim de Souza" style="width: 100%">
+                    <input type="text" name="nome" value="<?= $user->getNome() ?>" style="width: 100%">
                 </div>
                 <br><br>
                 <label><b>Email</b></label>
                 <br>
                 <div class="ui left icon input">
                     <i class="mail icon"></i>
-                    <input type="text" value="jplazarim@gmail.com" style="width: 100%">
+                    <input type="text" name="email" value="<?= $user->getEmail() ?>" style="width: 100%">
                 </div>
                 <br><br>
                 <label><b>Nova Senha</b></label>
@@ -35,7 +35,7 @@
                 <br>
                 <div class="ui left icon input">
                     <i class="unhide icon"></i>
-                    <input type="text" value="Tekislla" style="width: 100%">
+                    <input type="text" name="login" value="<?= $user->getLogin() ?>" style="width: 100%">
                 </div>
                 <br><br>
                 <label><b>Senha Antiga</b></label>
@@ -52,7 +52,7 @@
                     <input type="text" placeholder="*****" style="width: 100%">
                 </div>
                 <br><br><br>
-                <button name="salvar" class="ui animated green large submit button" tabindex="0">
+                <button name="salvar" form="form1" type="submit"  class="ui animated green large submit button" tabindex="0">
                     <div class="visible content">Salvar</div>
                     <div class="hidden content">
                         <i class="upload icon"></i>

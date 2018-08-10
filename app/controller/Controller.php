@@ -239,7 +239,28 @@
             echo '<img src="' . $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType . '">';
         }
 
+        public function editar_perfil(){
+            $user = $this->user->crud->getUser_byLogin($_COOKIE['login']);
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $login = $_POST['login'];
+
+            echo $login;
+
+            $user->setNome($nome);
+            $user->setEmail($email);
+            $user->setLogin($login);
+
+            echo '<pre>';
+            var_dump($_POST);
+            var_dump($user);
+            echo '</pre>';
+
+            //$this->user->crud->update($userEditado);
+            /*$joaomuitogay = $_COOKIE['login'];
+            header("Location: perfil/$joaomuitogay");*/
 
 
+        }
 
     }
