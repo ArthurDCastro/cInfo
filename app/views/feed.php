@@ -32,11 +32,11 @@
                     <a class="like">
                         <i class="like icon"></i><?= count($publicacao->getLike()) ?>
                     </a>
-                    <a class="comments comentarios" id="comenClick1">
+                    <a class="comments comentarios" id="<?= $publicacao->getCodigo(); ?>">
                         <i class="comments icon"></i><?= count($publicacao->getComentarios()) ?>
                     </a>
                 </div>
-                <div class="ui cookie nag comentarios" style="z-index: inherit" id="comen1">
+                <div class="ui cookie nag comentarios" style="z-index: inherit" id="comen-<?= $publicacao->getCodigo(); ?>">
                     <i class="close icon black"></i>
                     <div class="ui small comments">
                         <h4 class="ui dividing header">Comentários</h4>
@@ -63,9 +63,9 @@
                         <?php endforeach; ?>
                         <form class="ui reply form">
                             <div class="field">
-                                <textarea rows="2"></textarea>
+                                <textarea id="text-<?= $publicacao->getCodigo(); ?>" rows="2"></textarea>
                             </div>
-                            <div class="ui blue labeled submit icon button">
+                            <div class="ui blue labeled submit icon button add_coment" id="add-<?= $publicacao->getCodigo(); ?>">
                                 <i class="icon edit"></i> Add Comentário
                             </div>
                         </form>

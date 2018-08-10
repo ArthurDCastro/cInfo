@@ -7,6 +7,7 @@
 <div style="margin-top: 110px"></div>
 <div class="ui two column centered grid" style="padding: 0% 4%">
     <div class="column" id="corpo" style="width: 2002px">
+        <!-- TODO fazer carrossel -->
         <ul class="bxslider">
             <li class="black" style="height: 550px; position: relative">
                 <div class="ui container">

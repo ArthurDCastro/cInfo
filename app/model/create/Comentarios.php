@@ -29,6 +29,17 @@ class Comentarios
         $this->postagem = $postagem;
     }
 
+    public function insert(){
+        return [
+            '_id'        => new MongoDB\BSON\ObjectId,
+            'id'         => uniqid(),
+            'user'       => $this->user,
+            'comentario' => $this->comentario,
+            'postagem'   => $this->postagem,
+            'data'       => $this->data
+        ];
+    }
+
     /**
      * @return string
      */

@@ -15,6 +15,7 @@ class Postagem
     private $comentarios;
     private $like;
     private $data;
+    private $codigo;
 
     /**
      * Postagem constructor.
@@ -25,7 +26,7 @@ class Postagem
      * @param $like
      * @param $data
      */
-    public function __construct($user, $grafico, $descricao, $comentarios, array $like, string $data)
+    public function __construct($user, $grafico, $descricao, $comentarios, array $like, string $data, $codigo)
     {
         $this->user = $user;
         $this->grafico = $grafico;
@@ -33,6 +34,7 @@ class Postagem
         $this->comentarios = $comentarios;
         $this->like = $like;
         $this->data = $data;
+        $this->codigo = $codigo;
     }
 
     public function insert(){
@@ -44,7 +46,7 @@ class Postagem
 
         return [
             '_id'       => new MongoDB\BSON\ObjectId,
-            'id'       => uniqid(),
+            'codigo'       => uniqid(),
             'user'      => $this->user,
             'grafico'     => $this->grafico,
             'descricao' => $this->descricao,
@@ -52,6 +54,22 @@ class Postagem
             'like'     => $this->like,
             'data'      => $this->data
         ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * @param mixed $codigo
+     */
+    public function setCodigo($codigo): void
+    {
+        $this->codigo = $codigo;
     }
 
     /**

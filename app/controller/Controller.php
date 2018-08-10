@@ -66,10 +66,11 @@
             $data['funcoes'] = $this->dados->crud->getAllFuncoes();
             if (isset($this->getDataUrl()[0])){
                 $data['url'] = $this->getDataUrl();
+                $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo($data['url'][0]);
             } else {
                 $data['url'] = '';
+                $data['grafico'] = new grafico();
             }
-
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php', $data);
@@ -130,7 +131,7 @@
 
         public function post(){
             $url = $this->getDataUrl();
-            $post = new Postagem($_COOKIE['login'], $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'));
+            $post = new Postagem($_COOKIE['login'], $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'), uniqid());
 
             echo '<pre>';
             var_dump($post);
@@ -238,8 +239,4 @@
 
             echo '<img src="' . $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType . '">';
         }
-
-
-
-
     }

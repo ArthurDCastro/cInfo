@@ -50,7 +50,7 @@
                 <!-- Titulo -->
                 <div class="required field">
                     <label>Título do Gráfico</label>
-                    <input type="text" name="titulo" placeholder="Título" id="titulo">
+                    <input type="text" name="titulo" placeholder="Título" id="titulo" value="<?= $data['grafico']->getTitulo() ?>">
                 </div>
 
                 <!-- codigo do grafico (se possuir) -->
@@ -60,7 +60,7 @@
                 <div class="required field">
                     <label>Tipo de Gráfico</label>
                     <div class="ui fluid search selection dropdown">
-                        <input type="hidden" name="tipo" id="tipo">
+                        <input type="hidden" name="tipo" id="tipo" value="<?= $data['grafico']->getTipo() ?>">
                         <i class="dropdown icon"></i>
                         <div class="default text">Selecione o Tipo de Gráfico</div>
                         <div class="menu">
@@ -87,6 +87,9 @@
                     <label>Gastos</label>
                     <select id="gasto" multiple="" name="gasto" class="ui fluid search dropdown gasto">
                         <option value="">Gasto</option>
+                        <?php foreach ($data['grafico']->getDados() as $data):?>
+                            <option value="<?= $data->getCodigo() ?>" selected><?= $data->getNome()?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
 

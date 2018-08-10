@@ -41,7 +41,11 @@ switch ($_POST['acao']){
 
         $list = $_POST['vals'];
 
-        $vals = [];
+        $vals = [
+            'codigo' => [],
+            'nome'   => [],
+            'gasto'  => []
+        ];
         foreach ($list as $item){
             $dado = $dados->getDados_byCodigo($item);
             $vals['codigo'][] = $dado->getCodigo();

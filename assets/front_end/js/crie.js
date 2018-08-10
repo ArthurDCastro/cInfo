@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    var id = $('#id').val();
+    if (id != ''){
+        $('#grafico_titulo').text($('#titulo').val());
+        $('#teste').trigger('click');
+    }
     //$("#img-out").hide();
 
     $('#share').hide();
