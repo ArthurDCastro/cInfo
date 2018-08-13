@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/modal.css">
 
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">
-    <div class="seven wide column ui segment center aligned">
+        <div class="seven wide column ui segment center aligned">
         <div class="centered" id="print">
             <h3 class="ui grey header">
                 <i class="pie chart icon"></i>

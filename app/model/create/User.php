@@ -27,7 +27,7 @@ class User
 
     public function insert(){
         return [
-            '_id'       => new MongoDB\BSON\ObjectId,
+
             'nome'      => $this->nome,
             'login'     => $this->login,
             'tipo_user' => $this->tipo_user,
@@ -36,6 +36,7 @@ class User
             'foto'      => $this->foto
         ];
     }
+
 
     /**
      * @return mixed
