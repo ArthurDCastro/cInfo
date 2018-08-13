@@ -78,7 +78,7 @@
             </div>
         </a>
         <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
-            <a id="editar" class="item">
+            <a href="editar_perfil" id="editar" class="item">
                 <div class="ui mini horizontal statistic">
                     <div class="value"></div>
                     <div class="label">

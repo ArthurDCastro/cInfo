@@ -240,38 +240,50 @@
         }
 
         public function editar_perfil(){
+
+            $data['titulo_pagina'] = 'cInfo - Editar';
+            $logado = $_COOKIE['login'];
+            $this->loadView('padroes/head.php', $data);
+            $this->loadView('padroes/menu.php', $data);
+            $this->loadView('perfil.php/$logado', $data);
+            $this->loadView('rodape.php', $data);
+
             $user = $this->user->crud->getUser_byLogin($_COOKIE['login']);
+
             $nome = $_POST['nome'];
             $email = $_POST['email'];
-            $login = $_POST['login'];
-            $senha = $_POST['senha'];
+            $nova = $_POST['senha_nova'];
             $antiga = $_POST['senha_antiga'];
             $confirmada = $_POST['senha_confirmada'];
 
-            if ($senha == $confirmada AND $antiga == $user->getPassword()){
-                $user->setPassword($senha);
+            if ($nova == $confirmada AND $antiga == $user->getPassword()){
+                $user->setPassword($nova);
+            }else{
+                $data['error'] = 'Senha inválida!';
+
             }
 
             $user->setNome($nome);
             $user->setEmail($email);
-            $user->setLogin($login);
 
-            echo '<pre>';
-            echo "teste";
+            /*echo '<pre>';
+            echo "senha antiga:".$antiga;
             echo '<br>';
-            echo "$senha";
+            echo "senha nova:".$nova;
             echo '<br>';
-            echo $antiga;
-            echo '<br>';
-            echo $confirmada;
+            echo "confirmada:".$confirmada;
             echo '<br>';
             var_dump($_POST);
+            echo '<br>';
             var_dump($user);
-            echo '</pre>';
+            echo '</pre>';*/
 
            $this->user->crud->update($user);
-           $joaomuitogay = $_COOKIE['login'];
-           header("Location: perfil/$joaomuitogay");
+           //$logado = $_COOKIE['login'];
+           //header("Location: perfil/$logado");
+
         }
 
+
     }
+

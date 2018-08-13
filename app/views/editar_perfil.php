@@ -1,4 +1,4 @@
-<form class="ui form" method="post" id="form1">
+<form action="editar_perfil" class="ui form" method="post" id="form1">
     <div class="ui equal width form" style="margin: 3% 7% 7% 7%;">
         <div class="fields">
             <div class="field">
@@ -28,7 +28,7 @@
                 <label>Nova Senha</label>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input name="senha" type="password" placeholder="*****">
+                    <input name="senha_nova" type="password" placeholder="*****">
                 </div>
             </div>
             <div class="field">
@@ -57,4 +57,12 @@
         </button>
     </div>
 </form>
+
+<?php if (isset($error)): ?>
+    <div class="ui negative message">
+        <p>
+            <?= $error ?>
+        </p>
+    </div>
+<?php endif; ?>
 
