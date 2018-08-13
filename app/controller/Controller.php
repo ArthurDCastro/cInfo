@@ -244,23 +244,34 @@
             $nome = $_POST['nome'];
             $email = $_POST['email'];
             $login = $_POST['login'];
+            $senha = $_POST['senha'];
+            $antiga = $_POST['senha_antiga'];
+            $confirmada = $_POST['senha_confirmada'];
 
-            echo $login;
+            if ($senha == $confirmada AND $antiga == $user->getPassword()){
+                $user->setPassword($senha);
+            }
 
             $user->setNome($nome);
             $user->setEmail($email);
             $user->setLogin($login);
 
             echo '<pre>';
+            echo "teste";
+            echo '<br>';
+            echo "$senha";
+            echo '<br>';
+            echo $antiga;
+            echo '<br>';
+            echo $confirmada;
+            echo '<br>';
             var_dump($_POST);
             var_dump($user);
             echo '</pre>';
 
-            //$this->user->crud->update($userEditado);
-            /*$joaomuitogay = $_COOKIE['login'];
-            header("Location: perfil/$joaomuitogay");*/
-
-
+           $this->user->crud->update($user);
+           $joaomuitogay = $_COOKIE['login'];
+           header("Location: perfil/$joaomuitogay");
         }
 
     }

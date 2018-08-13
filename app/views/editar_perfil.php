@@ -20,7 +20,7 @@
                 <br>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="text" placeholder="*****" style="width: 100%">
+                    <input type="text" name="senha" placeholder="*****" style="width: 100%">
                 </div>
                 <br><br><br>
                 <button name="cancelar" class="ui animated red large submit button" tabindex="0">
@@ -35,21 +35,21 @@
                 <br>
                 <div class="ui left icon input">
                     <i class="unhide icon"></i>
-                    <input type="text" name="login" value="<?= $user->getLogin() ?>" style="width: 100%">
+                    <input type="text" form="form1" name="login" value="<?= $user->getLogin() ?>" style="width: 100%">
                 </div>
                 <br><br>
                 <label><b>Senha Antiga</b></label>
                 <br>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="text" placeholder="*****" style="width: 100%">
+                    <input type="text" name="senha_antiga" form="form1" placeholder="*****" style="width: 100%">
                 </div>
                 <br><br>
                 <label><b>Confirme a Senha</b></label>
                 <br>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="text" placeholder="*****" style="width: 100%">
+                    <input type="text" name="senha_confirmada" form="form1" placeholder="*****" style="width: 100%">
                 </div>
                 <br><br><br>
                 <button name="salvar" form="form1" type="submit"  class="ui animated green large submit button" tabindex="0">
