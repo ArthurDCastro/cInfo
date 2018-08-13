@@ -27,7 +27,6 @@ class User
 
     public function insert(){
         return [
-
             'nome'      => $this->nome,
             'login'     => $this->login,
             'tipo_user' => $this->tipo_user,
