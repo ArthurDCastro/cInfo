@@ -30,8 +30,21 @@ class PostagemCrud
             $grafico = new GraficoCrud();
             $grafico = $grafico->getGraficos_byCodigo($array['grafico']);
 
-            $list[] = new Postagem($user, $grafico, $array['descricao'], $array['comentarios'], $array['like'], $array['data'], $array['codigo']);
+            $comentarios = [];
+            foreach ((array) $array['comentarios'] as $comenta){
+                $comentario = new Comentarios();
+                $coment = (array) $comenta;
+                $comentario->setUser($coment['user']);
+                $comentario->setComentarios($coment['text']);
+                $comentario->setData($coment['data']);
+                $comentario->setCodigo($coment['codigo']);
+                $comentarios[] = $comentario;
+            }
+
+
+            $list[] = new Postagem($user, $grafico, $array['descricao'], $comentarios, $array['like'], $array['data'], $array['codigo']);
         }
+
         usort($list, function ($a, $b) {
             return $a->getData() < $b->getData();
         });
@@ -68,6 +81,10 @@ class PostagemCrud
         return $this->getData(['user' => $user]);
     }
 
+    public function getPublicacao_byCodigo($codigo){
+        return $this->getData(['codigo' => $codigo])[0];
+    }
+
     public function add(Postagem $postagem){
 
         $bulk = new MongoDB\Driver\BulkWrite;
@@ -76,4 +93,14 @@ class PostagemCrud
 
         $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
     }
+
+    public function update(Postagem $postagem){
+
+        $bulk = new MongoDB\Driver\BulkWrite;
+
+        $bulk->update(['codigo' => $postagem->getCodigo()], $postagem->insert());
+
+        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+    }
+
 }

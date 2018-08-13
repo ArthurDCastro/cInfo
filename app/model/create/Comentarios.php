@@ -9,7 +9,7 @@
 class Comentarios
 {
     private $user;
-    private $comentario;
+    private $comentarios;
     private $data;
     private $codigo;
     private $postagem;
@@ -23,7 +23,7 @@ class Comentarios
     public function __construct($user = '', $comentario = '', $data = '', $codigo = '', $postagem = '')
     {
         $this->user = $user;
-        $this->comentario = $comentario;
+        $this->comentarios = $comentario;
         $this->data = $data;
         $this->codigo = $codigo;
         $this->postagem = $postagem;
@@ -31,14 +31,15 @@ class Comentarios
 
     public function insert(){
         return [
-            '_id'        => new MongoDB\BSON\ObjectId,
             'id'         => uniqid(),
             'user'       => $this->user,
-            'comentario' => $this->comentario,
+            'comentario' => $this->comentarios,
             'postagem'   => $this->postagem,
             'data'       => $this->data
         ];
     }
+
+
 
     /**
      * @return string
@@ -93,15 +94,15 @@ class Comentarios
     /**
      * @return mixed
      */
-    public function getComentario()
+    public function getComentarios()
     {
-        return $this->comentario;
+        return $this->comentarios;
     }
 
     /**
      * @param mixed $comentario
      */
-    public function setComentario($comentario): void
+    public function setComentarios($comentario): void
     {
         $this->comentario = $comentario;
     }

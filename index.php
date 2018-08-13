@@ -3,6 +3,8 @@
     require_once 'config/config.php';
     require_once 'app/controller/Controller.php';
 
+require_once 'app/model/create/Comentarios.php';
+
     $base_url    = $config['base_url'];
     $padrao = $config['views_padrao'];
 

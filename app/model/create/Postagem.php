@@ -40,15 +40,20 @@ class Postagem
     public function insert(){
         $comentarios = [];
         foreach ($this->comentarios as $coment){
-            $comentarios[] = $coment->getCodigo();
+            var_dump($coment);
+            $comentarios[] = [
+                'text' => $coment->getComentarios(),
+                'codigo' => $coment->getCodigo(),
+                'user' => $coment->getUser(),
+                'data' => $coment->getData(),
+            ];
         }
 
 
         return [
-            '_id'       => new MongoDB\BSON\ObjectId,
             'codigo'       => uniqid(),
-            'user'      => $this->user,
-            'grafico'     => $this->grafico,
+            'user'      => $this->user->getLogin(),
+            'grafico'     => $this->grafico->getCodigo(),
             'descricao' => $this->descricao,
             'comentarios'  => $comentarios,
             'like'     => $this->like,
@@ -134,6 +139,11 @@ class Postagem
     public function setComentarios($comentarios): void
     {
         $this->comentarios = $comentarios;
+    }
+
+    public function setComentario($comentario): void
+    {
+        $this->comentarios[] = $comentario;
     }
 
     /**
