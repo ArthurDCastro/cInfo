@@ -11,14 +11,4 @@ $(document).ready(function(){
     });
 
 
-    $('.user_icon').click( function () {
-        $('.padrao_option').hide();
-        $('.user_option').show();
-    });
-
-    $('.voltar_icon').click( function () {
-        $('.user_option').hide();
-        $('.padrao_option').show();
-    });
-
 });

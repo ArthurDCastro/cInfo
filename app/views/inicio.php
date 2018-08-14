@@ -7,17 +7,11 @@
 <div style="margin-top: 110px"></div>
 <div class="ui two column centered grid" style="padding: 0% 4%">
     <div class="column" id="corpo" style="width: 2002px">
-        <!-- TODO fazer carrossel -->
         <ul class="bxslider">
-            <li class="black" style="height: 550px; position: relative">
-                <div class="ui container">
-                    <img src="assets/files/img/1.jpg" style="width: 100%; height: 100%;">
-                </div>
-            </li>
             <li class="black" style="height: 550px;
     position: relative">
-                <div class="ui container">
-                    <img src="assets/files/img/2.jpg" style="width: 100%; height: 100%;">
+                <div id="grafico1" class="ui container">
+                    <canvas id="chart"></canvas>
                 </div>
             </li>
             <li class="black" style="height: 550px;
