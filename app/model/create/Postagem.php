@@ -40,18 +40,16 @@ class Postagem
     public function insert(){
         $comentarios = [];
         foreach ($this->comentarios as $coment){
-            var_dump($coment);
             $comentarios[] = [
-                'text' => $coment->getComentarios(),
+                'text' => $coment->getComentario(),
                 'codigo' => $coment->getCodigo(),
                 'user' => $coment->getUser(),
                 'data' => $coment->getData(),
             ];
         }
 
-
         return [
-            'codigo'       => uniqid(),
+            'codigo'       => $this->codigo,
             'user'      => $this->user->getLogin(),
             'grafico'     => $this->grafico->getCodigo(),
             'descricao' => $this->descricao,
@@ -144,6 +142,21 @@ class Postagem
     public function setComentario($comentario): void
     {
         $this->comentarios[] = $comentario;
+    }
+
+    public function removeLike($user){
+        $new_likes = [];
+        foreach ($this->like as $like){
+            if ($user != $like){
+                $new_likes[] = $like;
+            }
+        }
+
+        $this->like = $new_likes;
+    }
+
+    public function addLike($user){
+        $this->like[] = $user;
     }
 
     /**

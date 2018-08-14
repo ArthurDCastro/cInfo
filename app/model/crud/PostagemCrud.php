@@ -35,14 +35,15 @@ class PostagemCrud
                 $comentario = new Comentarios();
                 $coment = (array) $comenta;
                 $comentario->setUser($coment['user']);
-                $comentario->setComentarios($coment['text']);
+                $comentario->setComentario($coment['text']);
                 $comentario->setData($coment['data']);
                 $comentario->setCodigo($coment['codigo']);
                 $comentarios[] = $comentario;
             }
 
+            $like = (array) $array['like'];
 
-            $list[] = new Postagem($user, $grafico, $array['descricao'], $comentarios, $array['like'], $array['data'], $array['codigo']);
+            $list[] = new Postagem($user, $grafico, $array['descricao'], $comentarios, $like, $array['data'], $array['codigo']);
         }
 
         usort($list, function ($a, $b) {
@@ -82,7 +83,11 @@ class PostagemCrud
     }
 
     public function getPublicacao_byCodigo($codigo){
-        return $this->getData(['codigo' => $codigo])[0];
+        if (isset($this->getData(['codigo' => $codigo])[0])){
+            return $this->getData(['codigo' => $codigo])[0];
+        } else {
+            return null;
+        }
     }
 
     public function add(Postagem $postagem){

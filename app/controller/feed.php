@@ -28,18 +28,52 @@ switch ($_POST['acao']){
         $post = $postagem->getPublicacao_byCodigo($_POST['vals']['postagem']);
 
         $coment->setUser($_COOKIE['login']);
-        var_dump($_POST['vals']['comentario']);
-        $coment->setComentarios($_POST['vals']['comentario']);
+        $coment->setComentario($_POST['vals']['comentario']);
         $coment->setData(date('Y-m-d H:i:s'));
         $coment->setCodigo(uniqid());
 
         $post->setComentario($coment);
 
-        echo '<pre>';
-        var_dump($post->getComentarios());
-        echo '</pre>';
+        $postagem->update($post);
+
+        break;
+
+    case 'like-post':
+        $postagem = new PostagemCrud();
+
+        $post = $postagem->getPublicacao_byCodigo($_POST['vals']['postagem']);
+
+        $verifica = true;
+        if (count($post->getLike()) > 0){
+            foreach ($post->getLike() as $user_like){
+                if ($_COOKIE['login'] == $user_like){
+                    $verifica = false;
+                }
+            }
+        }
+
+
+        if ($verifica){
+            $post->addLike($_COOKIE['login']);
+            $resposta = 'like';
+        } else {
+            $post->removeLike($_COOKIE['login']);
+            $resposta = 'unlike';
+        }
 
         $postagem->update($post);
+
+        $like = [
+            'count' => count($post->getLike()),
+            'users' => $post->getLike(),
+            'resposta' => $resposta
+        ];
+
+        $like = json_encode($like);
+
+        header("Conten-type: application/json");
+
+        echo $like;
 
         break;
 }

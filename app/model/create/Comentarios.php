@@ -9,7 +9,7 @@
 class Comentarios
 {
     private $user;
-    private $comentarios;
+    private $comentario;
     private $data;
     private $codigo;
     private $postagem;
@@ -17,44 +17,77 @@ class Comentarios
     /**
      * Comentarios constructor.
      * @param $user
-     * @param $comentario
+     * @param $comentarios
      * @param $data
+     * @param $codigo
+     * @param $postagem
      */
-    public function __construct($user = '', $comentario = '', $data = '', $codigo = '', $postagem = '')
+    public function __construct($user = '', $comentarios = '', $data = '', $codigo = '', $postagem = '')
     {
         $this->user = $user;
-        $this->comentarios = $comentario;
+        $this->comentario = $comentarios;
         $this->data = $data;
         $this->codigo = $codigo;
         $this->postagem = $postagem;
     }
 
+
     public function insert(){
         return [
             'id'         => uniqid(),
             'user'       => $this->user,
-            'comentario' => $this->comentarios,
+            'comentario' => $this->comentario,
             'postagem'   => $this->postagem,
             'data'       => $this->data
         ];
     }
 
+    /**
+     * @return string
+     */
+    public function getUser(): string
+    {
+        return $this->user;
+    }
 
+    /**
+     * @param string $user
+     */
+    public function setUser(string $user): void
+    {
+        $this->user = $user;
+    }
 
     /**
      * @return string
      */
-    public function getPostagem(): string
+    public function getComentario(): string
     {
-        return $this->postagem;
+        return $this->comentario;
     }
 
     /**
-     * @param string $postagem
+     * @param string $comentario
      */
-    public function setPostagem(string $postagem): void
+    public function setComentario(string $comentario): void
     {
-        $this->postagem = $postagem;
+        $this->comentario = $comentario;
+    }
+
+    /**
+     * @return string
+     */
+    public function getData(): string
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param string $data
+     */
+    public function setData(string $data): void
+    {
+        $this->data = $data;
     }
 
     /**
@@ -73,55 +106,20 @@ class Comentarios
         $this->codigo = $codigo;
     }
 
-
-
     /**
-     * @return mixed
+     * @return string
      */
-    public function getUser()
+    public function getPostagem(): string
     {
-        return $this->user;
+        return $this->postagem;
     }
 
     /**
-     * @param mixed $user
+     * @param string $postagem
      */
-    public function setUser($user): void
+    public function setPostagem(string $postagem): void
     {
-        $this->user = $user;
+        $this->postagem = $postagem;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getComentarios()
-    {
-        return $this->comentarios;
-    }
-
-    /**
-     * @param mixed $comentario
-     */
-    public function setComentarios($comentario): void
-    {
-        $this->comentario = $comentario;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function setData($data): void
-    {
-        $this->data = $data;
-    }
-
 
 }

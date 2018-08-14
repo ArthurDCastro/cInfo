@@ -10,23 +10,25 @@ require_once '../model/crud/DadosCrud.php';
 require_once '../model/crud/GraficoCrud.php';
 require_once '../model/crud/UserCrud.php';
 require_once '../model/crud/SeguidoresCrud.php';
+require_once '../model/crud/PostagemCrud.php';
 
 require_once '../model/create/Grafico.php';
 require_once '../model/create/Dados.php';
 require_once '../model/create/User.php';
 require_once '../model/create/Seguidores.php';
+require_once '../model/create/Postagem.php';
+require_once '../model/create/Comentarios.php';
 
 
 switch ($_POST['acao']){
 
     case 'perfil':
         $crud = new UserCrud();
-        $crudSeg = new SeguidoresCrud();
+        $crudPostagem = new PostagemCrud();
+
         $data['user'] = $crud->getUser_byLogin($_POST['user']);
 
-        if ($data['user']->getLogin() != $_COOKIE['login']){
-            $data['relacao'] = $crudSeg->getRelacao($data['user']->getLogin(), $_COOKIE['login']);
-        }
+        $data['publicacoes'] = $crudPostagem->getPublicacoes_byUser($data['user']->getLogin());
 
         include "../views/perfil_usuario.php";
     break;

@@ -29,7 +29,7 @@
                     <canvas id="chart-<?= $publicacao->getGrafico()->getCodigo() ?>"></canvas>
                 </div>
                 <div class="meta">
-                    <a class="like">
+                    <a class="like like-post" id="like-<?= $publicacao->getCodigo() ?>">
                         <i class="like icon"></i><?= count($publicacao->getLike()) ?>
                     </a>
                     <a class="comments comentarios" id="<?= $publicacao->getCodigo(); ?>">
@@ -46,12 +46,12 @@
                                 <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
                             </a>
                             <div class="content">
-                                <a class="author">Matt</a>
+                                <a class="author"><?= $comentario->getUser() ?></a>
                                 <div class="metadata">
-                                    <span class="date">Today at 5:42PM</span>
+                                    <span class="date"><?= $comentario->getData() ?></span>
                                 </div>
                                 <div class="text">
-                                    How artistic!
+                                    <?= $comentario->getComentario() ?>
                                 </div>
                                 <div class="meta">
                                     <a class="like">

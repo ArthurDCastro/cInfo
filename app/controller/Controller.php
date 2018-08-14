@@ -131,11 +131,9 @@
 
         public function post(){
             $url = $this->getDataUrl();
-            $post = new Postagem($_COOKIE['login'], $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'), uniqid());
+            $user = $this->user->crud->getUser_byLogin($_COOKIE['login']);
+            $post = new Postagem($user, $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'), uniqid());
 
-            echo '<pre>';
-            var_dump($post);
-            echo '</pre>';
             $this->postagem->crud->add($post);
 
             header('Location: ../feed');
@@ -146,6 +144,7 @@
             $data['url'] = @$this->getDataUrl();
 
             $data['user'] = $this->user->crud->getUser_byLogin($data['url'][0]);
+            $data['publicacoes'] = $this->postagem->crud->getPublicacoes_byUser($data['user']->getLogin());
             $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
             $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
             $data['seguindo'] = $this->seguidores->crud->getSeguindo_bySeguidor($data['user']->getLogin());
