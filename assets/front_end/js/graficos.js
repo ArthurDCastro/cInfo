@@ -11,8 +11,11 @@ $(document).ready(function() {
     });
 
     $('#excluir').click(function () {
+        alert('aa');
 
-        $.post('app/controller/perfil.php',
+        alert(window.location.href.substring(0))
+
+        /*$.post('app/controller/perfil.php',
             {
                 acao: 'excluir',
                 id: $('#oculta').html()
@@ -20,7 +23,7 @@ $(document).ready(function() {
                 $('#conteudo').html('');
                 $('#conteudo').html(dados);
             }
-        );
+        )*/;
     });
 
     $('.info').hide();

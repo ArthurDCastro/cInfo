@@ -29,9 +29,16 @@
                     <canvas id="chart-<?= $publicacao->getGrafico()->getCodigo() ?>"></canvas>
                 </div>
                 <div class="meta">
-                    <a class="like like-post" id="like-<?= $publicacao->getCodigo() ?>">
-                        <i class="like icon"></i><?= count($publicacao->getLike()) ?>
-                    </a>
+                    <?php $verificaLike = false; foreach ($publicacao->getLike() as $likes): if ($likes == $_COOKIE['login']): $verificaLike = true; endif; endforeach; ?>
+                    <?php if ($verificaLike): ?>
+                        <a class="like active like-post" id="unlike-<?= $publicacao->getCodigo() ?>">
+                            <i class="like icon"></i><?= count($publicacao->getLike()) ?>
+                        </a>
+                    <?php else: ?>
+                        <a class="like like-post" id="like-<?= $publicacao->getCodigo() ?>">
+                            <i class="like icon"></i><?= count($publicacao->getLike()) ?>
+                        </a>
+                    <?php endif; ?>
                     <a class="comments comentarios" id="<?= $publicacao->getCodigo(); ?>">
                         <i class="comments icon"></i><?= count($publicacao->getComentarios()) ?>
                     </a>

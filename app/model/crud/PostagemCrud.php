@@ -20,13 +20,12 @@ class PostagemCrud
         $cursor =  $this->manager->executeQuery('db_cinfo.postagem', $query);
 
         $list = [];
-
         foreach ($cursor as $document) {
             $array = (array) $document;
 
             $user = new UserCrud();
             $user = $user->getUser_byLogin($array['user']);
-
+            
             $grafico = new GraficoCrud();
             $grafico = $grafico->getGraficos_byCodigo($array['grafico']);
 

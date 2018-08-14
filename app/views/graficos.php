@@ -42,7 +42,7 @@
             <?php foreach ($graficos as $grafico): ?>
                 <div id="<?= $grafico->getCodigo() ?>" class="ui centered card grafico" >
                     <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
-                        <a class="ui right corner red label olhai">
+                        <a class="ui right corner red label msgExcluir">
                             <i class="remove icon"></i>
                         </a>
                         <a href="crie/<?= $grafico->getCodigo() ?>" class="ui blue left corner label">

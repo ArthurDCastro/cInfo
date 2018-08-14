@@ -26,9 +26,9 @@
             "$oid": "5b6cc835607d9e19c0002fd7"
         },
         "codigo": "5b67ed3c6290f",
-        "titulo": "asd",
+        "titulo": "cod",
         "tipo": "polarArea",
-        "data": "2018-08-06 08:39:56",
+        "data": "2018-08-14 19:40:05",
         "user": "LukDuk",
         "dados": [
             {
@@ -326,6 +326,116 @@
                 "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
                 "gasto": "2322404943.08",
                 "codigo": "201005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b6d7ef2607d9e10ac00762e"
+        },
+        "codigo": "5b6d7ef26d293",
+        "titulo": "olhai",
+        "tipo": "doughnut",
+        "data": "2018-08-10 14:02:58",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "INST. FED. DE EDUC.,CIENC. E TEC. DE RONDONIA",
+                "gasto": "150687754.64",
+                "codigo": "158148"
+            },
+            {
+                "nome": "INST.FED.DE EDUC.,CIENC.E TEC.CATARINENSE",
+                "gasto": "359712240.57",
+                "codigo": "26422"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b6d8764607d9e10ac007630"
+        },
+        "codigo": "5b6d87641d704",
+        "titulo": "gh",
+        "tipo": "doughnut",
+        "data": "2018-08-10 14:39:00",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "COMPANHIA NACIONAL DE ABASTECIMENTO",
+                "gasto": "824127879.06",
+                "codigo": "135100"
+            },
+            {
+                "nome": "COMPANHIA NACIONAL DE ABASTECIMENTO",
+                "gasto": "2182436855.93",
+                "codigo": "22211"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b6d88c4607d9e10ac007632"
+        },
+        "codigo": "5b6d88c40d936",
+        "titulo": "oakskdl",
+        "tipo": "polarArea",
+        "data": "2018-08-10 14:44:52",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "IF CATARINENSE - CAMPUS ARAQUARI",
+                "gasto": "8025241.06",
+                "codigo": "158459"
+            },
+            {
+                "nome": "IF CATARINENSE - CAMPUS BLUMENAU",
+                "gasto": "3052721.79",
+                "codigo": "152254"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b6dd9e5607d9e10ac007635"
+        },
+        "codigo": "5b6dd9e52882b",
+        "titulo": "uasfdgjbn",
+        "tipo": "pie",
+        "data": "2018-08-10 20:31:01",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "ESCRIT\u00d3RIO DE DIFUS\u00c3O REGIONAL NORDESTE",
+                "gasto": "419469.47",
+                "codigo": "183044"
+            },
+            {
+                "nome": "ESCRIT\u00d3RIO DE DIFUS\u00c3O REGIONAL SUDESTE I",
+                "gasto": "440624.16",
+                "codigo": "183045"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b71bf0a607d9e10ac007637"
+        },
+        "codigo": "5b71bf0a67205",
+        "titulo": "olhai",
+        "tipo": "pie",
+        "data": "2018-08-13 19:25:30",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
+                "gasto": "600172496.8",
+                "codigo": "201013"
+            },
+            {
+                "nome": "FUNDO DE ESTAB.DO SEG.RURAL-FESR-R.S\/SUP.MPDG",
+                "gasto": "28944381.31",
+                "codigo": "71904"
             }
         ]
     }

@@ -132,7 +132,8 @@
         public function post(){
             $url = $this->getDataUrl();
             $user = $this->user->crud->getUser_byLogin($_COOKIE['login']);
-            $post = new Postagem($user, $url[0], $_POST['descricao'], [], [], date('Y-m-d H:i:s'), uniqid());
+            $grafico = $this->grafico->crud->getGraficos_byCodigo($url[0]);
+            $post = new Postagem($user, $grafico, $_POST['descricao'], [], [], date('Y-m-d H:i:s'), uniqid());
 
             $this->postagem->crud->add($post);
 
