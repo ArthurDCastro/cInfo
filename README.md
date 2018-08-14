@@ -1,2 +1,3 @@
 # control
-Uma biblioteca MVC desenvolvida em PHP
+
+cInfo - Plataforma de visualização de gastos públicos
