@@ -1,9 +1,9 @@
-<?php if (isset($data['publicacoes'])): ?>
+<?php if (count($data['publicacoes']) > 0): ?>
     <div class="ui feed">
-        <?php foreach ($data['publicacoes'] as $publicacao): ?>
+        <?php foreach ($data['publicacoes'] as $publicacao): $foto = $publicacao->getUser()->getFoto();?>
             <div class="event">
                 <div class="label">
-                    <?php if ( isset( $data['foto'])): ?>
+                    <?php if ($foto != ''): ?>
                         <img src="<?= $publicacao->getUser()->getFoto() ?>">
                     <?php else: ?>
                         <img src="assets/files/img/image.png">
@@ -85,6 +85,7 @@
 
     </div>
 <?php else: ?>
+    <br>
     <div class="ui middle aligned center aligned grid" id="div1">
         <div class="ui container">
 
@@ -92,7 +93,7 @@
                 <div class="header">
                     Sem postagens
                 </div>
-                <p>Ops, seus seguidores ainda não postaram nenhum <gráfico class="."></gráfico></p>
+                <p>Ops, seus seguidores ainda não postaram nenhum gráfico...</p>
             </div>
         </div>
     </div>

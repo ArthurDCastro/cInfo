@@ -16,40 +16,34 @@ class UserCrud
         $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
     }
 
-    public function getAllUser(){
-        $query = new MongoDB\Driver\Query([]);
+    public function getData($query){
+        $query = new MongoDB\Driver\Query($query);
         $cursor =  $this->manager->executeQuery('db_cinfo.user', $query);
 
         $list = [];
 
         foreach ($cursor as $document) {
             $array = (array) $document;
-            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
+            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email'], $array['foto']);
         }
 
         return $list;
     }
 
+    public function getAllUser(){
+        return $this->getData([]);
+    }
+
     public function getUser_byLogin($login){
-        $query = new MongoDB\Driver\Query(['login' => $login]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.user', $query);
+        $user = $this->getData(['login' => $login]);
 
-        foreach ($cursor as $document) {
-            $array = (array) $document;
-        }
-
-        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
+        return $user[0];
     }
 
     public function getUser_byEmail($email){
-        $query = new MongoDB\Driver\Query(['email' => $email]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.user', $query);
+        $user = $this->getData(['email' => $email]);
 
-        foreach ($cursor as $document) {
-            $array = (array) $document;
-        }
-
-        return new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email']);
+        return $user[0];
     }
 
     public function add(User $user){

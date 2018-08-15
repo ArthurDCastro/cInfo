@@ -149,6 +149,7 @@
             $data['url'] = @$this->getDataUrl();
 
             $data['user'] = $this->user->crud->getUser_byLogin($data['url'][0]);
+            $data['foto'] = $data['user']->getFoto();
             $data['publicacoes'] = $this->postagem->crud->getPublicacoes_byUser($data['user']->getLogin());
             $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
             $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
@@ -166,7 +167,7 @@
 
         public function addFoto()
         {
-            $target_dir = "assets/files/img/";
+            $target_dir = "assets/files/img/perfil/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -181,12 +182,6 @@
                     echo "File is not an image.";
                     $uploadOk = 0;
                 }
-            }
-
-            // Check if file already exists
-            if (file_exists($target_file)) {
-                echo "Sorry, file already exists.";
-                $uploadOk = 0;
             }
 
             // Check file size
@@ -209,38 +204,46 @@
                 // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+                    $image = $target_file; // the image to crop
+                    $dest_image = $target_file; // make sure the directory is writeable
+
+                    $org_img = imagecreatefromjpeg($image);
+
+                    if (imagesy($org_img) <= imagesx($org_img)){
+                        $size = imagesy($org_img);
+                    } else {
+                        $size = imagesx($org_img);
+                    }
+
+                    $img = imagecreatetruecolor($size,$size);
+                    $imsx = (imagesx($org_img) - $size)/2;
+                    $imsy = (imagesy($org_img) - $size)/2;
+
+                    imagecopy($img,$org_img, 0, 0, $imsx, $imsy, $size, $size);
+                    imagejpeg($img,$dest_image,90);
+                    imagedestroy($img);
+
+                    if (file_exists($target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType)) {
+                        unlink($target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
+                        rename($target_file, $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
+                    } else {
+                        rename($target_file, $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
+                    }
+
+                    $caminho_img = $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType;
+
+                    $data['user'] = $this->user->crud->getUser_byLogin($_COOKIE['login']);
+                    $data['user']->setFoto($caminho_img);
+                    $this->user->crud->update($data['user']);
+
+                    echo ' <div class="ui active dimmer"><div class="ui massive text loader">Loading</div></div>';
+
+                    sleep(3);
+
+                    header("Location: perfil/{$_COOKIE['login']}");
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-
-            $image = $target_file; // the image to crop
-            $dest_image = $target_file; // make sure the directory is writeable
-
-            $org_img = imagecreatefromjpeg($image);
-
-            if (imagesy($org_img) <= imagesx($org_img)){
-                $size = imagesy($org_img);
-            } else {
-                $size = imagesx($org_img);
-            }
-
-            $img = imagecreatetruecolor($size,$size);
-            $imsx = (imagesx($org_img) - $size)/2;
-            $imsy = (imagesy($org_img) - $size)/2;
-            echo 'size: ' . $size . ' y-x: ' . $imsy . '-' . $imsx;
-            imagecopy($img,$org_img, 0, 0, $imsx, $imsy, $size, $size);
-            imagejpeg($img,$dest_image,90);
-            imagedestroy($img);
-
-            if (file_exists($target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType)) {
-                unlink($target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
-                rename($target_file, $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
-            } else {
-                rename($target_file, $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType);
-            }
-
-            echo '<img src="' . $target_dir . 'foto-' . $_COOKIE['login'] . '.' . $imageFileType . '">';
         }
     }

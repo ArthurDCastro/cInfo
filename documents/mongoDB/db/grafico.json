@@ -23,28 +23,6 @@
     },
     {
         "_id": {
-            "$oid": "5b6cc835607d9e19c0002fd7"
-        },
-        "codigo": "5b67ed3c6290f",
-        "titulo": "cod",
-        "tipo": "polarArea",
-        "data": "2018-08-14 19:40:05",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "COO-GERAL GEST.PESSOL CIVIL MILITAR DO ANT.DF",
-                "gasto": "1101158965.34",
-                "codigo": "201064"
-            },
-            {
-                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
-                "gasto": "2322404943.08",
-                "codigo": "201005"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "5b6cc835607d9e19c0002fd8"
         },
         "codigo": "5b688205e38ec",
@@ -265,28 +243,6 @@
     },
     {
         "_id": {
-            "$oid": "5b6cc835607d9e19c0002fe2"
-        },
-        "codigo": "5b69d85fabf28",
-        "titulo": "olhai",
-        "tipo": "pie",
-        "data": "2018-08-07 19:35:27",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "BIBLIOTECA CENTRAL DA UFPB",
-                "gasto": "1903971.41",
-                "codigo": "153070"
-            },
-            {
-                "nome": "BIBLIOTECA CENTRAL DA UFPE",
-                "gasto": "106005.44",
-                "codigo": "153092"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "5b6cc851607d9e10ac007625"
         },
         "codigo": "5b6cc85164411",
@@ -375,28 +331,6 @@
     },
     {
         "_id": {
-            "$oid": "5b6d88c4607d9e10ac007632"
-        },
-        "codigo": "5b6d88c40d936",
-        "titulo": "oakskdl",
-        "tipo": "polarArea",
-        "data": "2018-08-10 14:44:52",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "IF CATARINENSE - CAMPUS ARAQUARI",
-                "gasto": "8025241.06",
-                "codigo": "158459"
-            },
-            {
-                "nome": "IF CATARINENSE - CAMPUS BLUMENAU",
-                "gasto": "3052721.79",
-                "codigo": "152254"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "5b6dd9e5607d9e10ac007635"
         },
         "codigo": "5b6dd9e52882b",
@@ -419,12 +353,12 @@
     },
     {
         "_id": {
-            "$oid": "5b71bf0a607d9e10ac007637"
+            "$oid": "5b731625607d9e10ac00763a"
         },
-        "codigo": "5b71bf0a67205",
-        "titulo": "olhai",
-        "tipo": "pie",
-        "data": "2018-08-13 19:25:30",
+        "codigo": "5b731625b73eb",
+        "titulo": "asd",
+        "tipo": "doughnut",
+        "data": "2018-08-14 19:49:25",
         "user": "LukDuk",
         "dados": [
             {
@@ -433,9 +367,53 @@
                 "codigo": "201013"
             },
             {
-                "nome": "FUNDO DE ESTAB.DO SEG.RURAL-FESR-R.S\/SUP.MPDG",
-                "gasto": "28944381.31",
-                "codigo": "71904"
+                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
+                "gasto": "2322404943.08",
+                "codigo": "201005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b73166c607d9e10ac00763c"
+        },
+        "codigo": "5b73166c03052",
+        "titulo": "sada",
+        "tipo": "doughnut",
+        "data": "2018-08-15 23:40:26",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "CONAB - SEDE SUREG SAO PAULO",
+                "gasto": "25152208.36",
+                "codigo": "135325"
+            },
+            {
+                "nome": "CONAB SEDE SUREG ACRE",
+                "gasto": "4857126.76",
+                "codigo": "135605"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b731f50607d9e10ac007641"
+        },
+        "codigo": "5b731f50271e9",
+        "titulo": "graficozin",
+        "tipo": "doughnut",
+        "data": "2018-08-14 20:28:32",
+        "user": "fez",
+        "dados": [
+            {
+                "nome": "SECRETARIA ESPECIAL MICRO E PEQUENA EMPRESA",
+                "gasto": "6225481.49",
+                "codigo": "280124"
+            },
+            {
+                "nome": "SUPERINTENDENCIA DA ZONA FRANCA DE MANAUS",
+                "gasto": "178065235.07",
+                "codigo": "28233"
             }
         ]
     }
