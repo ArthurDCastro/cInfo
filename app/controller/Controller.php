@@ -7,6 +7,7 @@
  * $data é um array onde voce pode colocar informações como título da pagina ou então id de um produto
 */
 
+//TODO fazer permissão de acesso as paginas
     require_once 'engine/Construct.php';
 
     class Controller extends Construct

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $("#teste").click(function(){
+    $("#teste").click(function () {
         if( $('.ui.form').form('is valid')) {
             $('#grafico').remove();
             $('#chart').html('<div id="grafico"><canvas id="myChart" width="400" height="500"></canvas></div>').hide();
@@ -84,4 +84,5 @@ $(document).ready(function(){
             $('.ui.form').form('validate form')
         }
     });
+
 });

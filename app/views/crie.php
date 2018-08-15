@@ -120,6 +120,7 @@
                         </div>
                     </div>
                     <div class="field">
+                        <!--TODO aparecer quando o grafico ja estiver salvo-->
                         <div class="ui vertical animated blue basic small button" tabindex="0" id="share">
                             <div class="visible content">Compartilhar</div>
                             <div class="hidden content">

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/button.css">
 
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
-    <div id="trap"><br>
+    <div id="trap"><br><br>
         <?php if ( isset( $data['foto'])): ?>
             <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
         <?php elseif ($data['user']->getLogin() == $_COOKIE['login']): ?>
@@ -21,7 +21,8 @@
                 <img src="assets/files/img/image.png">
             </div>
         <?php else: ?>
-            <img id="borda" class="ui centered small circular image" src="<?= $data['foto'] ?>">
+
+            <img id="borda" class="ui centered small circular image" src="assets/files/img/image.png">
         <?php endif; ?>
     </div>
     <div class="ui container">
@@ -82,7 +83,7 @@
                 <div class="ui mini horizontal statistic">
                     <div class="value"></div>
                     <div class="label">
-                        Editar
+                        Editar <!--TODO editar perfil (completo)-->
                     </div>
                 </div>
             </a>
