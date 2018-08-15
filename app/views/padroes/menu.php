@@ -36,6 +36,7 @@
                     <img src="assets/files/img/logo.png" style="">
                 </a>
 
+
                 <!-- user -->
                 <div class="item">
 
@@ -70,9 +71,10 @@
             Home
         </a>
         <a href="sobre" class="item padrao_option">
-            <i class="book icon"></i>
+            <i class="book  icon"></i>
             Sobre
         </a>
+
         <?php if (isset($_COOKIE['login'])): ?>
             <a href="crie" class="item padrao_option">
                 <i class="chart pie icon"></i>
@@ -84,9 +86,13 @@
             </a>
         <?php endif; ?>
         <?php if (isset($_COOKIE['login'])): ?>
-        <a class="item user_icon padrao_option">
+        <a href="perfil/<?=$_COOKIE['login']?>" class="item padrao_option">
            <i class="user circle icon"></i>
             <?= $_COOKIE['login'] ?>
+        </a>
+        <a href="logout" class="item padrao_option">
+            <i class="power off icon"></i>
+            Sair
         </a>
         <?php else: ?>
             <a href="login" class="item padrao_option">
@@ -98,19 +104,6 @@
                 Cadastre-se
             </a>
         <?php endif; ?>
-        <!-- segunda parte do menu na vertical-->
-        <a class="item user_option voltar_icon">
-            <i class="reply grey icon"></i>
-            Voltar
-        </a>
-        <a href="perfil" class="item user_option">
-            <i class="id card icon"></i>
-            Perfil
-        </a>
-        <a href="logout" class="item user_option">
-            <i class="power off icon"></i>
-            Sair
-        </a>
     </div>
 
 
