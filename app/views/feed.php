@@ -47,27 +47,29 @@
                     <i class="close icon black"></i>
                     <div class="ui small comments">
                         <h4 class="ui dividing header">Comentários</h4>
-                        <?php foreach ($publicacao->getComentarios() as $comentario): ?>
-                            <div class="comment">
-                            <a class="avatar">
-                                <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
-                            </a>
-                            <div class="content">
-                                <a class="author"><?= $comentario->getUser() ?></a>
-                                <div class="metadata">
-                                    <span class="date"><?= $comentario->getData() ?></span>
-                                </div>
-                                <div class="text">
-                                    <?= $comentario->getComentario() ?>
-                                </div>
-                                <div class="meta">
-                                    <a class="like">
-                                        <i class="like icon"></i><?= count($publicacao->getLike()) ?>
+                        <div id="todos_comen-<?= $publicacao->getCodigo(); ?>">
+                            <?php foreach ($publicacao->getComentarios() as $comentario): ?>
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
                                     </a>
+                                    <div class="content">
+                                        <a class="author"><?= $comentario->getUser() ?></a>
+                                        <div class="metadata">
+                                            <span class="date"><?= $comentario->getData() ?></span>
+                                        </div>
+                                        <div class="text">
+                                            <?= $comentario->getComentario() ?>
+                                        </div>
+                                        <div class="meta">
+                                            <a class="like">
+                                                <i class="like icon"></i><?= count($publicacao->getLike()) ?>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <?php endforeach; ?>
                         <form class="ui reply form">
                             <div class="field">
                                 <textarea id="text-<?= $publicacao->getCodigo(); ?>" rows="2"></textarea>

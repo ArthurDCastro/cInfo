@@ -19,7 +19,8 @@ $(document).ready(function(){
 
                 }
             }, function (dados) {
-                var dado = JSON.parse(dados);
+                $('#todos_comen-' + id).html(dados);
+                $('#text-' + id).val("");
             })
     });
 
