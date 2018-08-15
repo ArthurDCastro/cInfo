@@ -27,10 +27,7 @@
                 </div>
             </li>
         </ul>
-
-
         <div class="ui three column grid" style="margin: 0 10px 10px 10px">
-
             <div class="column">
                 <div class="ui green fluid card">
                     <div class="content">
@@ -84,4 +81,18 @@
         </div>
     </div>
 </div>
-
+<div id="oculta">
+    <p id="titulo">Titulo: <?= $data['grafico']->getTitulo() ?></p>
+        <p id="dado">
+            <?php foreach ($data['grafico']->getDados() as $dados): ?>
+                        Dado: <?= $dados->getNome() ?>
+            <?php endforeach; ?>
+        </p>
+    <p id="quantia">
+        <?php foreach ($data['grafico']->getDados() as $dados): ?>
+            /<?= $dados->getGasto(); ?>
+        <?php endforeach; ?>
+    </p>
+</div>
+<br>
+<div id="123"></div>
