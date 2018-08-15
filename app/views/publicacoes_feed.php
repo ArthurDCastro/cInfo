@@ -47,13 +47,17 @@
                         <div class="ui small comments">
                             <h4 class="ui dividing header">Comentários</h4>
                             <div id="todos_comen-<?= $publicacao->getCodigo(); ?>">
-                                <?php foreach ($publicacao->getComentarios() as $comentario): ?>
+                                    <?php foreach ($publicacao->getComentarios() as $comentario): $foto = $comentario->getUser()->getFoto()?>
                                     <div class="comment">
                                         <a class="avatar">
-                                            <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
+                                            <?php if ($foto != ''): ?>
+                                                <img src="<?= $comentario->getUser()->getFoto() ?>" style=" height: auto">
+                                            <?php else: ?>
+                                                <img src="assets/files/img/image.png" style=" height: auto">
+                                            <?php endif; ?>
                                         </a>
                                         <div class="content">
-                                            <a class="author"><?= $comentario->getUser() ?></a>
+                                            <a class="author"><?= $comentario->getUser()->getLogin() ?></a>
                                             <div class="metadata">
                                                 <span class="date"><?= $comentario->getData() ?></span>
                                             </div>
@@ -61,9 +65,9 @@
                                                 <?= $comentario->getComentario() ?>
                                             </div>
                                             <div class="meta">
-                                                <a class="like">
-                                                    <i class="like icon"></i><?= count($publicacao->getLike()) ?>
-                                                </a>
+                                                <!--<a class="like">
+                                                    <i class="like icon"></i><?/*= count($publicacao->getLike()) */?>
+                                                </a>-->
                                             </div>
                                         </div>
                                     </div>

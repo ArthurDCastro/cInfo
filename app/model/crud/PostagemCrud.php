@@ -23,8 +23,8 @@ class PostagemCrud
         foreach ($cursor as $document) {
             $array = (array) $document;
 
-            $user = new UserCrud();
-            $user = $user->getUser_byLogin($array['user']);
+            $userCrud = new UserCrud();
+            $user = $userCrud->getUser_byLogin($array['user']);
             
             $grafico = new GraficoCrud();
             $grafico = $grafico->getGraficos_byCodigo($array['grafico']);
@@ -33,7 +33,7 @@ class PostagemCrud
             foreach ((array) $array['comentarios'] as $comenta){
                 $comentario = new Comentarios();
                 $coment = (array) $comenta;
-                $comentario->setUser($coment['user']);
+                $comentario->setUser($userCrud->getUser_byLogin($coment['user']));
                 $comentario->setComentario($coment['text']);
                 $comentario->setData($coment['data']);
                 $comentario->setCodigo($coment['codigo']);
