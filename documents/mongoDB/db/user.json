@@ -1,57 +1,62 @@
 [
     {
         "_id": {
-            "$oid": "5b6cc835607d9e19c0002fd2"
-        },
-        "nome": "Arthur Dias Viana de Catro",
-        "login": "LukDuk",
-        "tipo_user": "admin",
-        "password": "$1$zi5kz80C$PNQ7PcRO5mY3Gwiy5aIiX\/",
-        "email": "arthurcastro078@gmail.com",
-        "foto": "assets\/files\/img\/perfil\/foto-LukDuk.jpg"
-    },
-    {
-        "_id": {
-            "$oid": "5b6cc835607d9e19c0002fd3"
+            "$oid": "5b74ad9c607d9e37880045b3"
         },
         "nome": "Jo\u00e3o Pedro Lazarim de Souza",
         "login": "Tekislla",
         "tipo_user": "admin",
         "password": "$1$LxsQRnGK$vfk199RZXquz2AiSrnoeS1",
         "email": "jplazarim@gmail.com",
-        "foto": "assets\/files\/img\/perfil\/foto-Tekislla.jpg"
+        "foto": "assets\/files\/img\/perfil\/foto-Tekislla.jpg",
+        "bio": ""
     },
     {
         "_id": {
-            "$oid": "5b6cc835607d9e19c0002fd4"
+            "$oid": "5b74ad9c607d9e37880045b4"
         },
         "nome": "Vinicius Peres",
         "login": "ohPeres",
         "tipo_user": "admin",
         "password": "$1$ldqy0aHh$JvJnRCjiQOVUzE8Dy4mzh1",
         "email": "peresvini2@gmail.com",
-        "foto": "assets\/files\/img\/perfil\/foto-ohPeres.jpg"
+        "foto": "assets\/files\/img\/perfil\/foto-ohPeres.jpg",
+        "bio": ""
     },
     {
         "_id": {
-            "$oid": "5b6cc835607d9e19c0002fd5"
+            "$oid": "5b74ad9c607d9e37880045b5"
         },
         "nome": "olhai",
         "login": "olhai",
         "tipo_user": "comum",
         "password": "$1$B0kP1Kor$.Dsm5y8dITsR\/LwwCWxZX0",
         "email": "olah@olhia",
-        "foto": "assets\/files\/img\/perfil\/foto-olhai.jpg"
+        "foto": "assets\/files\/img\/perfil\/foto-olhai.jpg",
+        "bio": ""
     },
     {
         "_id": {
-            "$oid": "5b731e8b607d9e10ac007640"
+            "$oid": "5b74ad9c607d9e37880045b6"
         },
         "nome": "feio",
         "login": "fez",
         "tipo_user": "comum",
         "password": "$1$Jq03mny5$XjrtoJspZJTnv3xAIk55w.",
         "email": "brunoluizfhynbeen@gmail.com",
-        "foto": "assets\/files\/img\/perfil\/foto-fez.jpg"
+        "foto": "assets\/files\/img\/perfil\/foto-fez.jpg",
+        "bio": ""
+    },
+    {
+        "_id": {
+            "$oid": "5b759b46607d9e10ac007648"
+        },
+        "nome": "Arthur Dias",
+        "login": "LukDuk",
+        "tipo_user": "comum",
+        "password": "$1$GLtQUv3L$8Pze5.sVUkWux1Yd.AgMS1",
+        "email": "arthurcastro078@gmail.com",
+        "foto": "assets\/files\/img\/perfil\/foto-LukDuk.jpg",
+        "bio": "asdasd"
     }
 ]
