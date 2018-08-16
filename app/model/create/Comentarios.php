@@ -45,7 +45,7 @@ class Comentarios
     /**
      * @return string
      */
-    public function getUser(): string
+    public function getUser()
     {
         return $this->user;
     }
@@ -53,7 +53,7 @@ class Comentarios
     /**
      * @param string $user
      */
-    public function setUser(string $user): void
+    public function setUser($user): void
     {
         $this->user = $user;
     }

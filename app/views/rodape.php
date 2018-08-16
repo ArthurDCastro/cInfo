@@ -10,10 +10,15 @@
                 <h4 class="ui inverted header">cInfo</h4>
                 <div class="ui inverted link list">
                     <a href="index" class="item">Início</a>
-                    <a href="feed" class="item">Feed</a>
-                    <a href="crie" class="item">Crie</a>
                     <a href="sobre" class="item">Sobre</a>
-                    <a href="#" class="item">Transparência</a>
+                    <?php if(isset($_COOKIE['login'])): ?>
+                        <a href="feed" class="item">Feed</a>
+                        <a href="crie" class="item">Crie</a>
+                        <a href="perfil" class="item">Perfil</a>
+                    <?php else: ?>
+                        <a href="login" class="item">Login</a>
+                        <a href="cadastro" class="item">Cadastro</a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="seven wide column">

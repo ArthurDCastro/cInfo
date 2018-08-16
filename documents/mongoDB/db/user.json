@@ -6,9 +6,9 @@
         "nome": "Arthur Dias Viana de Catro",
         "login": "LukDuk",
         "tipo_user": "admin",
-        "password": "$1$dDGzb8e3$8XfEfjr7TKdD8Yc6h3P.h\/",
+        "password": "$1$zi5kz80C$PNQ7PcRO5mY3Gwiy5aIiX\/",
         "email": "arthurcastro078@gmail.com",
-        "foto": ""
+        "foto": "assets\/files\/img\/perfil\/foto-LukDuk.jpg"
     },
     {
         "_id": {
@@ -19,7 +19,7 @@
         "tipo_user": "admin",
         "password": "$1$LxsQRnGK$vfk199RZXquz2AiSrnoeS1",
         "email": "jplazarim@gmail.com",
-        "foto": ""
+        "foto": "assets\/files\/img\/perfil\/foto-Tekislla.jpg"
     },
     {
         "_id": {
@@ -30,7 +30,7 @@
         "tipo_user": "admin",
         "password": "$1$ldqy0aHh$JvJnRCjiQOVUzE8Dy4mzh1",
         "email": "peresvini2@gmail.com",
-        "foto": ""
+        "foto": "assets\/files\/img\/perfil\/foto-ohPeres.jpg"
     },
     {
         "_id": {
@@ -41,6 +41,17 @@
         "tipo_user": "comum",
         "password": "$1$B0kP1Kor$.Dsm5y8dITsR\/LwwCWxZX0",
         "email": "olah@olhia",
-        "foto": ""
+        "foto": "assets\/files\/img\/perfil\/foto-olhai.jpg"
+    },
+    {
+        "_id": {
+            "$oid": "5b731e8b607d9e10ac007640"
+        },
+        "nome": "feio",
+        "login": "fez",
+        "tipo_user": "comum",
+        "password": "$1$Jq03mny5$XjrtoJspZJTnv3xAIk55w.",
+        "email": "brunoluizfhynbeen@gmail.com",
+        "foto": "assets\/files\/img\/perfil\/foto-fez.jpg"
     }
 ]

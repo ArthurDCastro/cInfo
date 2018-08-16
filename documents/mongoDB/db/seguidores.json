@@ -256,7 +256,7 @@
         "seguidor": "LukDuk",
         "seguindo": "Tekislla",
         "dti": "2018-08-07 19:35:52",
-        "dtf": "",
+        "dtf": "2018-08-16 00:36:50",
         "id": "5b69d8788a653"
     },
     {
@@ -336,7 +336,57 @@
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
         "dti": "2018-08-10 14:39:38",
-        "dtf": "",
+        "dtf": "2018-08-14 20:22:24",
         "id": "5b6d878a3fff2"
+    },
+    {
+        "_id": {
+            "$oid": "5b731de3607d9e10ac00763e"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "ohPeres",
+        "dti": "2018-08-14 20:22:27",
+        "dtf": "2018-08-14 20:22:30",
+        "id": "5b731de35220b"
+    },
+    {
+        "_id": {
+            "$oid": "5b731e0a607d9e10ac00763f"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "ohPeres",
+        "dti": "2018-08-14 20:23:06",
+        "dtf": "",
+        "id": "5b731e0aecbda"
+    },
+    {
+        "_id": {
+            "$oid": "5b731f6a607d9e10ac007643"
+        },
+        "seguidor": "fez",
+        "seguindo": "LukDuk",
+        "dti": "2018-08-14 20:28:58",
+        "dtf": "",
+        "id": "5b731f6abe63a"
+    },
+    {
+        "_id": {
+            "$oid": "5b731fa2607d9e10ac007644"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "fez",
+        "dti": "2018-08-14 20:29:54",
+        "dtf": "",
+        "id": "5b731fa286b16"
+    },
+    {
+        "_id": {
+            "$oid": "5b74ab05607d9e10ac007645"
+        },
+        "seguidor": "LukDuk",
+        "seguindo": "Tekislla",
+        "dti": "2018-08-16 00:36:53",
+        "dtf": "",
+        "id": "5b74ab0596ffa"
     }
 ]

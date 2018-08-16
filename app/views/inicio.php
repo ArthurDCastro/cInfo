@@ -4,6 +4,8 @@
 <script src="assets/front_end/js/inicio.js"></script>
 <script rel="stylesheet" src="assets/charts/inicio.js"></script>
 
+<!--TODO graficos principais no carroussel-->
+
 <div style="margin-top: 110px"></div>
 <div class="ui two column centered grid" style="padding: 0% 4%">
     <div class="column" id="corpo" style="width: 2002px">

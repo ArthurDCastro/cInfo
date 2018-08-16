@@ -36,6 +36,27 @@ switch ($_POST['acao']){
 
         $postagem->update($post);
 
+        foreach ($post->getComentarios() as $comentario): ?>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
+                </a>
+                <div class="content">
+                    <a class="author"><?= $comentario->getUser() ?></a>
+                    <div class="metadata">
+                        <span class="date"><?= $comentario->getData() ?></span>
+                    </div>
+                    <div class="text">
+                        <?= $comentario->getComentario() ?>
+                    </div>
+                    <div class="meta">
+                        <a class="like">
+                            <i class="like icon"></i><?= count($post->getLike()) ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach;
         break;
 
     case 'like-post':

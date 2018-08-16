@@ -11,19 +11,23 @@ $(document).ready(function() {
     });
 
     $('#excluir').click(function () {
-        alert('aa');
 
-        alert(window.location.href.substring(0))
+        var base = $('base').attr('href');
 
-        /*$.post('app/controller/perfil.php',
+        var url = window.location.href;
+
+        var user = url.replace(base,'').split('/')[1];
+
+        $.post('app/controller/perfil.php',
             {
                 acao: 'excluir',
-                id: $('#oculta').html()
+                id: $('#oculta').html(),
+                user: user
             }, function (dados) {
                 $('#conteudo').html('');
                 $('#conteudo').html(dados);
             }
-        )*/;
+        );
     });
 
     $('.info').hide();
