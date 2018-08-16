@@ -8,10 +8,14 @@
 <div class="ui two column centered grid" style="padding: 0% 4%">
     <div class="column" id="corpo" style="width: 2002px">
         <ul class="bxslider">
-            <li class="black" style="height: 550px;
-    position: relative">
-                <div id="grafico1" class="ui container">
-                    <canvas id="chart"></canvas>
+            <li class="black" style="height: 550px; position: relative">
+                <div id="todo">
+                    <div id="grafico1" class="ui container" >
+                        <canvas id="chart"></canvas>
+                    </div>
+                    <div id="legenda" class="ui container" >
+                        <h1>Gráfico comparando gastos em educação da<label class="ui pink header">UFSC</label> e da<label class="ui blue header">UFPR</label>.</h1>
+                    </div>
                 </div>
             </li>
             <li class="black" style="height: 550px;
@@ -82,17 +86,15 @@
     </div>
 </div>
 <div id="oculta">
-    <p id="titulo">Titulo: <?= $data['grafico']->getTitulo() ?></p>
-        <p id="dado">
+    <ul id="dado">Titulo: <?= $data['grafico']->getTitulo() ?>
             <?php foreach ($data['grafico']->getDados() as $dados): ?>
-                        Dado: <?= $dados->getNome() ?>
+                <li class="dado"><?= $dados->getNome() ?></li>
             <?php endforeach; ?>
-        </p>
-    <p id="quantia">
+    </ul>
+    <ul id="quantia">
         <?php foreach ($data['grafico']->getDados() as $dados): ?>
-            /<?= $dados->getGasto(); ?>
+            <li class="quantia"><?= $dados->getGasto(); ?></li>
         <?php endforeach; ?>
-    </p>
+    </ul>
 </div>
 <br>
-<div id="123"></div>

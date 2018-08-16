@@ -26,7 +26,7 @@
             $data['bruno'] = 'bruno';
 
             $data['grafico'] = new Grafico();
-            $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo('5b70ec98bdacf');
+            $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo('5b74b7c266d86');
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');

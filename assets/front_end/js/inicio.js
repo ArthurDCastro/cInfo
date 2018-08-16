@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    //$('#oculta').hide();
+    $('#oculta').hide();
 
     $('.bxslider').bxSlider({
         mode: 'horizontal',
@@ -14,21 +14,17 @@ $(document).ready(function(){
         responsive: true
     });
 
-    var dados = [
-        $('#dado').text()
-    ];
 
-    var quantias = [
-        $('#quantia').text()
-    ];
+    var quantia = [];
+    var dado = [];
 
-    //var teste = quantias.split('/');
+    $('.quantia').each(function(){
+       quantia.push($(this).text());
+    });
 
-    strx   = quantias.split('/');
-    array  = [];
-    array = array.concat(strx);
-
-    $('#123').text(array[0]);
+    $('.dado').each(function(){
+       dado.push($(this).text());
+    });
 
     var ctx = document.getElementById('chart').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -36,7 +32,7 @@ $(document).ready(function(){
 
         data: {
             datasets: [{
-                data: [],
+                data: quantia,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.8)',
                     'rgba(54, 162, 235, 0.8)',
@@ -60,8 +56,12 @@ $(document).ready(function(){
                 ],
                 borderWidth: 0
             }],
-            labels: [dados]
+            labels: dado
         }
     });
 
 });
+
+Chart.defaults.global.legend.position = 'right';
+
+Chart.defaults.global.legend.display = false;
