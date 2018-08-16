@@ -1,3 +1,4 @@
+<script type="text/javascript" src="assets/front_end/js/editar_perfil.js"></script>
 <form action="editar_perfil" class="ui form" method="post" id="form1">
     <div class="ui equal width form" style="margin: 3% 7% 7% 7%;">
         <div class="fields">
@@ -21,7 +22,7 @@
                 <label>Senha Antiga</label>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input name="senha_antiga" type="password" placeholder="*****">
+                    <input name="password" type="password" placeholder="*****">
                 </div>
             </div>
             <div class="field">
@@ -41,9 +42,10 @@
         </div>
         <div class="field">
             <label>Biografia</label>
-            <textarea name="bio" rows="2"></textarea>
+            <textarea name="bio" rows="2"><?= $user->getBio() ?></textarea>
         </div>
-        <button name="salvar" form="form1" type="submit" class="ui animated green large submit button" tabindex="0" style="float: right;">
+        <div class="ui error message"></div>
+        <button id="salvar" name="salvar" form="form1" type="submit" class="ui animated green large submit button" tabindex="0" style="float: right;">
             <div class="visible content">Salvar</div>
             <div class="hidden content">
                 <i class="upload icon"></i>

@@ -14,8 +14,9 @@ class User
     private $nome;
     private $email;
     private $foto;
+    private $bio;
 
-    public function __construct($tipo_user = '', $login = '', $password = '', $nome = '', $email = '', $foto = '')
+    public function __construct($tipo_user = '', $login = '', $password = '', $nome = '', $email = '', $foto = '', $bio = '')
     {
         $this->tipo_user = $tipo_user;
         $this->login = $login;
@@ -23,17 +24,30 @@ class User
         $this->nome = $nome;
         $this->email = $email;
         $this->foto = $foto;
+        $this->bio = $bio;
     }
 
     public function insert(){
         return [
-
             'nome'      => $this->nome,
             'login'     => $this->login,
             'tipo_user' => $this->tipo_user,
             'password'  => crypt($this->password),
             'email'     => $this->email,
-            'foto'      => $this->foto
+            'foto'      => $this->foto,
+            'bio'      => $this->bio
+        ];
+    }
+
+    public function update(){
+        return [
+            'nome'      => $this->nome,
+            'login'     => $this->login,
+            'tipo_user' => $this->tipo_user,
+            'password'  => $this->password,
+            'email'     => $this->email,
+            'foto'      => $this->foto,
+            'bio'      => $this->bio
         ];
     }
 
@@ -132,6 +146,22 @@ class User
     public function setFoto(string $foto): void
     {
         $this->foto = $foto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBio()
+    {
+        return $this->bio;
+    }
+
+    /**
+     * @param mixed $bio
+     */
+    public function setBio($bio): void
+    {
+        $this->bio = $bio;
     }
 
 

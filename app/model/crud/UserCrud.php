@@ -24,7 +24,7 @@ class UserCrud
 
         foreach ($cursor as $document) {
             $array = (array) $document;
-            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email'], $array['foto']);
+            $list[] = new User($array['tipo_user'], $array['login'], $array['password'], $array['nome'], $array['email'], $array['foto'], $array['bio']);
         }
 
         return $list;
@@ -90,7 +90,7 @@ class UserCrud
 
         $bulk = new MongoDB\Driver\BulkWrite;
 
-        $bulk->update(['login' => $user->getLogin()], $user->insert());
+        $bulk->update(['login' => $user->getLogin()], $user->update());
 
         $this->manager->executeBulkWrite('db_cinfo.user', $bulk);
     }

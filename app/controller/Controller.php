@@ -173,12 +173,16 @@
             }
         }
 
-        public function perfil(){
+        public function perfil($user = ''){
             if (isset($_COOKIE['login'])){
                 $data['titulo_pagina'] = 'cInfo - Perfil';
-                $data['url'] = @$this->getDataUrl();
+                if ($user == ''){
+                    $data['url'] = @$this->getDataUrl();
+                    $user = $data['url'][0];
+                }
 
-                $data['user'] = $this->user->crud->getUser_byLogin($data['url'][0]);
+
+                $data['user'] = $this->user->crud->getUser_byLogin($user);
                 $data['foto'] = $data['user']->getFoto();
                 $data['publicacoes'] = $this->postagem->crud->getPublicacoes_byUser($data['user']->getLogin());
                 $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
@@ -284,5 +288,29 @@
                 header('Location: error_permissao');
             }
 
+        }
+
+        public function editar_perfil(){
+            if (isset($_COOKIE['login'])){
+                $user = $this->user->crud->getUser_byLogin($_COOKIE['login']);
+
+                $user->setNome($_POST['nome']);
+                $user->setEmail($_POST['email']);
+                $user->setBio($_POST['bio']);
+
+                if (isset($_POST['senha_nova'])){
+                    if (crypt($_POST['password'], $user->getPassword()) == $user->getPassword()){
+                        if ($_POST['senha_nova'] == $_POST['senha_confirmada']){
+                            $user->setPassword(crypt($_POST['senha_nova']));
+                        } else {
+                            $this->perfil($_COOKIE['login']);
+                        }
+                    }
+                }
+
+                $this->user->crud->update($user);
+            } else {
+                header('Location: error_permissao');
+            }
         }
     }

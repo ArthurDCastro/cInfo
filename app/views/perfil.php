@@ -44,7 +44,7 @@
                 <?php endif;?>
             <?php endif; ?>
         </h1>
-        <div class="sub header">bio</div>
+        <div class="sub header"><?= $data['user']->getBio() ?></div>
     </div>
     <div class="ui top attached tabular menu">
         <a id="perfil" class="active item">
@@ -86,7 +86,7 @@
             </div>
         </a>
         <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
-            <a href="editar_perfil" id="editar" class="item">
+            <a id="editar" class="item">
                 <div class="ui mini horizontal statistic">
                     <div class="value"></div>
                     <div class="label">
