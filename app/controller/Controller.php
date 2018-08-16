@@ -32,6 +32,8 @@
 
             $data['grafico'] = new Grafico();
             $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo('5b74b7c266d86');
+            $data['grafico2'] = $this->grafico->crud->getGraficos_byCodigo('5b74f14f9c60d');
+            $data['grafico3'] = $this->grafico->crud->getGraficos_byCodigo('5b74f94cea165');
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');

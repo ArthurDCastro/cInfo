@@ -20,16 +20,27 @@
                     </div>
                 </div>
             </li>
-            <li class="black" style="height: 550px;
-    position: relative">
-                <div class="ui container">
-                    <img src="assets/files/img/3.jpg" style="width: 100%; height: 100%;">
+            <li class="black" style="height: 550px; position: relative">
+                <div id="grafico2" class="ui container" >
+                    <canvas id="chart2" style="padding: 2%"></canvas>
+                </div>
+                <div id="legenda" class="ui container" >
+                    <h1 id="h12">Gráfico sobre as despesas em agricultura nos Laboratórios Nacionais Agropecuarios de:
+                        <br><label  class="ui pink header es">MG</label>,
+                        <label class="ui blue header es">PE</label>,
+                        <label class="ui yellow header es">RS</label> e
+                        <label class="ui teal header es">SP</label>.
+                    </h1>
                 </div>
             </li>
-            <li class="black" style="height: 550px;
-    position: relative">
-                <div class="ui container">
-                    <img src="assets/files/img/4.jpg" style="width: 100%; height: 100%;">
+            //esse gráfico não está funcionando por estar na terceira parte do carrosel pq ele esta sendo construido e exibido
+
+            <li class="black" style="height: 550px; position: relative">
+                <div id="grafico3" class="ui container" >
+                    <canvas id="chart3" style="padding: 2%"></canvas>
+                </div>
+                <div id="legenda" class="ui container" >
+                    <h1><label  class="ui pink header es">TESTE</label></h1>
                 </div>
             </li>
         </ul>
@@ -96,6 +107,30 @@
     <ul id="quantia">
         <?php foreach ($data['grafico']->getDados() as $dados): ?>
             <li class="quantia"><?= $dados->getGasto(); ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<div id="oculta2">
+    <ul id="dado">Titulo: <?= $data['grafico2']->getTitulo() ?>
+        <?php foreach ($data['grafico2']->getDados() as $dados): ?>
+            <li class="dado2"><?= $dados->getNome() ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <ul id="quantia">
+        <?php foreach ($data['grafico2']->getDados() as $dados): ?>
+            <li class="quantia2"><?= $dados->getGasto(); ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<div id="oculta3">
+    <ul id="dado">Titulo: <?= $data['grafico3']->getTitulo() ?>
+        <?php foreach ($data['grafico3']->getDados() as $dados): ?>
+            <li class="dado3"><?= $dados->getNome() ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <ul id="quantia">
+        <?php foreach ($data['grafico3']->getDados() as $dados): ?>
+            <li class="quantia3"><?= $dados->getGasto(); ?></li>
         <?php endforeach; ?>
     </ul>
 </div>
