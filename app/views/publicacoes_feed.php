@@ -11,7 +11,7 @@
                 </div>
                 <div class="content">
                     <div class="summary">
-                        <a><?= $publicacao->getUser()->getLogin() ?></a>
+                        <a href="perfil/<?= $publicacao->getUser()->getLogin() ?>"><?= $publicacao->getUser()->getLogin() ?></a>
                         <div class="date">
                             <?= $publicacao->getData(); ?>
                         </div>

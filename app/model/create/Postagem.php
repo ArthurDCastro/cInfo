@@ -110,7 +110,7 @@ class Postagem
     /**
      * @return string
      */
-    public function getDescricao(): string
+    public function getDescricao()
     {
         return $this->descricao;
     }

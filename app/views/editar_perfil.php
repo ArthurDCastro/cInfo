@@ -45,7 +45,7 @@
             <textarea name="bio" rows="2"><?= $user->getBio() ?></textarea>
         </div>
         <div class="ui error message"></div>
-        <button id="salvar" name="salvar" form="form1" type="submit" class="ui animated green large submit button" tabindex="0" style="float: right;">
+        <button id="salvar" name="salvar" form="form1" type="submit" class="ui animated green large submit button" value="cadastrar" tabindex="0" style="float: right;">
             <div class="visible content">Salvar</div>
             <div class="hidden content">
                 <i class="upload icon"></i>
