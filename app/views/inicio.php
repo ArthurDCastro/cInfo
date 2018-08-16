@@ -13,7 +13,7 @@
             <li class="black" style="height: 550px; position: relative">
                 <div id="todo">
                     <div id="grafico1" class="ui container" >
-                        <canvas id="chart"></canvas>
+                        <canvas id="chart" style="padding: 2%"></canvas>
                     </div>
                     <div id="legenda" class="ui container" >
                         <h1>Gráfico comparando gastos em educação da<label class="ui pink header">UFSC</label> e da<label class="ui blue header">UFPR</label>.</h1>
