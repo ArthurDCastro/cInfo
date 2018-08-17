@@ -10,8 +10,8 @@
                 </div>
                 <br><br>
                 <div class="row">
-                    <img src="assets/files/img/castrinho.jpg" id="img">
-                </div>
-            </div>
-        </div>
-    </div>
+<!--                    <img src="assets/files/img/castrinho.jpg" id="img">-->
+</div>
+</div>
+</div>
+</div>
