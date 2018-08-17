@@ -4,95 +4,160 @@
 <script src="assets/front_end/js/inicio.js"></script>
 <script rel="stylesheet" src="assets/charts/inicio.js"></script>
 
-<!--TODO graficos principais no carroussel-->
+<div class="pusher">
+    <div class="ui vertical masthead center aligned segment" id="header">
 
-<div style="margin-top: 110px"></div>
-<div class="ui two column centered grid" style="padding: 0% 4%">
-    <div class="column" id="corpo" style="width: 2002px">
-        <ul class="bxslider">
-            <li class="black" style="height: 550px; position: relative">
-                <div id="todo">
-                    <div id="grafico1" class="ui container" >
-                        <canvas id="chart" style="padding: 2%"></canvas>
-                    </div>
-                    <div id="legenda" class="ui container" >
-                        <h1>Gráfico comparando gastos em educação da<label class="ui pink header">UFSC</label> e da<label class="ui blue header">UFPR</label>.</h1>
-                    </div>
+        <div class="ui container">
+            <div class="ui large secondary inverted header menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="item" href="index">Inicio</a>
+                <a class="item" href="sobre">Sobre</a>
+                <?php if (isset($_COOKIE['login'])): ?>
+                    <a  class="item" href="feed">
+                        Feed
+                    </a>
+                    <a  class="item" href="crie">
+                        Crie
+                    </a>
+                <?php endif; ?>
+                <div class="right item">
+                    <?php if (isset($_COOKIE['login'])): ?>
+                        <a id="some" class="ui inverted button" href="perfil/<?=$_COOKIE['login']?>">
+                            <?= $_COOKIE['login'] ?>
+                        </a>
+                        <a id="some" class="ui red inverted button" href="logout">Sair</a>
+                    <?php else: ?>
+                        <a id="some" href="login" class="ui inverted button">Login</a>
+                        <a id="some" href="cadastro" class="ui inverted button">Cadastre-se</a>
+                    <?php endif; ?>
                 </div>
-            </li>
-            <li class="black" style="height: 550px; position: relative">
-                <div id="grafico2" class="ui container" >
-                    <canvas id="chart2" style="padding: 2%"></canvas>
-                </div>
-                <div id="legenda" class="ui container" >
-                    <h1 id="h12">Gráfico sobre as despesas em agricultura nos Laboratórios Nacionais Agropecuarios de:
-                        <br><label  class="ui pink header es">MG</label>,
-                        <label class="ui blue header es">PE</label>,
-                        <label class="ui yellow header es">RS</label> e
-                        <label class="ui teal header es">SP</label>.
-                    </h1>
-                </div>
-            </li>
-            //esse gráfico não está funcionando por estar na terceira parte do carrosel pq ele esta sendo construido e exibido
+            </div>
+        </div>
 
-            <li class="black" style="height: 550px; position: relative">
-                <div id="grafico3" class="ui container" >
-                    <canvas id="chart3" style="padding: 2%"></canvas>
-                </div>
-                <div id="legenda" class="ui container" >
-                    <h1><label  class="ui pink header es">TESTE</label></h1>
-                </div>
-            </li>
-        </ul>
-        <div class="ui three column grid" style="margin: 0 10px 10px 10px">
-            <div class="column">
-                <div class="ui green fluid card">
-                    <div class="content">
-                        <div class="header">
-                            <i class="arrow up icon"></i>
-                            R$20,00
+        <div class="ui text container" id="titulo">
+            <h1 class="ui inverted header">
+                <img src="assets/files/img/logo.png">
+            </h1>
+            <h2>Plataforma de criação de gráficos a partir dos gastos publicos econtrados no <a href="http://www.portaltransparencia.gov.br/" target="_blank">portal da transparência</a>.</h2>
+        </div>
+
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="seven wide column">
+                    <h3 class="ui header">Gastos nos Laboratórios Nacionais Agropecuarios</h3>
+                    <p id="legenda">
+                        Gráfico sobre as despesas em agricultura nos Laboratórios Nacionais Agropecuarios de:
+                            <label  class="ui pink header es">MG</label>,
+                            <label class="ui blue header es">PE</label>,
+                            <label class="ui yellow header es">RS</label> e
+                            <label class="ui teal header es">SP</label>.
+
+                    </p>
+                    <div class="ui small statistic">
+                        <div class="value">
+                            30M
                         </div>
-                        <div class="description">
-                            Arrecadação - R$3000 (10%)
+                        <div class="label">
+                            MG
                         </div>
                     </div>
-                    <div class="ui bottom attached button">
-                        <i class="add icon"></i>
-                        Mais informações
+                    <div class="ui small statistic">
+                        <div class="value">
+                            12M
+                        </div>
+                        <div class="label">
+                            PE
+                        </div>
+                    </div>
+                    <div class="ui small statistic">
+                        <div class="value">
+                            12M
+                        </div>
+                        <div class="label">
+                            RS
+                        </div>
+                    </div>
+                    <div class="ui small statistic">
+                        <div class="value">
+                            31M
+                        </div>
+                        <div class="label">
+                            SP
+                        </div>
+                    </div>
+                </div>
+                <div class="seven wide right floated column" id="grafico1">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="seven wide right column" id="grafico2">
+                    <canvas id="chart2"></canvas>
+                </div>
+                <div class="seven wide column">
+                    <h3 class="ui header">Gastos das Universidades Federais</h3>
+                    <p id="legenda">
+                        Gráfico sobre as despesas em educação nas Universidades Federais de:
+                        <label  class="ui pink header es">Santa Catarina</label> e
+                        <label class="ui blue header es">Paraná</label>.
+                    </p>
+                    <div class="ui statistic">
+                        <div class="value">
+                            1.551M
+                        </div>
+                        <div class="label">
+                            UFSC
+                        </div>
+                    </div>
+                    <div class="ui statistic">
+                        <div class="value">
+                            1.450M
+                        </div>
+                        <div class="label">
+                            UFPR
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="column">
-                <div class="ui red fluid card">
-                    <div class="content">
-                        <div class="header centered">
-                            <i class="arrow down icon"></i>
-                            R$20,00
+        </div>
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="seven wide column">
+                    <h3 class="ui header">Imprensa <i>vs</i> Estudos e Projetos</h3>
+                    <p id="legenda">
+                        Gráfico sobre a relação das despesas entre a
+                            <label  class="ui pink header es">Financiadora de Estudos e Projetos</label> e o
+                            <label class="ui blue header es">Fundo de Imprensa Nacional</label>.
+                    </p>
+                    <div class="ui statistic">
+                        <div class="value">
+                            150M
                         </div>
-                        <div class="description">
-                            Despesas totais - R$3000 (10%)
+                        <div class="label">
+                            Estudos e Projetos
                         </div>
                     </div>
-                    <div class="ui bottom attached button">
-                        <i class="add icon"></i>
-                        Mais informações
+                    <div class="ui statistic">
+                        <div class="value">
+                            195M
+                        </div>
+                        <div class="label">
+                            Imprensa Nacional
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="column">
-                <div class="ui inverted yellow fluid card">
-                    <div class="content">
-                        <div class="header">R$20,00</div>
-                        <div class="description">
-                            Divida Pública - R$3000 (10%)
-                        </div>
-                    </div>
-                    <div class="ui bottom attached button">
-                        <i class="add icon"></i>
-                        Mais informações
-                    </div>
+                <div class="seven wide right floated column" id="grafico3">
+                    <canvas id="chart3"></canvas>
                 </div>
             </div>
         </div>

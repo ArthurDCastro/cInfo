@@ -156,6 +156,7 @@
     </div>
 </div>
 
+<!--TODO arrumar modal-->
 <div class="ui fullscreen modal" id="publicar">
     <i class="close icon"></i>
     <div class="header" id="tituloModal">

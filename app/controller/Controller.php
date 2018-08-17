@@ -31,9 +31,9 @@
             $data['titulo_pagina'] = 'cInfo - Bem Vindo';
 
             $data['grafico'] = new Grafico();
-            $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo('5b74b7c266d86');
-            $data['grafico2'] = $this->grafico->crud->getGraficos_byCodigo('5b74f14f9c60d');
-            $data['grafico3'] = $this->grafico->crud->getGraficos_byCodigo('5b74f94cea165');
+            $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo('5b7635e1a1c6e');
+            $data['grafico2'] = $this->grafico->crud->getGraficos_byCodigo('5b763a769e073');
+            $data['grafico3'] = $this->grafico->crud->getGraficos_byCodigo('5b763ce7e6ccd');
 
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
@@ -300,15 +300,29 @@
                 $user->setEmail($_POST['email']);
                 $user->setBio($_POST['bio']);
 
-                if (isset($_POST['senha_nova'])){
+                if ($_POST['senha_nova'] != ''){
                     if (crypt($_POST['password'], $user->getPassword()) == $user->getPassword()){
-                        if ($_POST['senha_nova'] == $_POST['senha_confirmada']){
-                            $user->setPassword(crypt($_POST['senha_nova']));
+                        if (strlen($_POST['senha_nova']) >= 6){
+                            if ($_POST['senha_nova'] == $_POST['senha_confirmada']){
+                                $user->setPassword(crypt($_POST['senha_nova']));
+                            } else {
+                                $data['erro'] = 'As senhas não correspondem';
+                                $this->loadView('padroes/head.php', $data);
+                                $this->loadView('transicao.php', $data);
+                            }
                         } else {
-                            $this->perfil($_COOKIE['login']);
+                            $data['erro'] = 'Senha muito curta';
+                            $this->loadView('padroes/head.php', $data);
+                            $this->loadView('transicao.php', $data);
                         }
+                    } else {
+                        $data['erro'] = 'Senha invalida';
+                        $this->loadView('padroes/head.php', $data);
+                        $this->loadView('transicao.php', $data);
                     }
                 }
+
+                header('Location: perfil/' . $_COOKIE['login']);
 
                 $this->user->crud->update($user);
             } else {

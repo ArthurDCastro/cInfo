@@ -74,7 +74,7 @@ switch ($_POST['acao']){
 
     case 'editar':
         $userCrud = new UserCrud();
-        $user = $userCrud->getUser_byLogin($_COOKIE['login']);
+        $data['user'] = $userCrud->getUser_byLogin($_COOKIE['login']);
         include "../views/editar_perfil.php";
         break;
 

@@ -7,7 +7,7 @@
 <body>
     <div class="ui grid">
         <div class="ten wide column centered">
-            <div class="ui secondary pointing huge three item top fixed menu" id="menu">
+            <div class="ui secondary pointing huge three item top fixed hidden menu" id="menu">
 
                 <!-- menu -->
                 <div id="some" class="item">
@@ -33,7 +33,7 @@
 
                 <!-- logo -->
                 <a class="item" href="index" id="logo">
-                    <img src="assets/files/img/logo.png" style="">
+                    <img src="assets/files/img/logo.png">
                 </a>
 
 
@@ -52,7 +52,6 @@
                         <a id="some" class="item" href="perfil/<?=$_COOKIE['login']?>">
                             <?= $_COOKIE['login'] ?>
                         </a>
-
                         <a id="some" class="item" href="logout">Sair</a>
                     <?php else: ?>
                             <a id="some" href="login" class="item some">Login</a>

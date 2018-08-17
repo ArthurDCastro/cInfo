@@ -66,17 +66,5 @@
         ],
         "like": [],
         "data": "2018-08-14 19:50:39"
-    },
-    {
-        "_id": {
-            "$oid": "5b759d6a607d9e10ac007649"
-        },
-        "codigo": "5b759d6ad0c16",
-        "user": "LukDuk",
-        "grafico": null,
-        "descricao": null,
-        "comentarios": [],
-        "like": [],
-        "data": "2018-08-16 17:51:06"
     }
 ]

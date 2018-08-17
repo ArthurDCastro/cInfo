@@ -2,6 +2,7 @@
     $('.ui.form')
         .form({
             fields: {
+                senha_nova: 'empty',
                 nome: {
                     identifier: 'nome',
                     rules: [
@@ -31,3 +32,6 @@
             }
         })
     ;
+    if( $('.ui.form').form('is valid', 'senha_nova') < 1) {
+        alert('aa')
+    }

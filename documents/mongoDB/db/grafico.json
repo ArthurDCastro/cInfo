@@ -416,5 +416,81 @@
                 "codigo": "28233"
             }
         ]
+    },
+    {
+        "_id": {
+            "$oid": "5b7635e1607d9e10ac00764a"
+        },
+        "codigo": "5b7635e1a1c6e",
+        "titulo": "Laborat\u00f3rios agropec\u00faarios",
+        "tipo": "pie",
+        "data": "2018-08-17 04:41:37",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "LABORATORIO NACIONAL AGROPECUARIO\/MG",
+                "gasto": "30830640.48",
+                "codigo": "130058"
+            },
+            {
+                "nome": "LABORATORIO NACIONAL AGROPECUARIO\/PE",
+                "gasto": "12627414.67",
+                "codigo": "130016"
+            },
+            {
+                "nome": "LABORATORIO NACIONAL AGROPECUARIO\/RS",
+                "gasto": "12563115.83",
+                "codigo": "130103"
+            },
+            {
+                "nome": "LABORATORIO NACIONAL AGROPECUARIO\/SP",
+                "gasto": "31367540.58",
+                "codigo": "130102"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b763a76607d9e10ac00764b"
+        },
+        "codigo": "5b763a769e073",
+        "titulo": "Universidades Federais do Sul",
+        "tipo": "doughnut",
+        "data": "2018-08-17 05:01:10",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "UNIVERSIDADE FEDERAL DE SANTA CATARINA",
+                "gasto": "1551173376.22",
+                "codigo": "26246"
+            },
+            {
+                "nome": "UNIVERSIDADE FEDERAL DO PARANA",
+                "gasto": "1454016259.76",
+                "codigo": "153079"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b763ce7607d9e10ac00764c"
+        },
+        "codigo": "5b763ce7e6ccd",
+        "titulo": "Imprensa do governo vs Estudos e Projetos",
+        "tipo": "pie",
+        "data": "2018-08-17 05:11:35",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "FINANCIADORA DE ESTUDOS E PROJETOS",
+                "gasto": "150906499.39",
+                "codigo": "20502"
+            },
+            {
+                "nome": "FUNDO DE IMPRENSA NACIONAL",
+                "gasto": "195425386.2",
+                "codigo": "20927"
+            }
+        ]
     }
 ]

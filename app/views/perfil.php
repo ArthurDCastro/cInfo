@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="assets/front_end/css/perfil.css">
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/button.css">
-
+<?php
+    $verificaEditar = false;
+    if (isset($data['url'][1])):
+        if ($data['url'][1] == 'editar_perfil'):
+            $verificaEditar = true;
+        endif;
+    endif;
+?>
 <script type="text/javascript" src="assets/front_end/js/perfil.js"></script>
     <div id="trap"><br><br>
         <?php if ($data['foto'] != '' and $data['user']->getLogin() != $_COOKIE['login']): ?>
@@ -47,7 +54,7 @@
         <div class="sub header"><?= $data['user']->getBio() ?></div>
     </div>
     <div class="ui top attached tabular menu">
-        <a id="perfil" class="active item">
+        <a id="perfil" class="<?php if(!$verificaEditar): echo 'active'; endif;?> item">
             <div class="ui mini horizontal statistic">
                 <div class="value"></div>
                 <div class="label">
@@ -86,11 +93,11 @@
             </div>
         </a>
         <?php if ($data['user']->getLogin() == $_COOKIE['login']): ?>
-            <a id="editar" class="item">
+            <a id="editar" class="<?php if($verificaEditar): echo 'active'; endif;?> item">
                 <div class="ui mini horizontal statistic">
                     <div class="value"></div>
                     <div class="label">
-                        Editar <!--TODO editar perfil (completo)-->
+                        Editar
                     </div>
                 </div>
             </a>
@@ -98,7 +105,13 @@
     </div>
     <div class="ui bottom attached segment">
         <div id="conteudo">
-            <?php include 'perfil_usuario.php'?>
+            <?php
+                if ($verificaEditar):
+                    include 'editar_perfil.php';
+                else:
+                    include 'perfil_usuario.php';
+                endif;
+            ?>
         </div>
     </div>
 </div>
