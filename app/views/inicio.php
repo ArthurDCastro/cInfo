@@ -24,13 +24,13 @@
                 <?php endif; ?>
                 <div class="right item">
                     <?php if (isset($_COOKIE['login'])): ?>
-                        <a id="some" class="ui inverted button" href="perfil/<?=$_COOKIE['login']?>">
+                        <a class="ui inverted button" href="perfil/<?=$_COOKIE['login']?>">
                             <?= $_COOKIE['login'] ?>
                         </a>
-                        <a id="some" class="ui red inverted button" href="logout">Sair</a>
+                        <a class="ui red inverted button" href="logout">Sair</a>
                     <?php else: ?>
-                        <a id="some" href="login" class="ui inverted button">Login</a>
-                        <a id="some" href="cadastro" class="ui inverted button">Cadastre-se</a>
+                        <a href="login" class="ui inverted button">Login</a>
+                        <a href="cadastro" class="ui inverted button">Cadastre-se</a>
                     <?php endif; ?>
                 </div>
             </div>
