@@ -6,5 +6,3 @@
 $project = new Project($config['banco']);
 
 $project->downloadData();
-
-//teste
