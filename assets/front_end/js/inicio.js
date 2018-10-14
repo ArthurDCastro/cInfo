@@ -173,5 +173,5 @@ $(document).ready(function(){
 });
 
 Chart.defaults.global.legend.position = 'right';
-
-Chart.defaults.global.legend.display = false;
+/*
+Chart.defaults.global.legend.display = false;*/

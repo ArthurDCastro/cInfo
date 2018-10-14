@@ -243,160 +243,6 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e37880045c2"
-        },
-        "codigo": "5b6cc85164411",
-        "titulo": "olhai",
-        "tipo": "pie",
-        "data": "2018-08-10 01:03:45",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
-                "gasto": "2322404943.08",
-                "codigo": "201005"
-            },
-            {
-                "nome": "ESCOLA NACIONAL DA ADMINISTRACAO PUBLICA-ENAP",
-                "gasto": "54795527.07",
-                "codigo": "47210"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c3"
-        },
-        "codigo": "5b6ccf935a4c9",
-        "titulo": "oljsahd",
-        "tipo": "doughnut",
-        "data": "2018-08-10 01:34:43",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
-                "gasto": "600172496.8",
-                "codigo": "201013"
-            },
-            {
-                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
-                "gasto": "2322404943.08",
-                "codigo": "201005"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c4"
-        },
-        "codigo": "5b6d7ef26d293",
-        "titulo": "olhai",
-        "tipo": "doughnut",
-        "data": "2018-08-10 14:02:58",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "INST. FED. DE EDUC.,CIENC. E TEC. DE RONDONIA",
-                "gasto": "150687754.64",
-                "codigo": "158148"
-            },
-            {
-                "nome": "INST.FED.DE EDUC.,CIENC.E TEC.CATARINENSE",
-                "gasto": "359712240.57",
-                "codigo": "26422"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c5"
-        },
-        "codigo": "5b6d87641d704",
-        "titulo": "gh",
-        "tipo": "doughnut",
-        "data": "2018-08-10 14:39:00",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "COMPANHIA NACIONAL DE ABASTECIMENTO",
-                "gasto": "824127879.06",
-                "codigo": "135100"
-            },
-            {
-                "nome": "COMPANHIA NACIONAL DE ABASTECIMENTO",
-                "gasto": "2182436855.93",
-                "codigo": "22211"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c6"
-        },
-        "codigo": "5b6dd9e52882b",
-        "titulo": "uasfdgjbn",
-        "tipo": "pie",
-        "data": "2018-08-10 20:31:01",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "ESCRIT\u00d3RIO DE DIFUS\u00c3O REGIONAL NORDESTE",
-                "gasto": "419469.47",
-                "codigo": "183044"
-            },
-            {
-                "nome": "ESCRIT\u00d3RIO DE DIFUS\u00c3O REGIONAL SUDESTE I",
-                "gasto": "440624.16",
-                "codigo": "183045"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c7"
-        },
-        "codigo": "5b731625b73eb",
-        "titulo": "asd",
-        "tipo": "doughnut",
-        "data": "2018-08-14 19:49:25",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "COORDENACAO DE EXECUCAO ORC. E FINANCEIRA",
-                "gasto": "600172496.8",
-                "codigo": "201013"
-            },
-            {
-                "nome": "COORDENACAO-GERAL DE GESTAO DE PESSOAS",
-                "gasto": "2322404943.08",
-                "codigo": "201005"
-            }
-        ]
-    },
-    {
-        "_id": {
-            "$oid": "5b74ad9c607d9e37880045c8"
-        },
-        "codigo": "5b73166c03052",
-        "titulo": "sada",
-        "tipo": "doughnut",
-        "data": "2018-08-15 23:40:26",
-        "user": "LukDuk",
-        "dados": [
-            {
-                "nome": "CONAB - SEDE SUREG SAO PAULO",
-                "gasto": "25152208.36",
-                "codigo": "135325"
-            },
-            {
-                "nome": "CONAB SEDE SUREG ACRE",
-                "gasto": "4857126.76",
-                "codigo": "135605"
-            }
-        ]
-    },
-    {
-        "_id": {
             "$oid": "5b74ad9c607d9e37880045c9"
         },
         "codigo": "5b731f50271e9",
@@ -490,6 +336,28 @@
                 "nome": "FUNDO DE IMPRENSA NACIONAL",
                 "gasto": "195425386.2",
                 "codigo": "20927"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5b77029c607d9e0528007400"
+        },
+        "codigo": "5b77029ca864e",
+        "titulo": "Comp",
+        "tipo": "doughnut",
+        "data": "2018-08-17 19:15:08",
+        "user": "LukDuk",
+        "dados": [
+            {
+                "nome": "ESC DE DIFUS\u00c3O REGIONAL SUL I",
+                "gasto": "97705.98",
+                "codigo": "183042"
+            },
+            {
+                "nome": "ESCRIT\u00d3RIO DE DIFUS\u00c3O REGIONAL CENTRO-OESTE",
+                "gasto": "513927.31",
+                "codigo": "183043"
             }
         ]
     }

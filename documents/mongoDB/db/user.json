@@ -51,12 +51,36 @@
         "_id": {
             "$oid": "5b759b46607d9e10ac007648"
         },
-        "nome": "asd",
+        "nome": "Arthur Dias Viana De Castro",
         "login": "LukDuk",
         "tipo_user": "comum",
-        "password": "$1$.eue8mKE$03C0dmM1t5rxgQFgnMj.k0",
+        "password": "$1$lw4Nyci1$xjwK\/vBapvhfUc87.EUJ20",
         "email": "arthurcastro078@gmail.com",
         "foto": "assets\/files\/img\/perfil\/foto-LukDuk.jpg",
-        "bio": "olhaia"
+        "bio": "olhai"
+    },
+    {
+        "_id": {
+            "$oid": "5b770410607d9e0528007402"
+        },
+        "nome": "Arthur Dias",
+        "login": "asdCastrinhao",
+        "tipo_user": "comum",
+        "password": "$1$0jD5Yv7o$rVo4rVt8PXuU1cGW.hBo81",
+        "email": "castrinho@gmail.com",
+        "foto": "",
+        "bio": ""
+    },
+    {
+        "_id": {
+            "$oid": "5bc3a810607d9e0968000d55"
+        },
+        "nome": "Arthur Dias",
+        "login": "deCastro",
+        "tipo_user": "comum",
+        "password": "$1$DBz5lhDP$TULko3iZHXFSqKK2gSwxq\/",
+        "email": "arthurcastro078@mail.com",
+        "foto": "",
+        "bio": ""
     }
 ]
