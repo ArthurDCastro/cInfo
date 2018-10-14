@@ -62,7 +62,7 @@ class PostagemCrud
         $seguidores[] = $user;
 
         foreach ($seguidores as $seguidor){
-            $data = $this->getData(['user' => $seguidor]);
+            $data = $this->getData(['user' => trim($seguidor)]);
             if (count($data) >= 1){
                 foreach ($data as $dt){
                     $list[] = $dt;
@@ -78,7 +78,7 @@ class PostagemCrud
     }
 
     public function getPublicacoes_byUser($user){
-        return $this->getData(['user' => $user]);
+        return $this->getData(['user' => trim($user)]);
     }
 
     public function getPublicacao_byCodigo($codigo){

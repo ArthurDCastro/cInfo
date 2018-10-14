@@ -37,11 +37,11 @@ class SeguidoresCrud
     }
 
     public function getSeguindo_bySeguidor($seguidor){
-            return $this->getData(['seguidor' => $seguidor]);
+            return $this->getData(['seguidor' => trim($seguidor)]);
     }
 
     public function getSeguidores_bySeguindo($seguindo){
-        return $this->getData(['seguindo' => $seguindo]);
+        return $this->getData(['seguindo' => trim($seguindo)]);
     }
 
     public function getRelacao($seguindo, $seguidor){

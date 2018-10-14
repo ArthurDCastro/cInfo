@@ -9,7 +9,6 @@
 class Project
 {
     private $banco;
-    private $manager;
 
     public function __construct($banco)
     {

@@ -49,7 +49,7 @@ class GraficoCrud
     }
 
     public function getGraficos_byUser($login){
-        $query = new MongoDB\Driver\Query(['user' => (string) $login]);
+        $query = new MongoDB\Driver\Query(['user' => (string) trim($login)]);
         $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
 
         $list = [];

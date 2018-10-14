@@ -1,7 +1,7 @@
 [
     {
         "_id": {
-            "$oid": "5b7702a2607d9e0528007401"
+            "$oid": "5bc3aaca607d9e0864006470"
         },
         "codigo": "5b7702a25d691",
         "user": "LukDuk",
@@ -11,7 +11,7 @@
             {
                 "text": "muito bacana",
                 "codigo": "5b7702af9be8e",
-                "user": {},
+                "user": "LukDuk",
                 "data": "2018-08-17 19:15:27"
             }
         ],

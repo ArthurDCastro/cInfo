@@ -26,7 +26,7 @@ switch ($_POST['acao']){
         $crud = new UserCrud();
         $crudPostagem = new PostagemCrud();
 
-        $data['user'] = $crud->getUser_byLogin($_POST['user']);
+        $data['user'] = $crud->getUser_byLogin(trim($_POST['user']));
 
         $data['publicacoes'] = $crudPostagem->getPublicacoes_byUser($data['user']->getLogin());
 
@@ -36,8 +36,8 @@ switch ($_POST['acao']){
     case 'graficos':
     $crud = new GraficoCrud();
     $crudUser = new UserCrud();
-    $data['user'] = $crudUser->getUser_byLogin($_POST['user']);
-    $graficos = $crud->getGraficos_byUser($_POST['user']);
+    $data['user'] = $crudUser->getUser_byLogin(trim($_POST['user']));
+    $graficos = $crud->getGraficos_byUser(trim($_POST['user']));
 
     include "../views/graficos.php";
     break;
@@ -45,13 +45,13 @@ switch ($_POST['acao']){
     case 'excluir':
         $crud = new GraficoCrud();
         $crudUser = new UserCrud();
-        $data['user'] = $crudUser->getUser_byLogin($_POST['user']);
+        $data['user'] = $crudUser->getUser_byLogin(trim($_POST['user']));
 
         if ($data['user']->getLogin() == $_COOKIE['login']){
             $crud->delete($_POST['id']);
         }
 
-        $graficos = $crud->getGraficos_byUser($_POST['user']);
+        $graficos = $crud->getGraficos_byUser(trim($_POST['user']));
 
         include "../views/graficos.php";
         break;
@@ -59,7 +59,7 @@ switch ($_POST['acao']){
     case 'seguidores':
         $crud = new SeguidoresCrud();
 
-        $segue = $crud->getSeguidores_bySeguindo($_POST['user']);
+        $segue = $crud->getSeguidores_bySeguindo(trim($_POST['user']));
 
         include "../views/seguidores.php";
         break;
@@ -67,7 +67,7 @@ switch ($_POST['acao']){
     case 'seguindo':
         $crud = new SeguidoresCrud();
 
-        $segue = $crud->getSeguindo_bySeguidor($_POST['user']);
+        $segue = $crud->getSeguindo_bySeguidor(trim($_POST['user']));
 
         include "../views/seguindo.php";
         break;
@@ -87,7 +87,7 @@ switch ($_POST['acao']){
 
     case 'relacao':
         $crud = new SeguidoresCrud();
-        $relacao = $crud->getRelacao($_POST['user'], $_COOKIE['login']);
+        $relacao = $crud->getRelacao(trim($_POST['user']), $_COOKIE['login']);
         $seguidor = $relacao->getSeguidor()->getLogin();
         $dtf = $relacao->getDtf();
 
@@ -99,7 +99,7 @@ switch ($_POST['acao']){
             $crudUser = new UserCrud();
             $relacao->setId(uniqid());
             $relacao->setSeguidor($crudUser->getUser_byLogin($_COOKIE['login']));
-            $relacao->setSeguindo($crudUser->getUser_byLogin($_POST['user']));
+            $relacao->setSeguindo($crudUser->getUser_byLogin(trim($_POST['user'])));
             $relacao->setDti(date('Y-m-d H:i:s'));
             $relacao->setDtf('');
             $crud->add($relacao);

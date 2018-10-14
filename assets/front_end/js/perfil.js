@@ -13,7 +13,6 @@ $(document).ready(function() {
         $('#submit').trigger('click');
     });
 
-    $('#user').hide();
 
     $('#perfil').click(function () {
         $('.item').removeClass('active');

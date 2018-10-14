@@ -1,7 +1,7 @@
 [
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005576"
+            "$oid": "5bc3aaca607d9e0864006445"
         },
         "seguidor": "LukDuk",
         "seguindo": "Tekislla",
@@ -11,7 +11,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005577"
+            "$oid": "5bc3aaca607d9e0864006446"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -21,7 +21,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005578"
+            "$oid": "5bc3aaca607d9e0864006447"
         },
         "seguidor": "Tekislla",
         "seguindo": "LukDuk",
@@ -31,7 +31,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005579"
+            "$oid": "5bc3aaca607d9e0864006448"
         },
         "seguidor": "Tekislla",
         "seguindo": "ohPeres",
@@ -41,7 +41,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557a"
+            "$oid": "5bc3aaca607d9e0864006449"
         },
         "seguidor": "ohPeres",
         "seguindo": "Tekislla",
@@ -51,7 +51,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557b"
+            "$oid": "5bc3aaca607d9e086400644a"
         },
         "seguidor": "ohPeres",
         "seguindo": "LukDuk",
@@ -61,7 +61,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557c"
+            "$oid": "5bc3aaca607d9e086400644b"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -71,7 +71,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557d"
+            "$oid": "5bc3aaca607d9e086400644c"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -81,7 +81,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557e"
+            "$oid": "5bc3aaca607d9e086400644d"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -91,7 +91,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800557f"
+            "$oid": "5bc3aaca607d9e086400644e"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -101,7 +101,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005580"
+            "$oid": "5bc3aaca607d9e086400644f"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -111,7 +111,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005581"
+            "$oid": "5bc3aaca607d9e0864006450"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -121,7 +121,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005582"
+            "$oid": "5bc3aaca607d9e0864006451"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -131,7 +131,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005583"
+            "$oid": "5bc3aaca607d9e0864006452"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -141,7 +141,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005584"
+            "$oid": "5bc3aaca607d9e0864006453"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -151,7 +151,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005585"
+            "$oid": "5bc3aaca607d9e0864006454"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -161,7 +161,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005586"
+            "$oid": "5bc3aaca607d9e0864006455"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -171,7 +171,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005587"
+            "$oid": "5bc3aaca607d9e0864006456"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -181,7 +181,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005588"
+            "$oid": "5bc3aaca607d9e0864006457"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -191,7 +191,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005589"
+            "$oid": "5bc3aaca607d9e0864006458"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -201,7 +201,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558a"
+            "$oid": "5bc3aaca607d9e0864006459"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -211,7 +211,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558b"
+            "$oid": "5bc3aaca607d9e086400645a"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -221,7 +221,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558c"
+            "$oid": "5bc3aaca607d9e086400645b"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -231,7 +231,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558d"
+            "$oid": "5bc3aaca607d9e086400645c"
         },
         "seguidor": "olhai",
         "seguindo": "LukDuk",
@@ -241,7 +241,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558e"
+            "$oid": "5bc3aaca607d9e086400645d"
         },
         "seguidor": "LukDuk",
         "seguindo": "olhai",
@@ -251,7 +251,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800558f"
+            "$oid": "5bc3aaca607d9e086400645e"
         },
         "seguidor": "LukDuk",
         "seguindo": "Tekislla",
@@ -261,7 +261,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005590"
+            "$oid": "5bc3aaca607d9e086400645f"
         },
         "seguidor": "LukDuk",
         "seguindo": "olhai",
@@ -271,7 +271,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005591"
+            "$oid": "5bc3aaca607d9e0864006460"
         },
         "seguidor": "LukDuk",
         "seguindo": "olhai",
@@ -281,7 +281,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005592"
+            "$oid": "5bc3aaca607d9e0864006461"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -291,7 +291,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005593"
+            "$oid": "5bc3aaca607d9e0864006462"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -301,7 +301,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005594"
+            "$oid": "5bc3aaca607d9e0864006463"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -311,7 +311,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005595"
+            "$oid": "5bc3aaca607d9e0864006464"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -321,7 +321,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005596"
+            "$oid": "5bc3aaca607d9e0864006465"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -331,7 +331,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005597"
+            "$oid": "5bc3aaca607d9e0864006466"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -341,7 +341,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005598"
+            "$oid": "5bc3aaca607d9e0864006467"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -351,7 +351,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e3788005599"
+            "$oid": "5bc3aaca607d9e0864006468"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -361,7 +361,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800559a"
+            "$oid": "5bc3aaca607d9e0864006469"
         },
         "seguidor": "fez",
         "seguindo": "LukDuk",
@@ -371,7 +371,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800559b"
+            "$oid": "5bc3aaca607d9e086400646a"
         },
         "seguidor": "LukDuk",
         "seguindo": "fez",
@@ -381,7 +381,7 @@
     },
     {
         "_id": {
-            "$oid": "5b74ad9c607d9e378800559c"
+            "$oid": "5bc3aaca607d9e086400646b"
         },
         "seguidor": "LukDuk",
         "seguindo": "Tekislla",
@@ -391,7 +391,7 @@
     },
     {
         "_id": {
-            "$oid": "5b76f0b0607d9e05280073fa"
+            "$oid": "5bc3aaca607d9e086400646c"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -401,7 +401,7 @@
     },
     {
         "_id": {
-            "$oid": "5b76f0b6607d9e05280073fb"
+            "$oid": "5bc3aaca607d9e086400646d"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -411,7 +411,7 @@
     },
     {
         "_id": {
-            "$oid": "5b76f56c607d9e05280073fd"
+            "$oid": "5bc3aaca607d9e086400646e"
         },
         "seguidor": "LukDuk",
         "seguindo": "ohPeres",
@@ -421,7 +421,7 @@
     },
     {
         "_id": {
-            "$oid": "5b77018c607d9e05280073fe"
+            "$oid": "5bc3aaca607d9e086400646f"
         },
         "seguidor": "LukDuk",
         "seguindo": "olhai",

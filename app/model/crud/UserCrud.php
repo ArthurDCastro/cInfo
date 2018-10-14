@@ -35,7 +35,7 @@ class UserCrud
     }
 
     public function getUser_byLogin($login){
-        $user = $this->getData(['login' => $login]);
+        $user = $this->getData(['login' => trim($login)]);
 
         return $user[0];
     }

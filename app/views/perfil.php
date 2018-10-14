@@ -42,7 +42,9 @@
     <div class="ui container">
     <div class="ui header">
         <h1 class="ui left floated blue header" style="width: 100%">
-            <?= $data['user']->getLogin(); ?>
+            <p id="user">
+                <?= $data['user']->getLogin(); ?>
+            </p>
             <?php if ($data['user']->getLogin() != $_COOKIE['login']): ?>
                 <?php if($data['relacao']->getSeguidor()->getLogin() != '' and $data['relacao']->getDtf() == ''): ?>
                     <button id='seguir' class="ui right floated blue circular button" value="unfollow">Seguindo</button>
@@ -115,7 +117,6 @@
         </div>
     </div>
 </div>
-<div id="user"><?= $data['user']->getLogin(); ?></div>
 <br>
 
 
