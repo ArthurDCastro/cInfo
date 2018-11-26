@@ -142,7 +142,7 @@
         Gráfico Salvo
     </div>
     <div class="content">
-        <p>Seu gráfico foi salvo com sucesso, ele esta disponivel no seu <b><a href="graficos">portifolio de graficos</a></b>. Se quiser compartilhar em outras redes sociais ou apenas exportar só clicar em continuar e em seguida no botão compartilhar.</p>
+        <p>Seu gráfico foi salvo com sucesso, ele estará disponível em seu <b><a href="graficos">portifólio de gráficos</a></b>. Se quiser compartilhar em outras redes sociais ou apenas exportar, clique em continuar e, em seguida, no botão compartilhar.</p>
     </div>
     <div class="actions">
         <div class="ui blue ok inverted button" id="clear">
@@ -164,12 +164,10 @@
     </div>
     <form id="post" action="post" method="post">
         <div class="scrolling image content">
-            <div class="ui large image">
-                <div id="chartModal" style=" width:400px; height:500px"></div>
-            </div>
+
             <div class="description" style="width: 100%">
                 <div class="ui feed">
-                    <div class="event">
+                    <div class="event" style="padding-top: 10px; padding-left: 15px">
                         <div class="label">
                             <img src="assets/files/img/avatar/small/joe.jpg">
                         </div>
@@ -180,9 +178,22 @@
                                     agora mesmo
                                 </div>
                             </div>
+                            <br>
                             <div class="ui form">
                                 <div class="field">
-                                    <textarea name="descricao"></textarea>
+                                    <textarea name="descricao" style="width: 45%; height: 800px; margin-left: 13px"></textarea>
+                                    <div class="ui large image" style="padding-left: 12%">
+                                        <div id="chartModal" style=" width:370px; height:370px"></div>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="ui black deny button">
+                                            Cancelar
+                                        </div>
+                                        <button type="submit" class="ui positive right labeled icon button">
+                                            Postar
+                                            <i class="checkmark icon"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -190,14 +201,6 @@
                 </div>
             </div>
         </div>
-        <div class="actions">
-            <div class="ui black deny button">
-                Cancelar
-            </div>
-            <button type="submit" class="ui positive right labeled icon button">
-                Postar
-                <i class="checkmark icon"></i>
-            </button>
-        </div>
+
     </form>
 </div>
