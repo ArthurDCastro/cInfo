@@ -8,7 +8,7 @@
                     <p>Atualmente, não temos um portal da transparência que passe as informações com clareza. Com essa desinformação a comunidade acaba saindo prejudicada, hoje quase ninguém conhece ou sabe como e para que é gasto o dinheiro.</p>
                     <br><br>
                         <div class="container">
-                            <img src="assets/files/img/brasil_sobre.png" style="width: 100%">
+                            <img src="assets/files/img/brasil_sobre.png" style="width: 100%; border-radius: 5px">
                         </div>
                 </div>
             </div>

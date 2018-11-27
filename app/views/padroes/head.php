@@ -6,6 +6,7 @@
     <script type="text/javascript" src="assets/vendor/front/charJS/Chart.js"></script>
 
     <link rel="stylesheet" href="assets/vendor/front/semantic/semantic.css">
+    <link rel="stylesheet" href="assets/front_end/css/rodape.css">
 
 
     <title><?= $titulo_pagina ?></title>
