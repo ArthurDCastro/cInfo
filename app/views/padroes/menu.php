@@ -1,6 +1,7 @@
     <link rel="stylesheet" href="assets/front_end/css/menu.css">
     <link rel="stylesheet" href="assets/vendor/front/semantic/components/dropdown.css">
     <script src="assets/vendor/front/semantic/components/dropdown.js"></script>
+    <script src="assets/vendor/front/semantic/components/search.js"></script>
     <script src="assets/front_end/js/menu.js"></script>
 </head>
 
@@ -39,16 +40,22 @@
 
                 <!-- user -->
                 <div class="item">
-
+                    <?php if (isset($_COOKIE['login'])): ?>
                     <!-- search -->
                     <div class="item">
-                        <div class="ui transparent icon input" id="right" style="">
-                            <input type="text" placeholder="Search">
-                            <i class="search link icon"></i>
+                        <div class="ui scrolling dropdown">
+                            <div class="ui transparent icon input" style="">
+                                <input name="search" id="search" type="text" placeholder="Search">
+                                <i class="search link icon"></i>
+                            </div>
+                            <div class="menu" id="text_search">
+                                <div class="item disabled"><div class="ui centered active inline loader"></div></div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <?php if (isset($_COOKIE['login'])): ?>
+
                         <a id="some" class="item" href="perfil/<?=$_COOKIE['login']?>">
                             <?= $_COOKIE['login'] ?>
                         </a>

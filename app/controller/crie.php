@@ -12,6 +12,8 @@ require_once '../model/crud/UserCrud.php';
 
 require_once '../model/create/Dados.php';
 
+date_default_timezone_set('America/Sao_Paulo');
+
 function cmp($a, $b) {
     return $a[1] > $b[1];
 }

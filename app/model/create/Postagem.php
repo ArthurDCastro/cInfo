@@ -43,8 +43,8 @@ class Postagem
             $comentarios[] = [
                 'text' => $coment->getComentario(),
                 'codigo' => $coment->getCodigo(),
-                'user' => $coment->getUser(),
-                'data' => $coment->getData(),
+                'user' => $coment->getUser()->getLogin(),
+                'data' => $coment->getData()
             ];
         }
 

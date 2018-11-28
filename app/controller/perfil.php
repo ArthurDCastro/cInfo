@@ -19,6 +19,8 @@ require_once '../model/create/Seguidores.php';
 require_once '../model/create/Postagem.php';
 require_once '../model/create/Comentarios.php';
 
+date_default_timezone_set('America/Sao_Paulo');
+
 
 switch ($_POST['acao']){
 
@@ -26,7 +28,7 @@ switch ($_POST['acao']){
         $crud = new UserCrud();
         $crudPostagem = new PostagemCrud();
 
-        $data['user'] = $crud->getUser_byLogin(trim($_POST['user']));
+        $data['user'] = $crud->getUser_byLogin($_POST['user']);
 
         $data['publicacoes'] = $crudPostagem->getPublicacoes_byUser($data['user']->getLogin());
 

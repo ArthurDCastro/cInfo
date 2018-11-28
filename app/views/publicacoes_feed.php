@@ -64,11 +64,6 @@
                                             <div class="text">
                                                 <?= $comentario->getComentario() ?>
                                             </div>
-                                            <div class="meta">
-                                                <!--<a class="like">
-                                                    <i class="like icon"></i><?/*= count($publicacao->getLike()) */?>
-                                                </a>-->
-                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

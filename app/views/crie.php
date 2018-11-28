@@ -4,14 +4,23 @@
 
 <script type="text/javascript" src="assets/front_end/js/crie.js"></script>
 <script type="text/javascript" src="assets/charts/crie.js"></script>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+    <?php if (!isset($data['url'][0])): ?>
+        $('#share').hide();
+    <?php else: ?>
+        $('#teste').trigger('click');
+        $('#grafico_titulo').text($('#titulo').val());
+    <?php endif; ?>
+    })
+</script>
 <link rel="stylesheet" href="assets/front_end/css/crie.css">
 
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/form.css">
 <link rel="stylesheet" href="assets/vendor/front/semantic/components/modal.css">
 
 <div class="ui grid horizontal segments" style=" margin: 90px 10px 10px 10px;">
-        <div class="seven wide column ui segment center aligned">
+    <div class="seven wide column ui segment center aligned">
         <div class="centered" id="print">
             <h3 class="ui grey header">
                 <i class="pie chart icon"></i>
@@ -87,8 +96,8 @@
                     <label>Gastos</label>
                     <select id="gasto" multiple="" name="gasto" class="ui fluid search dropdown gasto">
                         <option value="">Gasto</option>
-                        <?php foreach ($data['grafico']->getDados() as $data):?>
-                            <option value="<?= $data->getCodigo() ?>" selected><?= $data->getNome()?></option>
+                        <?php foreach ($data['grafico']->getDados() as $dt):?>
+                            <option value="<?= $dt->getCodigo() ?>" selected><?= $dt->getNome()?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -120,7 +129,6 @@
                         </div>
                     </div>
                     <div class="field">
-                        <!--TODO aparecer quando o grafico ja estiver salvo-->
                         <div class="ui vertical animated blue basic small button" tabindex="0" id="share">
                             <div class="visible content">Compartilhar</div>
                             <div class="hidden content">
@@ -156,7 +164,6 @@
     </div>
 </div>
 
-<!--TODO arrumar modal-->
 <div class="ui fullscreen modal" id="publicar">
     <i class="close icon"></i>
     <div class="header" id="tituloModal">
@@ -169,7 +176,7 @@
                 <div class="ui feed">
                     <div class="event" style="padding-top: 10px; padding-left: 15px">
                         <div class="label">
-                            <img src="assets/files/img/avatar/small/joe.jpg">
+                            <img src="<?= $data['foto'] ?>">
                         </div>
                         <div class="content">
                             <div class="summary">

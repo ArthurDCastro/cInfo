@@ -22,7 +22,7 @@
             $data['titulo_pagina'] = 'cInfo - Error 404';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
-            $this->loadView('error_404.php', $data);
+            $this->loadView('erro_permissao.php', $data);
             $this->loadView('rodape.php');
         }
 
@@ -54,6 +54,7 @@
                 $data['titulo_pagina'] = 'cInfo - Cadastro';
 
                 if (isset($_POST['cadastro'])){
+
                     $user = new User();
                     $user->setLogin($_POST['nome_exib']);
                     $user->setTipoUser('comum');
@@ -79,20 +80,27 @@
 
                 if (isset($_POST['email'])){
                     $user = $this->user->crud->getUser_byEmail($_POST['email']);
-                    $this->user->getUserClass($user);
-                    if ($this->user->func->login($_POST['password'])){
-                        header('Location: index');
-                    } else {
-                        $login = $user->getLogin();
-                        if(isset($login)){
-                            $data['error'] = 'Senha inválida!';
-                            $data['email'] = $login = $user->getEmail();
+                    if (isset($user)){
+                        $this->user->getUserClass($user);
+                        if ($this->user->func->login($_POST['password'])){
+                            header('Location: index');
                         } else {
-                            $data['error'] = 'Este email não é cadastrado!';
+                            $login = $user->getLogin();
+                            if(isset($login)){
+                                $data['error'] = 'Senha inválida!';
+                                $data['email'] = $login = $user->getEmail();
+                            } else {
+                                $data['error'] = 'Este email não é cadastrado!';
+                            }
+                            $this->loadView('padroes/head.php', $data);
+                            $this->loadView('login.php', $data);
                         }
+                    } else {
+                        $data['error'] = 'Este email não é cadastrado!';
                         $this->loadView('padroes/head.php', $data);
                         $this->loadView('login.php', $data);
                     }
+
                 } else {
                     $this->loadView('padroes/head.php', $data);
                     $this->loadView('login.php', $data);
@@ -117,6 +125,7 @@
         public function crie(){
             if (isset($_COOKIE['login'])){
                 $data['titulo_pagina'] = 'cInfo - Crie um Gráfico';
+                $data['foto'] = $this->user->crud->getUser_byLogin($_COOKIE['login'])->getFoto();
 
                 $data['funcoes'] = $this->dados->crud->getAllFuncoes();
                 if (isset($this->getDataUrl()[0])){
@@ -124,7 +133,7 @@
                     $data['grafico'] = $this->grafico->crud->getGraficos_byCodigo($data['url'][0]);
                 } else {
                     $data['url'] = '';
-                    $data['grafico'] = new grafico();
+                    $data['grafico'] = new Grafico();
                 }
 
                 $this->loadView('padroes/head.php', $data);
@@ -184,21 +193,27 @@
                 }
 
 
-                $data['user'] = $this->user->crud->getUser_byLogin($user);
-                $data['foto'] = $data['user']->getFoto();
-                $data['publicacoes'] = $this->postagem->crud->getPublicacoes_byUser($data['user']->getLogin());
-                $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
-                $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
-                $data['seguindo'] = $this->seguidores->crud->getSeguindo_bySeguidor($data['user']->getLogin());
-
-                if ($data['user']->getLogin() != $_COOKIE['login']){
-                    $data['relacao'] = $this->seguidores->crud->getRelacao($data['user']->getLogin(), $_COOKIE['login']);
-                }
 
                 $this->loadView('padroes/head.php', $data);
                 $this->loadView('padroes/menu.php', $data);
-                $this->loadView('perfil.php', $data);
+                $data['user'] = $this->user->crud->getUser_byLogin($user);
+
+                if ($data['user']->getLogin() == ""){
+                    $this->loadView('usuario_nEncontrado.php', $data);
+                } else {
+                    $data['foto'] = $data['user']->getFoto();
+                    $data['publicacoes'] = $this->postagem->crud->getPublicacoes_byUser($data['user']->getLogin());
+                    $data['graficos'] = $this->grafico->crud->getGraficos_byUser($data['user']->getLogin());
+                    $data['seguidores'] = $this->seguidores->crud->getSeguidores_bySeguindo($data['user']->getLogin());
+                    $data['seguindo'] = $this->seguidores->crud->getSeguindo_bySeguidor($data['user']->getLogin());
+
+                    if ($data['user']->getLogin() != $_COOKIE['login']){
+                        $data['relacao'] = $this->seguidores->crud->getRelacao($data['user']->getLogin(), $_COOKIE['login']);
+                    }
+                    $this->loadView('perfil.php', $data);
+                }
                 $this->loadView('rodape.php', $data);
+
             } else {
                 header('Location: error_permissao');
             }
@@ -220,27 +235,27 @@
                         echo "File is an image - " . $check["mime"] . ".";
                         $uploadOk = 1;
                     } else {
-                        echo "File is not an image.";
+                        header("Location: perfil/{$_COOKIE['login']}/erro_img");
                         $uploadOk = 0;
                     }
                 }
 
                 // Check file size
                 if ($_FILES["fileToUpload"]["size"] > 500000) {
-                    echo "Sorry, your file is too large.";
+                    header("Location: perfil/{$_COOKIE['login']}/erro_img");
                     $uploadOk = 0;
                 }
 
                 // Allow certain file formats
                 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif") {
-                    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                    header("Location: perfil/{$_COOKIE['login']}/erro_img");
                     $uploadOk = 0;
                 }
 
                 // Check if $uploadOk is set to 0 by an error
                 if ($uploadOk == 0) {
-                    echo "Sorry, your file was not uploaded.";
+                    header("Location: perfil/{$_COOKIE['login']}/erro_img");
 
                     // if everything is ok, try to upload file
                 } else {
@@ -283,7 +298,7 @@
 
                         header("Location: perfil/{$_COOKIE['login']}");
                     } else {
-                        echo "Sorry, there was an error uploading your file.";
+                        header("Location: perfil/{$_COOKIE['login']}/erro_img");
                     }
                 }
             } else {

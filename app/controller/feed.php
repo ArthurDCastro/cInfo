@@ -19,15 +19,18 @@ require_once '../model/create/Seguidores.php';
 require_once '../model/create/Comentarios.php';
 require_once '../model/create/Postagem.php';
 
+date_default_timezone_set('America/Sao_Paulo');
+
 
 switch ($_POST['acao']){
     case 'comentar':
         $postagem = new PostagemCrud();
+        $user = new UserCrud();
         $coment = new Comentarios();
 
         $post = $postagem->getPublicacao_byCodigo($_POST['vals']['postagem']);
 
-        $coment->setUser($_COOKIE['login']);
+        $coment->setUser($user->getUser_byLogin($_COOKIE['login']));
         $coment->setComentario($_POST['vals']['comentario']);
         $coment->setData(date('Y-m-d H:i:s'));
         $coment->setCodigo(uniqid());
@@ -39,10 +42,14 @@ switch ($_POST['acao']){
         foreach ($post->getComentarios() as $comentario): ?>
             <div class="comment">
                 <a class="avatar">
-                    <img src="assets/files/img/avatar/small/matt.jpg" style=" height: auto">
+                    <?php if ($comentario->getUser()->getFoto() != ''): ?>
+                        <img src="<?= $comentario->getUser()->getFoto() ?>" style=" height: auto">
+                    <?php else: ?>
+                        <img src="assets/files/img/image.png" style=" height: auto">
+                    <?php endif; ?>
                 </a>
                 <div class="content">
-                    <a class="author"><?= $comentario->getUser() ?></a>
+                    <a class="author"><?= $comentario->getUser()->getLogin() ?></a>
                     <div class="metadata">
                         <span class="date"><?= $comentario->getData() ?></span>
                     </div>
@@ -50,9 +57,6 @@ switch ($_POST['acao']){
                         <?= $comentario->getComentario() ?>
                     </div>
                     <div class="meta">
-                        <a class="like">
-                            <i class="like icon"></i><?= count($post->getLike()) ?>
-                        </a>
                     </div>
                 </div>
             </div>

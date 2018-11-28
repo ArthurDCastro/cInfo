@@ -40,12 +40,17 @@ class GraficoCrud
 
         $dados = [];
         $dado = new DadosCrud();
-        foreach ($array['dados'] as $da){
-            $i = (array) $da;
-            $dados[] =  $dado->getDados_byCodigo($i['codigo']);
+        if (isset($array['dados'])){
+            foreach ($array['dados'] as $da){
+                $i = (array) $da;
+                $dados[] =  $dado->getDados_byCodigo($i['codigo']);
+            }
+
+            return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $dados, $array['codigo']);
+        } else {
+            return new Grafico('', '', '', '', [], '');
         }
 
-        return new Grafico($array['titulo'], $array['tipo'], $array['user'], $array['data'], $dados, $array['codigo']);
     }
 
     public function getGraficos_byUser($login){
@@ -93,6 +98,14 @@ class GraficoCrud
         $bulk->delete(['codigo' => $codigo]);
 
         $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
+
+        $post = new PostagemCrud();
+
+        $char = $post->getPublicacoes_byChar($codigo);
+
+        foreach ($char as $c){
+            $post->delete($c->getCodigo());
+        }
     }
 
 }

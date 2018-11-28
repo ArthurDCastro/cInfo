@@ -51,6 +51,16 @@ class User
         ];
     }
 
+    public function array(){
+        return [
+            'nome'      => $this->nome,
+            'login'     => $this->login,
+            'tipo_user' => $this->tipo_user,
+            'email'     => $this->email,
+            'foto'      => $this->foto,
+            'bio'      => $this->bio
+        ];
+    }
 
     /**
      * @return mixed

@@ -12,7 +12,7 @@
                 <a class="toc item">
                     <i class="sidebar icon"></i>
                 </a>
-                <a class="item" href="index">Inicio</a>
+                <a class="item" href="index">Início</a>
                 <a class="item" href="sobre">Sobre</a>
                 <?php if (isset($_COOKIE['login'])): ?>
                     <a  class="item" href="feed">
@@ -40,7 +40,7 @@
             <h1 class="ui inverted header">
                 <img src="assets/files/img/logo.png">
             </h1>
-            <h2>Plataforma de criação de gráficos a partir dos gastos publicos econtrados no <a href="http://www.portaltransparencia.gov.br/" target="_blank">portal da transparência</a>.</h2>
+            <h2>Plataforma de criação de gráficos a partir dos gastos públicos encontrados no <a href="http://www.portaltransparencia.gov.br/" target="_blank">portal da transparência</a>.</h2>
         </div>
 
     </div>
@@ -48,9 +48,9 @@
         <div class="ui middle aligned stackable grid container">
             <div class="row">
                 <div class="seven wide column">
-                    <h3 class="ui header">Gastos nos Laboratórios Nacionais Agropecuarios</h3>
+                    <h3 class="ui header">Gastos nos Laboratórios Nacionais Agropecuários</h3>
                     <p id="legenda">
-                        Gráfico sobre as despesas em agricultura nos Laboratórios Nacionais Agropecuarios de:
+                        Gráfico sobre as despesas em agricultura nos Laboratórios Nacionais Agropecuários de:
                             <label  class="ui pink header es">MG</label>,
                             <label class="ui blue header es">PE</label>,
                             <label class="ui yellow header es">RS</label> e

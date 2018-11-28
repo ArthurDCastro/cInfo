@@ -1,7 +1,6 @@
 $(document).ready(function() {
     //$("#img-out").hide();
 
-    $('#share').hide();
 
     $('.ui.form')
         .form({
@@ -33,7 +32,7 @@ $(document).ready(function() {
 
     $('#id').hide();
 
-    $('#titulo').change(function () {
+    $('#titulo').keydown(function () {
         $('#grafico_titulo').text($('#titulo').val());
     });
 

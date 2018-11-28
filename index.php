@@ -1,10 +1,11 @@
 <?php
 
-
     require_once 'config/config.php';
     require_once 'app/controller/Controller.php';
 
 require_once 'app/model/create/Comentarios.php';
+
+date_default_timezone_set('America/Sao_Paulo');
 
     $base_url    = $config['base_url'];
     $padrao = $config['views_padrao'];

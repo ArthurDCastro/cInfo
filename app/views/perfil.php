@@ -118,5 +118,28 @@
     </div>
 </div>
 <br>
+<script>
+    <?php if (isset($data['url'][1])): if ($data['url'][1] == 'erro_img'):?>
+    $(document).ready(function() {
+        $('#modal_excluir').modal('show');
+    });
+    <?php endif; endif; ?>
+</script>
+<!-- modal img-->
+<div class="ui basic modal" id="modal_excluir">
+    <div class="ui icon header">
+        <i class="image alternate outline icon"></i>
+        Imagem inválida!
+    </div>
+    <div class="content">
+        <p >Você selecionou um tipo de arquivo inválido, uma imagem muito grande ou não conseguimos salva-la.</p>
+    </div>
+    <div class="actions">
+        <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            Ok
+        </div>
+    </div>
+</div>
 
 

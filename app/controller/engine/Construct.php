@@ -68,23 +68,23 @@
         }
 
         protected function loadView($file, $data = ''){
-            $data['url'] = @$this->getDataUrl();
+            $data['url'] = $this->getDataUrl();
             $data['url_base'] = $this->base_url . '';
 
             foreach ($data as $key => $value ){
                 if (is_string($value)){
-                    @eval('$' . $key . ' = \'' . $value . '\';');
-                } elseif(is_array($value)) {
+                    eval('$' . $key . ' = \'' . $value . '\';');
+                } /*elseif(is_array($value)) {
                     foreach ($value as $val){
                         if (is_string($val)){
-                            @eval('$' . $key . '[] = \'' . $val . '\';');
+                            eval('$' . $key . '[] = \'' . $val . '\';');
                         }
                     }
-                }
+                }*/
 
             }
 
-            @include self::DIRECTORY_VIEW . $file;
+            include self::DIRECTORY_VIEW . $file;
         }
 
         protected function padroes($data = ''){

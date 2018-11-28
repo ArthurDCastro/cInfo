@@ -40,6 +40,10 @@ class PostagemCrud
                 $comentarios[] = $comentario;
             }
 
+            usort($comentarios, function ($a, $b) {
+                return $a->getData() < $b->getData();
+            });
+
             $like = (array) $array['like'];
 
             $list[] = new Postagem($user, $grafico, $array['descricao'], $comentarios, $like, $array['data'], $array['codigo']);
@@ -70,6 +74,10 @@ class PostagemCrud
             }
         }
 
+        usort($list, function ($a, $b) {
+            return $a->getData() < $b->getData();
+        });
+
         if (isset($list[0])){
             return $list;
         } else {
@@ -78,7 +86,11 @@ class PostagemCrud
     }
 
     public function getPublicacoes_byUser($user){
-        return $this->getData(['user' => trim($user)]);
+        return $this->getData(['user' => $user]);
+    }
+
+    public function getPublicacoes_byChar($char){
+        return $this->getData(['grafico' => $char]);
     }
 
     public function getPublicacao_byCodigo($codigo){
@@ -103,6 +115,17 @@ class PostagemCrud
         $bulk = new MongoDB\Driver\BulkWrite;
 
         $bulk->update(['codigo' => $postagem->getCodigo()], $postagem->insert());
+
+        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+    }
+
+
+    public function delete($codigo)
+    {
+
+        $bulk = new MongoDB\Driver\BulkWrite;
+
+        $bulk->delete(['codigo' => $codigo]);
 
         $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
     }
