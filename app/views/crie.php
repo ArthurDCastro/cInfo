@@ -150,7 +150,7 @@
         Gráfico Salvo
     </div>
     <div class="content">
-        <p>Seu gráfico foi salvo com sucesso, ele estará disponível em seu <b><a href="graficos">portifólio de gráficos</a></b>. Se quiser compartilhar em outras redes sociais ou apenas exportar, clique em continuar e, em seguida, no botão compartilhar.</p>
+        <p>Seu gráfico foi salvo com sucesso, ele estará disponível em seu portifólio de gráficos. Se quiser compartilhar em outras redes sociais ou apenas exportar, clique em continuar e, em seguida, no botão compartilhar.</p>
     </div>
     <div class="actions">
         <div class="ui blue ok inverted button" id="clear">

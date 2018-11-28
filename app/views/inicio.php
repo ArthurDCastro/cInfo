@@ -57,38 +57,41 @@
                             <label class="ui teal header es">SP</label>.
 
                     </p>
-                    <div class="ui small statistic">
-                        <div class="value">
-                            30M
+                    <div class="ui statistics">
+                        <div class="ui small statistic">
+                            <div class="value">
+                                R$30M
+                            </div>
+                            <div class="label">
+                                MG
+                            </div>
                         </div>
-                        <div class="label">
-                            MG
+                        <div class="ui small statistic">
+                            <div class="value">
+                                R$12M
+                            </div>
+                            <div class="label">
+                                PE
+                            </div>
+                        </div>
+                        <div class="ui small statistic">
+                            <div class="value">
+                                R$12M
+                            </div>
+                            <div class="label">
+                                RS
+                            </div>
+                        </div>
+                        <div class="ui small statistic">
+                            <div class="value">
+                                R$31M
+                            </div>
+                            <div class="label">
+                                SP
+                            </div>
                         </div>
                     </div>
-                    <div class="ui small statistic">
-                        <div class="value">
-                            12M
-                        </div>
-                        <div class="label">
-                            PE
-                        </div>
-                    </div>
-                    <div class="ui small statistic">
-                        <div class="value">
-                            12M
-                        </div>
-                        <div class="label">
-                            RS
-                        </div>
-                    </div>
-                    <div class="ui small statistic">
-                        <div class="value">
-                            31M
-                        </div>
-                        <div class="label">
-                            SP
-                        </div>
-                    </div>
+
                 </div>
                 <div class="seven wide right floated column" id="grafico1">
                     <canvas id="chart"></canvas>
@@ -109,20 +112,22 @@
                         <label  class="ui pink header es">Santa Catarina</label> e
                         <label class="ui blue header es">Paraná</label>.
                     </p>
-                    <div class="ui statistic">
-                        <div class="value">
-                            1.551M
+                    <div class="ui statistics">
+                        <div class="ui statistic">
+                            <div class="value">
+                                R$1.551M
+                            </div>
+                            <div class="label">
+                                UFSC
+                            </div>
                         </div>
-                        <div class="label">
-                            UFSC
-                        </div>
-                    </div>
-                    <div class="ui statistic">
-                        <div class="value">
-                            1.450M
-                        </div>
-                        <div class="label">
-                            UFPR
+                        <div class="ui statistic">
+                            <div class="value">
+                                R$1.450M
+                            </div>
+                            <div class="label">
+                                UFPR
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,20 +144,22 @@
                             <label  class="ui pink header es">Financiadora de Estudos e Projetos</label> e o
                             <label class="ui blue header es">Fundo de Imprensa Nacional</label>.
                     </p>
-                    <div class="ui statistic">
-                        <div class="value">
-                            150M
+                    <div class="ui statistics">
+                        <div class="ui statistic">
+                            <div class="value">
+                                R$150M
+                            </div>
+                            <div class="label">
+                                Estudos e Projetos
+                            </div>
                         </div>
-                        <div class="label">
-                            Estudos e Projetos
-                        </div>
-                    </div>
-                    <div class="ui statistic">
-                        <div class="value">
-                            195M
-                        </div>
-                        <div class="label">
-                            Imprensa Nacional
+                        <div class="ui statistic">
+                            <div class="value">
+                                R$195M
+                            </div>
+                            <div class="label">
+                                Imprensa Nacional
+                            </div>
                         </div>
                     </div>
                 </div>
