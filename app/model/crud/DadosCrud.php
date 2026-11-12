@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . '/../../../config/Database.php';
 /**
  * Created by PhpStorm.
  * User: Arthur Castro
@@ -13,12 +15,12 @@ class DadosCrud
 
     public function __construct()
     {
-        $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $this->manager = Database::manager();
     }
 
     public function getAllData(){
         $query = new MongoDB\Driver\Query([]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('dados'), $query);
 
         $list = [];
 
@@ -32,7 +34,7 @@ class DadosCrud
 
     public function getDados_byCodigo($codigo){
         $query = new MongoDB\Driver\Query(['codigo' => (string) $codigo]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('dados'), $query);
 
         $array = [];
         foreach ($cursor as $document) {
@@ -45,7 +47,7 @@ class DadosCrud
     public function getDados_byPai($pai){
         @$pai = (string) $pai;
         $query = new MongoDB\Driver\Query(['pai' => $pai]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.dados', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('dados'), $query);
 
         $list = [];
 
@@ -63,6 +65,10 @@ class DadosCrud
 
         $allData = $data;
 
+
+        if (!$allData) {
+            return [];
+        }
 
         $i = 0;
         $proximo = $allData[$i];
@@ -87,7 +93,8 @@ class DadosCrud
 
     public function getAllFuncoes(){
         $query = new MongoDB\Driver\Query([]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.funcoes', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('funcoes'), $query);
+        $list = [];
 
         foreach ($cursor as $document) {
             $array = (array) $document;

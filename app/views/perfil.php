@@ -32,11 +32,11 @@
                 <?php if ($data['foto'] != ''): ?>
                     <img src="<?= $data['foto'] ?>">
                 <?php else: ?>
-                    <img src="assets/files/img/image.png">
+                    <img src="assets/files/img/image.jpg">
                 <?php endif; ?>
             </div>
         <?php else: ?>
-            <img id="borda" class="ui centered small circular image" src="assets/files/img/image.png">
+            <img id="borda" class="ui centered small circular image" src="assets/files/img/image.jpg">
         <?php endif; ?>
     </div>
     <div class="ui container">

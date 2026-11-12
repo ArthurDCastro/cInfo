@@ -18,7 +18,7 @@ $(document).ready(function(){
                 acao: 'user',
                 vals: $('#search').val()
             }, function (data) {
-                var dados = JSON.parse(data);
+                var dados = (typeof data === 'string' ? JSON.parse(data) : data);
                 var html = '';
 
                 for (x in dados){

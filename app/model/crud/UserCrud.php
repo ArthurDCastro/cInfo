@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . '/../../../config/Database.php';
 /**
  * Created by PhpStorm.
  * User: Arthur Castro
@@ -13,12 +15,12 @@ class UserCrud
 
     public function __construct()
     {
-        $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $this->manager = Database::manager();
     }
 
     public function getData($query){
         $query = new MongoDB\Driver\Query($query);
-        $cursor =  $this->manager->executeQuery('db_cinfo.user', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('user'), $query);
 
         $list = [];
 
@@ -38,7 +40,7 @@ class UserCrud
         $user = $this->getData(['login' => trim($login)]);
 
         if (isset($user[0])){
-            return $user[0];
+            return $user[0] ?? null;
         } else {
             return new User();
         }
@@ -48,7 +50,7 @@ class UserCrud
     public function getUser_byEmail($email){
         $user = $this->getData(['email' => $email]);
 
-        return $user[0];
+        return $user[0] ?? null;
     }
 
     public function add(User $user){
@@ -63,7 +65,7 @@ class UserCrud
                 $verifica = false;
             }
 
-            echo $oneUser->getEmail() .'   ///   '. $user->getEmail();
+
 
             if ($oneUser->getEmail() == $user->getEmail()){
                 $verifica = false;
@@ -73,7 +75,7 @@ class UserCrud
         if ($verifica){
             $bulk->insert($user->insert());
 
-            $this->manager->executeBulkWrite('db_cinfo.user', $bulk);
+            $this->manager->executeBulkWrite(Database::collection('user'), $bulk);
             return true;
 
         } else {
@@ -88,7 +90,7 @@ class UserCrud
 
         $bulk->insert(['login' => $login]);
 
-        $this->manager->executeBulkWrite('db_cinfo.user', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('user'), $bulk);
     }
 
     public function update(User $user){
@@ -97,6 +99,6 @@ class UserCrud
 
         $bulk->update(['login' => $user->getLogin()], $user->update());
 
-        $this->manager->executeBulkWrite('db_cinfo.user', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('user'), $bulk);
     }
 }

@@ -6,11 +6,12 @@
  *
  * $data é um array onde voce pode colocar informações como título da pagina ou então id de um produto
 */
-    require_once 'engine/Construct.php';
+    require_once __DIR__ . '/engine/Construct.php';
 
     class Controller extends Construct
     {
         public function error_404(){
+            http_response_code(404);
             $data['titulo_pagina'] = 'cInfo - Error 404';
             $this->loadView('padroes/head.php', $data);
             $this->loadView('padroes/menu.php');
@@ -53,22 +54,41 @@
             if (!isset($_COOKIE['login'])){
                 $data['titulo_pagina'] = 'cInfo - Cadastro';
 
-                if (isset($_POST['cadastro'])){
+                if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST'){
 
-                    $user = new User();
-                    $user->setLogin($_POST['nome_exib']);
-                    $user->setTipoUser('comum');
-                    $user->setEmail($_POST['email']);
-                    $user->setNome($_POST['nome']);
-                    $user->setPassword($_POST['password']);
+                    $data['form'] = [];
+                    foreach (['nome', 'nome_exib', 'email'] as $field) {
+                        $data['form'][$field] = is_string($_POST[$field] ?? null)
+                            ? trim($_POST[$field]) : '';
+                    }
+                    $password = is_string($_POST['password'] ?? null) ? $_POST['password'] : '';
 
-                    $this->user->crud->add($user);
+                    if ($data['form']['nome'] === '' || $data['form']['nome_exib'] === '') {
+                        $data['error'] = 'Preencha o nome completo e o nome de exibição.';
+                    } elseif (!filter_var($data['form']['email'], FILTER_VALIDATE_EMAIL)) {
+                        $data['error'] = 'Informe um e-mail válido.';
+                    } elseif (strlen($password) < 6) {
+                        $data['error'] = 'Sua senha deve ter no mínimo 6 caracteres.';
+                    }
 
-                    header('Location: login/new');
-                } else {
-                    $this->loadView('padroes/head.php', $data);
-                    $this->loadView('cadastro.php', $data);
+                    if (!isset($data['error'])) {
+                        $user = new User();
+                        $user->setLogin($data['form']['nome_exib']);
+                        $user->setTipoUser('comum');
+                        $user->setEmail($data['form']['email']);
+                        $user->setNome($data['form']['nome']);
+                        $user->setPassword($password);
+
+                        if ($this->user->crud->add($user)) {
+                            header('Location: login/new');
+                            return;
+                        }
+                        $data['error'] = 'Este nome de exibição ou e-mail já está cadastrado. Escolha outro ou entre na sua conta.';
+                    }
+
                 }
+                $this->loadView('padroes/head.php', $data);
+                $this->loadView('cadastro.php', $data);
             } else {
                 header('Location: error_permissao');
             }
@@ -189,7 +209,7 @@
                 $data['titulo_pagina'] = 'cInfo - Perfil';
                 if ($user == ''){
                     $data['url'] = @$this->getDataUrl();
-                    $user = $data['url'][0];
+                    $user = $data['url'][0] ?? $_COOKIE['login'];
                 }
 
 
@@ -316,10 +336,10 @@
                 $user->setBio($_POST['bio']);
 
                 if ($_POST['senha_nova'] != ''){
-                    if (crypt($_POST['password'], $user->getPassword()) == $user->getPassword()){
+                    if (password_verify($_POST['password'], $user->getPassword())){
                         if (strlen($_POST['senha_nova']) >= 6){
                             if ($_POST['senha_nova'] == $_POST['senha_confirmada']){
-                                $user->setPassword(crypt($_POST['senha_nova']));
+                                $user->setPassword(password_hash($_POST['senha_nova'], PASSWORD_DEFAULT));
                             } else {
                                 $data['erro'] = 'As senhas não correspondem';
                                 $this->loadView('padroes/head.php', $data);

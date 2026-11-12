@@ -17,7 +17,7 @@ abstract class UserFunc
     }
 
     public function login($password){
-        if (crypt($password,$this->user->getPassword()) == $this->user->getPassword()){
+        if (password_verify($password, $this->user->getPassword())){
 
             setcookie('login', $this->user->getLogin());
 

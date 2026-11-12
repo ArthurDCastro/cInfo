@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . '/../../../config/Database.php';
 /**
  * Created by PhpStorm.
  * User: Arthur Castro
@@ -12,12 +14,12 @@ class PostagemCrud
 
     public function __construct()
     {
-        $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $this->manager = Database::manager();
     }
 
     protected function getData($query){
         $query = new MongoDB\Driver\Query($query);
-        $cursor =  $this->manager->executeQuery('db_cinfo.postagem', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('postagem'), $query);
 
         $list = [];
         foreach ($cursor as $document) {
@@ -41,7 +43,7 @@ class PostagemCrud
             }
 
             usort($comentarios, function ($a, $b) {
-                return $a->getData() < $b->getData();
+                return $b->getData() <=> $a->getData();
             });
 
             $like = (array) $array['like'];
@@ -50,7 +52,7 @@ class PostagemCrud
         }
 
         usort($list, function ($a, $b) {
-            return $a->getData() < $b->getData();
+            return $b->getData() <=> $a->getData();
         });
 
         return $list;
@@ -75,13 +77,13 @@ class PostagemCrud
         }
 
         usort($list, function ($a, $b) {
-            return $a->getData() < $b->getData();
+            return $b->getData() <=> $a->getData();
         });
 
         if (isset($list[0])){
             return $list;
         } else {
-            return null;
+            return [];
         }
     }
 
@@ -107,7 +109,7 @@ class PostagemCrud
 
         $bulk->insert($postagem->insert());
 
-        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('postagem'), $bulk);
     }
 
     public function update(Postagem $postagem){
@@ -116,7 +118,7 @@ class PostagemCrud
 
         $bulk->update(['codigo' => $postagem->getCodigo()], $postagem->insert());
 
-        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('postagem'), $bulk);
     }
 
 
@@ -127,7 +129,7 @@ class PostagemCrud
 
         $bulk->delete(['codigo' => $codigo]);
 
-        $this->manager->executeBulkWrite('db_cinfo.postagem', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('postagem'), $bulk);
     }
 
 }

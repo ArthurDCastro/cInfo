@@ -6,16 +6,16 @@
  * Time: 13:10
  */
 
-require_once '../model/crud/DadosCrud.php';
-require_once '../model/crud/GraficoCrud.php';
-require_once '../model/crud/UserCrud.php';
+require_once __DIR__ . '/../model/crud/DadosCrud.php';
+require_once __DIR__ . '/../model/crud/GraficoCrud.php';
+require_once __DIR__ . '/../model/crud/UserCrud.php';
 
-require_once '../model/create/Dados.php';
+require_once __DIR__ . '/../model/create/Dados.php';
 
 date_default_timezone_set('America/Sao_Paulo');
 
 function cmp($a, $b) {
-    return $a[1] > $b[1];
+    return $a[1] <=> $b[1];
 }
 
 
@@ -33,7 +33,7 @@ switch ($_POST['acao']){
         usort($data, 'cmp');
 
         $vals = json_encode($data);
-        header("Conten-type: application/json");
+        header("Content-Type: application/json");
         echo $vals;
 
         break;
@@ -56,7 +56,7 @@ switch ($_POST['acao']){
         }
 
         $vals = json_encode($vals);
-        header("Conten-type: application/json");
+        header("Content-Type: application/json");
         echo $vals;
         break;
 
@@ -103,7 +103,7 @@ switch ($_POST['acao']){
 
         $vals = json_encode($grafico);
 
-        header("Conten-type: application/json");
+        header("Content-Type: application/json");
 
         echo $vals;
         break;

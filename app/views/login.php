@@ -26,7 +26,7 @@
                     <h5 id="text_email">Email</h5>
                     <div class="ui left icon input">
                         <i class="mail icon"></i>
-                        <input type="email" name="email" placeholder="E-mail" value="<?= $email ?>">
+                        <input type="email" name="email" placeholder="E-mail" value="<?= htmlspecialchars($email ?? '', ENT_QUOTES, 'UTF-8') ?>">
                     </div>
                 </div>
                 <div class="field">
@@ -68,7 +68,7 @@
 </div>
 <script type="text/javascript" src="assets/front_end/js/login.js"></script>
 
-<?php if ($data['url'][0] == 'new'): ?>
+<?php if (($data['url'][0] ?? '') == 'new'): ?>
     <!-- Confirmação de cadastro -->
     <div class="ui basic modal">
         <div class="ui icon header">

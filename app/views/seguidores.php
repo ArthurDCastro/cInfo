@@ -7,7 +7,7 @@
                     <?php if ($foto != ''): ?>
                         <img src="<?= $s->getSeguidor()->getFoto() ?>">
                     <?php else: ?>
-                        <img src="assets/files/img/image.png">
+                        <img src="assets/files/img/image.jpg">
                     <?php endif; ?>
                 </div>
                 <div class="content">

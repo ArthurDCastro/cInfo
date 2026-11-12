@@ -5,7 +5,7 @@
  * Não editar
  */
 
-    require_once 'GetClass.php';
+    require_once __DIR__ . '/GetClass.php';
 
     abstract class Construct{
         const DIRECTORY_VIEW = 'app/views/';
@@ -67,27 +67,16 @@
             return $data['url'];
         }
 
-        protected function loadView($file, $data = ''){
+        protected function loadView($file, $data = []){
             $data['url'] = $this->getDataUrl();
             $data['url_base'] = $this->base_url . '';
 
-            foreach ($data as $key => $value ){
-                if (is_string($value)){
-                    eval('$' . $key . ' = \'' . $value . '\';');
-                } /*elseif(is_array($value)) {
-                    foreach ($value as $val){
-                        if (is_string($val)){
-                            eval('$' . $key . '[] = \'' . $val . '\';');
-                        }
-                    }
-                }*/
-
-            }
+            extract($data, EXTR_SKIP);
 
             include self::DIRECTORY_VIEW . $file;
         }
 
-        protected function padroes($data = ''){
+        protected function padroes($data = []){
             $files = scandir(self::DIRECTORY_VIEW . $this->padroes, 0);
 
             foreach ($files as $file){

@@ -43,7 +43,7 @@ $(document).ready(function() {
                 acao: 'funcao',
                 vals: $('#funcao').val()
             }, function (dados) {
-                var dbParam = JSON.parse(dados);
+                var dbParam = (typeof dados === 'string' ? JSON.parse(dados) : dados);
                 var txt = '';
                 var list = [];
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
                 }
 
                 var classe = document.getElementsByClassName('gasto');
-                for (y in classe){
+                for (var y = 0; y < classe.length; y++){
                     classe[y].getElementsByTagName('select')[0].innerHTML = txt;
                 }
             }
@@ -74,7 +74,7 @@ $(document).ready(function() {
 
                     }
                 }, function (dados) {
-                    var dado = JSON.parse(dados);
+                    var dado = (typeof dados === 'string' ? JSON.parse(dados) : dados);
 
                     $('#salvo')
                         .modal('show')

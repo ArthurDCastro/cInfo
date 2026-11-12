@@ -40,7 +40,7 @@ $(document).ready(function(){
                     postagem: id
                 }
             }, function (dados) {
-                var dado = JSON.parse(dados);
+                var dado = (typeof dados === 'string' ? JSON.parse(dados) : dados);
                 if (dado['resposta'] == 'like'){
                     $('#like-' + id).html('<i class="like icon"></i>' + dado['count']);
                     $('#like-' + id).attr(
@@ -78,7 +78,7 @@ $(document).ready(function(){
                     postagem: id
                 }
             }, function (dados) {
-                var dado = JSON.parse(dados);
+                var dado = (typeof dados === 'string' ? JSON.parse(dados) : dados);
                 if (dado['resposta'] == 'like'){
                     $('#like-' + id).html('<i class="like icon"></i>' + dado['count']);
                     $('#like-' + id).attr(

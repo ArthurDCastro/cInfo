@@ -28,14 +28,6 @@ $('.ui.form')
                     }
                 ]
             },
-            cadastro: {
-                identifier: 'cadastro',
-                rules: [
-                    {
-                        prompt : '...'
-                    }
-                ]
-            },
             password: {
                 identifier: 'password',
                 rules: [

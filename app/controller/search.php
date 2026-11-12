@@ -7,9 +7,9 @@
  */
 
 
-require_once '../model/crud/UserCrud.php';
+require_once __DIR__ . '/../model/crud/UserCrud.php';
 
-require_once '../model/create/User.php';
+require_once __DIR__ . '/../model/create/User.php';
 
 switch ($_POST['acao']){
     case 'user':
@@ -62,7 +62,7 @@ switch ($_POST['acao']){
         }
 
         $vals = json_encode($encontrados);
-        header("Conten-type: application/json");
+        header("Content-Type: application/json");
         echo $vals;
         break;
 }

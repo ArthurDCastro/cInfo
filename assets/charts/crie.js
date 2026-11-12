@@ -13,7 +13,7 @@ $(document).ready(function(){
                     acao: 'teste',
                     vals: gastos
                 }, function (dados) {
-                    var dbParam = JSON.parse(dados);
+                    var dbParam = (typeof dados === 'string' ? JSON.parse(dados) : dados);
 
                     var data = [];
                     for (i in dbParam['gasto']) {

@@ -6,7 +6,7 @@
                     <?php if ($foto != ''): ?>
                         <img src="<?= $publicacao->getUser()->getFoto() ?>">
                     <?php else: ?>
-                        <img src="assets/files/img/image.png">
+                        <img src="assets/files/img/image.jpg">
                     <?php endif; ?>
                 </div>
                 <div class="content">
@@ -53,7 +53,7 @@
                                             <?php if ($foto != ''): ?>
                                                 <img src="<?= $comentario->getUser()->getFoto() ?>" style=" height: auto">
                                             <?php else: ?>
-                                                <img src="assets/files/img/image.png" style=" height: auto">
+                                                <img src="assets/files/img/image.jpg" style=" height: auto">
                                             <?php endif; ?>
                                         </a>
                                         <div class="content">

@@ -27,37 +27,42 @@
                     <h5 id="text_nome">Nome Completo</h5>
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="nome" placeholder="Nome" value="<?= htmlspecialchars($data['form']['nome'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="field">
                     <h5 id="text_nome_exib">Nome de Exibição</h5>
                     <div class="ui left icon input">
                         <i class="unhide icon"></i>
-                        <input type="text" name="nome_exib" placeholder="Nome de Exibição">
+                        <input type="text" name="nome_exib" placeholder="Nome de Exibição" value="<?= htmlspecialchars($data['form']['nome_exib'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="field">
                     <h5 id="text_email">Email</h5>
                     <div class="ui left icon input">
                         <i class="mail icon"></i>
-                        <input type="email" name="email" placeholder="E-mail">
+                        <input type="email" name="email" placeholder="E-mail" value="<?= htmlspecialchars($data['form']['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
                     </div>
                 </div>
                 <div class="field">
                     <h5 id="text_senha">Senha</h5>
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Senha">
+                        <input type="password" name="password" placeholder="Senha" minlength="6" required>
                     </div>
                 </div>
-                <button name="cadastro" class="ui animated green large fluid submit button" tabindex="0">
+                <button type="submit" name="cadastro" class="ui animated green large fluid submit button" tabindex="0">
                     <div class="visible content">Cadastre-se</div>
                     <div class="hidden content">
                         <i class="right arrow icon"></i>
                     </div>
                 </button>
                 <h5 id="text_login">Já tem uma conta? <a href="login" id="clique_login"> Entre!</a></h5>
+                <?php if (isset($data['error'])): ?>
+                    <div class="ui negative message" role="alert">
+                        <?= htmlspecialchars($data['error'], ENT_QUOTES, 'UTF-8') ?>
+                    </div>
+                <?php endif; ?>
                 <div class="ui error message"></div>
             </div>
         </form>

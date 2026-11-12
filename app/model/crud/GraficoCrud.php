@@ -1,4 +1,6 @@
 <?php
+
+require_once __DIR__ . '/../../../config/Database.php';
 /**
  * Created by PhpStorm.
  * User: Arthur Castro
@@ -12,12 +14,12 @@ class GraficoCrud
 
     public function __construct()
     {
-        $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $this->manager = Database::manager();
     }
 
     public function getAllData(){
         $query = new MongoDB\Driver\Query([]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('grafico'), $query);
 
         $list = [];
 
@@ -31,7 +33,7 @@ class GraficoCrud
 
     public function getGraficos_byCodigo($codigo){
         $query = new MongoDB\Driver\Query(['codigo' => (string) $codigo]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('grafico'), $query);
 
         $array = [];
         foreach ($cursor as $document) {
@@ -55,7 +57,7 @@ class GraficoCrud
 
     public function getGraficos_byUser($login){
         $query = new MongoDB\Driver\Query(['user' => (string) trim($login)]);
-        $cursor =  $this->manager->executeQuery('db_cinfo.grafico', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('grafico'), $query);
 
         $list = [];
         foreach ($cursor as $document) {
@@ -79,7 +81,7 @@ class GraficoCrud
 
         $bulk->insert($grafico);
 
-        $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('grafico'), $bulk);
     }
 
     public function update($grafico){
@@ -88,7 +90,7 @@ class GraficoCrud
 
         $bulk->update(['codigo' => $grafico['codigo']], $grafico);
 
-        $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('grafico'), $bulk);
     }
 
     public function delete($codigo){
@@ -97,7 +99,7 @@ class GraficoCrud
 
         $bulk->delete(['codigo' => $codigo]);
 
-        $this->manager->executeBulkWrite('db_cinfo.grafico', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('grafico'), $bulk);
 
         $post = new PostagemCrud();
 

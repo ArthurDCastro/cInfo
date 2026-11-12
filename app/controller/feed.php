@@ -6,18 +6,18 @@
  * Time: 21:56
  */
 
-require_once '../model/crud/DadosCrud.php';
-require_once '../model/crud/GraficoCrud.php';
-require_once '../model/crud/UserCrud.php';
-require_once '../model/crud/SeguidoresCrud.php';
-require_once '../model/crud/PostagemCrud.php';
+require_once __DIR__ . '/../model/crud/DadosCrud.php';
+require_once __DIR__ . '/../model/crud/GraficoCrud.php';
+require_once __DIR__ . '/../model/crud/UserCrud.php';
+require_once __DIR__ . '/../model/crud/SeguidoresCrud.php';
+require_once __DIR__ . '/../model/crud/PostagemCrud.php';
 
-require_once '../model/create/Grafico.php';
-require_once '../model/create/Dados.php';
-require_once '../model/create/User.php';
-require_once '../model/create/Seguidores.php';
-require_once '../model/create/Comentarios.php';
-require_once '../model/create/Postagem.php';
+require_once __DIR__ . '/../model/create/Grafico.php';
+require_once __DIR__ . '/../model/create/Dados.php';
+require_once __DIR__ . '/../model/create/User.php';
+require_once __DIR__ . '/../model/create/Seguidores.php';
+require_once __DIR__ . '/../model/create/Comentarios.php';
+require_once __DIR__ . '/../model/create/Postagem.php';
 
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -45,7 +45,7 @@ switch ($_POST['acao']){
                     <?php if ($comentario->getUser()->getFoto() != ''): ?>
                         <img src="<?= $comentario->getUser()->getFoto() ?>" style=" height: auto">
                     <?php else: ?>
-                        <img src="assets/files/img/image.png" style=" height: auto">
+                        <img src="assets/files/img/image.jpg" style=" height: auto">
                     <?php endif; ?>
                 </a>
                 <div class="content">
@@ -96,7 +96,7 @@ switch ($_POST['acao']){
 
         $like = json_encode($like);
 
-        header("Conten-type: application/json");
+        header("Content-Type: application/json");
 
         echo $like;
 

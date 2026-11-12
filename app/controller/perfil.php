@@ -6,18 +6,18 @@
  * Time: 21:33
  */
 
-require_once '../model/crud/DadosCrud.php';
-require_once '../model/crud/GraficoCrud.php';
-require_once '../model/crud/UserCrud.php';
-require_once '../model/crud/SeguidoresCrud.php';
-require_once '../model/crud/PostagemCrud.php';
+require_once __DIR__ . '/../model/crud/DadosCrud.php';
+require_once __DIR__ . '/../model/crud/GraficoCrud.php';
+require_once __DIR__ . '/../model/crud/UserCrud.php';
+require_once __DIR__ . '/../model/crud/SeguidoresCrud.php';
+require_once __DIR__ . '/../model/crud/PostagemCrud.php';
 
-require_once '../model/create/Grafico.php';
-require_once '../model/create/Dados.php';
-require_once '../model/create/User.php';
-require_once '../model/create/Seguidores.php';
-require_once '../model/create/Postagem.php';
-require_once '../model/create/Comentarios.php';
+require_once __DIR__ . '/../model/create/Grafico.php';
+require_once __DIR__ . '/../model/create/Dados.php';
+require_once __DIR__ . '/../model/create/User.php';
+require_once __DIR__ . '/../model/create/Seguidores.php';
+require_once __DIR__ . '/../model/create/Postagem.php';
+require_once __DIR__ . '/../model/create/Comentarios.php';
 
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -32,7 +32,7 @@ switch ($_POST['acao']){
 
         $data['publicacoes'] = $crudPostagem->getPublicacoes_byUser($data['user']->getLogin());
 
-        include "../views/perfil_usuario.php";
+        include __DIR__ . '/../views/perfil_usuario.php';
     break;
 
     case 'graficos':
@@ -41,7 +41,7 @@ switch ($_POST['acao']){
     $data['user'] = $crudUser->getUser_byLogin(trim($_POST['user']));
     $graficos = $crud->getGraficos_byUser(trim($_POST['user']));
 
-    include "../views/graficos.php";
+    include __DIR__ . '/../views/graficos.php';
     break;
 
     case 'excluir':
@@ -55,7 +55,7 @@ switch ($_POST['acao']){
 
         $graficos = $crud->getGraficos_byUser(trim($_POST['user']));
 
-        include "../views/graficos.php";
+        include __DIR__ . '/../views/graficos.php';
         break;
 
     case 'seguidores':
@@ -63,7 +63,7 @@ switch ($_POST['acao']){
 
         $segue = $crud->getSeguidores_bySeguindo(trim($_POST['user']));
 
-        include "../views/seguidores.php";
+        include __DIR__ . '/../views/seguidores.php';
         break;
 
     case 'seguindo':
@@ -71,20 +71,20 @@ switch ($_POST['acao']){
 
         $segue = $crud->getSeguindo_bySeguidor(trim($_POST['user']));
 
-        include "../views/seguindo.php";
+        include __DIR__ . '/../views/seguindo.php';
         break;
 
     case 'editar':
         $userCrud = new UserCrud();
         $data['user'] = $userCrud->getUser_byLogin($_COOKIE['login']);
-        include "../views/editar_perfil.php";
+        include __DIR__ . '/../views/editar_perfil.php';
         break;
 
     case 'individual':
         $crud = new GraficoCrud();
         $grafico = $crud->getGraficos_byCodigo($_POST['id']);
 
-        include "../views/grafico_individual.php";
+        include __DIR__ . '/../views/grafico_individual.php';
         break;
 
     case 'relacao':

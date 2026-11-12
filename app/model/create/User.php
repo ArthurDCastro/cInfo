@@ -32,7 +32,7 @@ class User
             'nome'      => $this->nome,
             'login'     => $this->login,
             'tipo_user' => $this->tipo_user,
-            'password'  => crypt($this->password),
+            'password'  => password_hash($this->password, PASSWORD_DEFAULT),
             'email'     => $this->email,
             'foto'      => $this->foto,
             'bio'      => $this->bio

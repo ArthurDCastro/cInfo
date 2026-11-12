@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../../../config/Database.php';
+
 class SeguidoresCrud
 {
 
@@ -7,12 +9,12 @@ class SeguidoresCrud
 
     public function __construct()
     {
-        $this->manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $this->manager = Database::manager();
     }
 
     public function getData(array $query){
         $query = new MongoDB\Driver\Query($query);
-        $cursor =  $this->manager->executeQuery('db_cinfo.seguidores', $query);
+        $cursor =  $this->manager->executeQuery(Database::collection('seguidores'), $query);
 
         $list = [];
 
@@ -69,7 +71,7 @@ class SeguidoresCrud
 
         $bulk->insert($seguidores->insert());
 
-        $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('seguidores'), $bulk);
     }
 
     public function delete(Seguidores $seguidores){
@@ -78,7 +80,7 @@ class SeguidoresCrud
 
         $bulk->update(['id' => $seguidores->getId()], $seguidores->insert());
 
-        $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('seguidores'), $bulk);
     }
 
     public function update(Seguidores $seguidores){
@@ -87,7 +89,7 @@ class SeguidoresCrud
 
         $bulk->update(['id' => $seguidores->getId()], $seguidores->insert());
 
-        $this->manager->executeBulkWrite('db_cinfo.seguidores', $bulk);
+        $this->manager->executeBulkWrite(Database::collection('seguidores'), $bulk);
     }
 
 
